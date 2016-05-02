@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2016.
+ * author:wangjiawei
+ * school:tyut
+ * Hi-Music
+ */
+
 package com.tyut.himusic;
 
 import android.os.Bundle;

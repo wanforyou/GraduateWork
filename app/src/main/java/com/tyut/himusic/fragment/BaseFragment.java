@@ -5,25 +5,24 @@
  * Hi-Music
  */
 
-package com.tyut.himusic.activity;
+package com.tyut.himusic.fragment;
 
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.Fragment;
 
 import com.tyut.himusic.util.MyLog;
 
 /**
- * @author luqingchuan on 16/5/1 22:50
+ * @author luqingchuan on 16/5/2 10:11
  * @email luqingchuan@foxmail.com
  */
-public abstract class BashActivity extends FragmentActivity
+public abstract class BaseFragment extends Fragment
 {
-    protected static MyLog log = MyLog.qcLog();
+    MyLog log = MyLog.qcLog();
 
     protected abstract void initView();
 
     protected abstract void initListener();
 
     protected abstract void initData();
-
 
 }

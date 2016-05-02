@@ -1,8 +1,9 @@
-/*******************************************************************************
- * Recruit Andriod
- * Created by lqc
- * Copyright © 2016年 issuebang.com. All rights reserved.
- ******************************************************************************/
+/*
+ * Copyright (c) 2016.
+ * author:wangjiawei
+ * school:tyut
+ * Hi-Music
+ */
 package com.tyut.himusic.util;
 
 import java.util.HashMap;
