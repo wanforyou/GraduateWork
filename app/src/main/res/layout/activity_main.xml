@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.tyut.himusic.activity.MainActivity">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -43,7 +45,14 @@
             android:id="@+id/imageView"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_album_grey600_48dp"
            />
 
     </RelativeLayout>
+    <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+        android:id="@+id/banner_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
 </LinearLayout>
