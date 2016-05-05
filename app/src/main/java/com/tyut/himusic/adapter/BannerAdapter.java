@@ -20,18 +20,17 @@ public class BannerAdapter extends PagerAdapter {
     }
 
     private Context context = null;
-    private List<ImageView> banners = null;
+    private List<Integer> banners = null;
     private int imageCount = 0;
     private AutoScrollViewPager PosterPager;
 
     public BannerAdapter(Context mcontext,
-                         List<ImageView> banners,
-                         AutoScrollViewPager mPosterPager)
+                         List<Integer> banners)
     {
         this.context = mcontext;
         this.banners = banners;
         this.imageCount = banners.size();
-        this.PosterPager = mPosterPager;
+
     }
 
     @Override
