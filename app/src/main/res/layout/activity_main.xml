@@ -50,7 +50,7 @@
            />
 
     </RelativeLayout>
-    <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+    <com.tyut.himusic.view.AutoScrollViewPager
         android:id="@+id/banner_main_activity"
         android:layout_width="match_parent"
         android:layout_height="163dp"

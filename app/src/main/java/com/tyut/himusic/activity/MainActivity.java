@@ -20,8 +20,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private AutoScrollViewPager viewPager;
-
-
     private List<Integer>       imageIdList;
 
     @Override
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (AutoScrollViewPager) findViewById(R.id.banner_main_activity);
 //        indexText = (TextView)findViewById(R.id.view_pager_index);
 
-        imageIdList = new ArrayList<Integer>();
+
         imageIdList.add(R.drawable.ic_album_grey600_48dp);
         imageIdList.add(R.drawable.ic_av_timer_black_48dp);
         imageIdList.add(R.drawable.ic_closed_caption_black_48dp);
