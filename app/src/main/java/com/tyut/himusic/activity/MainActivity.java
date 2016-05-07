@@ -1,11 +1,9 @@
 package com.tyut.himusic.activity;
 
-import android.support.v4.view.ViewPager;
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.GridView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.BannerAdapter;
@@ -18,9 +16,10 @@ import java.util.List;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+
     private AutoScrollViewPager viewPager;
-    private List<Integer>       imageIdList;
+    private List<Integer>       imageIdList = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,46 +41,4 @@ public class MainActivity extends AppCompatActivity {
         viewPager.startAutoScroll();
     }
 }
-//        viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % ListUtils.getSize(imageIdList));
 
-
-//        innerViewPagerDemo = (Button)findViewById(R.id.auto_scroll_view_pager_inner);
-//        innerViewPagerDemo.setOnClickListener(new OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(context, AutoScrollViewPagerInnerDemo.class));
-//            }
-//        });
-//    }
-
-//    public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {
-//
-//        @Override
-//        public void onPageSelected(int position) {
-//            indexText.setText(new StringBuilder().append((position) % ListUtils.getSize(imageIdList) + 1).append("/")
-//                    .append(ListUtils.getSize(imageIdList)));
-//        }
-//
-//        @Override
-//        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
-//
-//        @Override
-//        public void onPageScrollStateChanged(int arg0) {}
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        // stop auto scroll when onPause
-//        viewPager.stopAutoScroll();
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        // start auto scroll when onResume
-//        viewPager.startAutoScroll();
-//    }
-//
-//}

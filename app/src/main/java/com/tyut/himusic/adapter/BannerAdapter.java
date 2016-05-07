@@ -1,9 +1,9 @@
 package com.tyut.himusic.adapter;
 
 import android.content.Context;
+
+
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -23,7 +23,7 @@ public class BannerAdapter extends PagerAdapter {
     private int imageCount = 0;
 
     private AutoScrollViewPager viewPager;
-    private List<Integer> imageIdList;
+
 
     public BannerAdapter(Context mcontext,
                          List<Integer> banners) {
@@ -36,9 +36,10 @@ public class BannerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-
-        ((AutoScrollViewPager) container).addView(imageIdList.get(position));
-        return imageIdList.get(position);
+        ImageView imageView = new ImageView(context);
+        imageView.setImageDrawable(context.getDrawable(banners.get(position)));
+        ((AutoScrollViewPager) container).addView(imageView);
+        return imageView;
     }
 
     @Override
@@ -54,7 +55,7 @@ public class BannerAdapter extends PagerAdapter {
     @Override
     public int getCount()
     {
-        return Integer.MAX_VALUE;
+        return 4;
     }
 
 
@@ -72,9 +73,9 @@ public class BannerAdapter extends PagerAdapter {
             // 处理点击每个事件的处理
 
             try {
-                Toast.makeText(getApplicationContext(), "点击了图片",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "点击了图片", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
+
             }
         }
     }
