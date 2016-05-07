@@ -7,52 +7,8 @@
     tools:context="com.tyut.himusic.activity.MainActivity"
     android:weightSum="1">
 
+    <include android:layout="@layout/topbar"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="37dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/searchView"
-            android:src="@drawable/ic_search_black_24dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:padding="5dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="热门HI视"
-            android:id="@+id/textView"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="50dp"
-            android:padding="10dp"
-            android:layout_toEndOf="@+id/searchView" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="热门HI乐"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/textView2"
-            android:layout_centerVertical="true"
-            android:padding="10dp"
-            android:layout_toEndOf="@+id/textView"
-             />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_album_grey600_48dp"
-           />
-
-    </RelativeLayout>
     <com.tyut.himusic.view.AutoScrollViewPager
         android:id="@+id/banner_main_activity"
         android:layout_width="match_parent"

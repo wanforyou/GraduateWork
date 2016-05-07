@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.tyut.himusic.activity.MainActivity;
 import com.tyut.himusic.view.AutoScrollViewPager;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class BannerAdapter extends PagerAdapter {
 
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+       public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
         imageView.setImageDrawable(context.getDrawable(banners.get(position)));
         ((AutoScrollViewPager) container).addView(imageView);
@@ -60,6 +61,8 @@ public class BannerAdapter extends PagerAdapter {
 
 
 
+
+
     class BannerClickListener implements View.OnClickListener {
 
         private int position;
@@ -71,12 +74,8 @@ public class BannerAdapter extends PagerAdapter {
         @Override
         public void onClick(View v) {
             // 处理点击每个事件的处理
+//                Toast.makeText(BannerAdapter.this, "点击了图片", Toast.LENGTH_SHORT).show();
 
-            try {
-//                Toast.makeText(getApplicationContext(), "点击了图片", Toast.LENGTH_SHORT).show();
-            } catch (Exception e) {
-
-            }
         }
     }
 }
