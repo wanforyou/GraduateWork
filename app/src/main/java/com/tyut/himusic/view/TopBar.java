@@ -57,7 +57,7 @@ public class TopBar extends RelativeLayout {
     public TopBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         // 设置topbar的背景
-        setBackgroundColor(0xFFF59563);
+        setBackgroundColor(0x0000FFF);
         // 通过这个方法，将你在atts.xml中定义的declare-styleable
         // 的所有属性的值存储到TypedArray中
         TypedArray ta = context.obtainStyledAttributes(attrs,

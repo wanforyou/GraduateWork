@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RadioGroup
+        android:id="@+id/activity_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignParentBottom="true"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/ing"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="#ffffff"
+
+            android:gravity="center_horizontal|bottom"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:text="动态"
+            android:padding="7dp"
+            />
+        <RadioButton
+            android:id="@+id/himusic"
+            android:padding="7dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="#ffffff"
+
+            android:gravity="center_horizontal|bottom"
+            android:button="@null"
+            android:layout_height="wrap_content"
+            android:text="Hi乐"
+
+            />
+        <RadioButton
+            android:id="@+id/suggestion"
+            android:layout_weight="1"
+            android:background="#66FF66"
+
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="0dp"
+            android:button="@null"
+            android:layout_height="wrap_content"
+            android:text="推荐"
+            android:padding="7dp"
+            />
+        <RadioButton
+            android:id="@+id/hivideo"
+            android:background="#ffffff"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hi视"
+            android:padding="7dp"
+            />
+        <RadioButton
+            android:id="@+id/mine"
+            android:background="#ffffff"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:button="@null"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:padding="7dp"
+            />
+    </RadioGroup>
+
+</LinearLayout>

@@ -12,10 +12,10 @@
         custom:searchBackground="@drawable/ic_search_black_24dp"
         custom:runningBackground="@drawable/ic_album_grey600_48dp"
         custom:HiMusic="HiMusic"
-        custom:HiMusicTextColor="#FF33FF"
+        custom:HiMusicTextColor="#000"
         custom:HiMusicTextSize="10sp"
         custom:HiVideo="HiMusic"
-        custom:HiVideoTextColor="#FF33FF"
+        custom:HiVideoTextColor="#000"
         custom:HiVideoTextSize="10sp"
         />
 

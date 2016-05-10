@@ -1,21 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tyut.himusic.view.TopBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@+id/topBar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.tyut.himusic.view.TopBar
+    android:layout_height="40dp"
+    custom:searchBackground="@drawable/ic_search_black_24dp"
+    custom:runningBackground="@drawable/ic_album_grey600_48dp"
+    custom:HiMusic="HiMusic"
+    custom:HiMusicTextColor="#000000"
+    custom:HiMusicTextSize="10dp"
+    custom:HiVideo="HiMusic"
+    custom:HiVideoTextColor="#000000"
+    custom:HiVideoTextSize="10dp"
+>
 
-        android:id="@+id/topBar"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        custom:searchBackground="@drawable/ic_search_black_24dp"
-        custom:runningBackground="@drawable/ic_album_grey600_48dp"
-        custom:HiMusic="HiMusic"
-        custom:HiMusicTextColor="#FF33FF"
-        custom:HiMusicTextSize="10sp"
-        custom:HiVideo="HiMusic"
-        custom:HiVideoTextColor="#FF33FF"
-        custom:HiVideoTextSize="10sp"
-        />
-
-</LinearLayout>
+</com.tyut.himusic.view.TopBar>
