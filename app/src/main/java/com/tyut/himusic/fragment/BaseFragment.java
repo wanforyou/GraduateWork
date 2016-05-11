@@ -19,10 +19,7 @@ public abstract class BaseFragment extends Fragment
 {
     MyLog log = MyLog.qcLog();
 
-    protected abstract void initView();
 
-    protected abstract void initListener();
 
-    protected abstract void initData();
 
 }

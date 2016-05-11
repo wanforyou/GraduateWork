@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今日最热"
+        android:textSize="16dp"
+        android:textColor="#66ff66"
+        android:id="@+id/bottom_today_hot"
+        android:clickable="true"
+        android:layout_toLeftOf="@+id/bottom_week_hot"
+        android:layout_marginRight="32dp"
+         />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#5f000000"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本周最热"
+        android:id="@+id/bottom_week_hot"
+        android:clickable="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#5f000000"
+
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本月最热"
+        android:id="@+id/bottom_month_hot"
+        android:clickable="true"
+        android:layout_toRightOf="@+id/bottom_week_hot"
+        android:layout_marginLeft="32dp"
+/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1f000000"
+        ></View>
+
+    <GridView
+        android:id="@+id/main_gridview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </GridView>
+
+
+
+</LinearLayout>

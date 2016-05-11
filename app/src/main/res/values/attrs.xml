@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopBar">
+        <attr name="searchBackground" format="reference"/>
+        <attr name="HiMusic" format="string"/>
+        <attr name="HiMusicTextSize" format="dimension"/>
+        <attr name="HiMusicTextColor" format="color"/>
+        <attr name="HiVideo" format="string"/>
+        <attr name="HiVideoTextSize" format="dimension"/>
+        <attr name="HiVideoTextColor" format="color"/>
+        <attr name="runningBackground" format="reference"/>
+    </declare-styleable>
+</resources>

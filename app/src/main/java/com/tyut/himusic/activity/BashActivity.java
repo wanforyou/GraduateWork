@@ -21,7 +21,6 @@ public abstract class BashActivity extends FragmentActivity
 
     protected abstract void initView();
 
-    protected abstract void initListener();
 
     protected abstract void initData();
 

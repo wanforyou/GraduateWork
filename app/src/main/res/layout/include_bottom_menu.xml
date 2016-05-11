@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true">
+
+    <RadioButton
+        android:id="@+id/ing"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="动态"
+        android:textColor="#9f000000"
+        android:textSize="20dp"
+
+
+        />
+
+    <RadioButton
+        android:id="@+id/himusic"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="Hi乐"
+        android:textColor="#9f000000"
+        android:textSize="20dp"
+
+        />
+
+    <RadioButton
+        android:id="@+id/suggestion"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="#66cc66"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="推荐"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        />
+
+    <RadioButton
+        android:id="@+id/hivideo"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="Hi视"
+        android:textColor="#9f000000"
+
+        android:textSize="20dp"
+        />
+
+    <RadioButton
+        android:id="@+id/mine"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="我的"
+        android:textColor="#9f000000"
+        android:textSize="20dp"
+        />
+</RadioGroup>
+
