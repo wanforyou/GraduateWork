@@ -59,9 +59,11 @@ public class MainActivity extends Activity {
         mTabWeekHot = (TextView)findViewById(R.id.bottom_week_hot);
         mTabMonthHot = (TextView)findViewById(R.id.bottom_month_hot);
 
-        mTabTodayHot.setOnClickListener(this);
-        mTabMonthHot.setOnClickListener(this);
-        mTabWeekHot.setOnClickListener(this);
+//        mTodayHot = (Fragment)findViewById(R.layout.main_todayhot_fragment) ;
+
+//        mTabTodayHot.setOnClickListener(this);
+//        mTabMonthHot.setOnClickListener(this);
+//        mTabWeekHot.setOnClickListener(this);
 
         // 设置默认的Fragment
         setDefaultFragment();
