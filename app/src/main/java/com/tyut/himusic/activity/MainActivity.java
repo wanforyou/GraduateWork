@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.fragment.MainHiMusicFragment;
+import com.tyut.himusic.fragment.MainHiVideoFragment;
+import com.tyut.himusic.fragment.MainIngFragment;
 import com.tyut.himusic.fragment.MainMineFragment;
 import com.tyut.himusic.fragment.MainSuggestionFragment;
 
@@ -31,7 +34,9 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 
     private MainSuggestionFragment mainSuggestionFragment;
     private MainMineFragment mainMineFragment;
-
+    private MainIngFragment mainIngFragment;
+    private MainHiMusicFragment mainHiMusicFragment;
+    private MainHiVideoFragment mainHiVideoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,18 +45,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
-
-
         initData();
-
-
-//        mTodayHot = (Fragment)findViewById(R.layout.main_todayhot_fragment) ;
-
-//        mTabTodayHot.setOnClickListener(this);
-//        mTabMonthHot.setOnClickListener(this);
-//        mTabWeekHot.setOnClickListener(this);
-
-        // 设置默认的Fragment
 
     }
 
@@ -90,6 +84,17 @@ public class MainActivity extends BashActivity implements View.OnClickListener
     @OnClick({R.id.ing, R.id.himusic, R.id.suggestion, R.id.hivideo, R.id.mine})
     public void onClick(View view)
     {
+        ing.setTextColor(getColor(R.color.text_color_bottom_grey));
+        ing.setBackgroundColor(getColor(R.color.bottom_white));
+        himusic.setTextColor(getColor(R.color.text_color_bottom_grey));
+        himusic.setBackgroundColor(getColor(R.color.bottom_white));
+        hivideo.setTextColor(getColor(R.color.text_color_bottom_grey));
+        hivideo.setBackgroundColor(getColor(R.color.bottom_white));
+        suggestion.setTextColor(getColor(R.color.text_color_bottom_grey));
+        suggestion.setBackgroundColor(getColor(R.color.bottom_white));
+        mine.setTextColor(getColor(R.color.text_color_bottom_grey));
+        mine.setBackgroundColor(getColor(R.color.bottom_white));
+
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mainSuggestionFragment != null)
         {
@@ -99,13 +104,52 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         {
             ft.hide(mainMineFragment);
         }
+        if (mainIngFragment != null)
+        {
+            ft.hide(mainIngFragment);
+        }
+        if (mainHiMusicFragment != null)
+        {
+            ft.hide(mainHiMusicFragment);
+        }
+        if (mainHiVideoFragment != null)
+        {
+            ft.hide(mainHiVideoFragment);
+        }
         switch (view.getId())
         {
             case R.id.ing:
+                ing.setTextColor(getColor(R.color.bottom_white));
+                ing.setBackgroundColor(getColor(R.color.bottom_green));
+                if (mainIngFragment != null && mainIngFragment.isAdded())
+                {
+                    ft.show(mainIngFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    mainIngFragment = MainIngFragment.getInstance();
+//
+                    ft.add(R.id.act_main_fragment, mainIngFragment);
+                }
+
                 break;
             case R.id.himusic:
+                himusic.setTextColor(getColor(R.color.bottom_white));
+                himusic.setBackgroundColor(getColor(R.color.bottom_green));
+                if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
+                {
+                    ft.show(mainHiMusicFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    mainHiMusicFragment = MainHiMusicFragment.getInstance();
+//
+                    ft.add(R.id.act_main_fragment, mainHiMusicFragment);
+                }
                 break;
             case R.id.suggestion:
+                suggestion.setTextColor(getColor(R.color.bottom_white));
+                suggestion.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
                 {
                     ft.show(mainSuggestionFragment);
@@ -118,8 +162,22 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.hivideo:
+                hivideo.setTextColor(getColor(R.color.bottom_white));
+                hivideo.setBackgroundColor(getColor(R.color.bottom_green));
+                if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
+                {
+                    ft.show(mainHiVideoFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    mainHiVideoFragment = MainHiVideoFragment.getInstance();
+//
+                    ft.add(R.id.act_main_fragment, mainHiVideoFragment);
+                }
                 break;
             case R.id.mine:
+                mine.setTextColor(getColor(R.color.bottom_white));
+                mine.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
                 {
                     ft.show(mainMineFragment);
