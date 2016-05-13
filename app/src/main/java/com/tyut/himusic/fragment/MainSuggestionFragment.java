@@ -20,10 +20,7 @@ import com.tyut.himusic.view.AutoScrollViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author luqingchuan on 16/5/11 22:20
- * @email luqingchuan@foxmail.com
- */
+
 public class MainSuggestionFragment extends BaseFragment
 {
     private TextView mTabTodayHot;

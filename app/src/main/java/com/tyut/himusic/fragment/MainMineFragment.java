@@ -14,10 +14,7 @@ import android.view.ViewGroup;
 
 import com.tyut.himusic.R;
 
-/**
- * @author luqingchuan on 16/5/11 22:36
- * @email luqingchuan@foxmail.com
- */
+
 public class MainMineFragment extends BaseFragment
 {
     public static MainMineFragment getInstance()
