@@ -49,6 +49,9 @@
         android:layout_height="1dp"
         android:background="#1f000000"
         ></View>
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <GridView
         android:id="@+id/main_gridview"
@@ -57,6 +60,6 @@
 
     </GridView>
 
-
+    </fragment>
 
 </LinearLayout>
