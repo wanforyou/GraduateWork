@@ -20,9 +20,11 @@ import android.widget.TextView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.BannerAdapter;
+import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
@@ -39,7 +41,7 @@ public class MainSuggestionFragment extends BaseFragment
     private MainTodayhotFragment mainTodayhotFragment;
 
 
-    private List<Integer> imageIdList = new ArrayList<Integer>();
+    private List<String> imageIdList ;
 
     public static MainSuggestionFragment getInstance()
     {
@@ -57,10 +59,7 @@ log.d("");
 
     protected void initView()
     {
-        imageIdList.add(R.drawable.ic_album_grey600_48dp);
-        imageIdList.add(R.drawable.ic_av_timer_black_48dp);
-        imageIdList.add(R.drawable.ic_closed_caption_black_48dp);
-        imageIdList.add(R.drawable.ic_equalizer_black_48dp);
+        imageIdList=Arrays.asList(ImageUrlTestUtils.getImageUrls2());
         viewPager.setAdapter(new BannerAdapter(getContext(), imageIdList));
 //        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
         viewPager
