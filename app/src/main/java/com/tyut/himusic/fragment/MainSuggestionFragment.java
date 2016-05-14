@@ -10,10 +10,12 @@ package com.tyut.himusic.fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tyut.himusic.R;
@@ -59,12 +61,37 @@ log.d("");
         imageIdList.add(R.drawable.ic_av_timer_black_48dp);
         imageIdList.add(R.drawable.ic_closed_caption_black_48dp);
         imageIdList.add(R.drawable.ic_equalizer_black_48dp);
-
         viewPager.setAdapter(new BannerAdapter(getContext(), imageIdList));
 //        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
-
+        viewPager
+                .setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);
         viewPager.setInterval(2000);
         viewPager.startAutoScroll();
+        viewPager.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent event)
+            {
+
+                switch (event.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        viewPager.stopAutoScroll();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        viewPager.startAutoScroll();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        viewPager.startAutoScroll();
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     protected void initData()

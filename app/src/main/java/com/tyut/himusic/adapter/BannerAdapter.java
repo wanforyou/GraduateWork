@@ -38,8 +38,8 @@ public class BannerAdapter extends PagerAdapter {
     @Override
        public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
-        imageView.setImageDrawable(context.getDrawable(banners.get(position)));
-        ((AutoScrollViewPager) container).addView(imageView);
+        imageView.setImageDrawable(context.getDrawable(banners.get(position % imageCount)));
+        container.addView(imageView);
         return imageView;
     }
 
@@ -56,7 +56,7 @@ public class BannerAdapter extends PagerAdapter {
     @Override
     public int getCount()
     {
-        return 4;
+        return Integer.MAX_VALUE;
     }
 
 
