@@ -8,9 +8,12 @@
 package com.tyut.himusic.fragment;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import com.tyut.himusic.R;
@@ -20,13 +23,20 @@ import com.tyut.himusic.view.AutoScrollViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainSuggestionFragment extends BaseFragment
 {
-    private TextView mTabTodayHot;
-    private TextView mTabWeekHot;
-    private TextView mTabMonthHot;
-    private AutoScrollViewPager viewPager;
+
+    @Bind(R.id.frag_main_suggestion_banner)
+    AutoScrollViewPager viewPager;
+
+
+    private MainTodayhotFragment mainTodayhotFragment;
+
+
     private List<Integer> imageIdList = new ArrayList<Integer>();
 
     public static MainSuggestionFragment getInstance()
@@ -39,14 +49,12 @@ public class MainSuggestionFragment extends BaseFragment
     {
 
         super.onCreate(savedInstanceState);
+        setDefaultFragment();
+log.d("");
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    protected void initView()
     {
-        View view = inflater.inflate(R.layout.fragment_main_suggestion, container, false);
-        viewPager = (AutoScrollViewPager) view.findViewById(R.id.banner_main_activity);
-//        indexText = (TextView)findViewById(R.id.view_pager_index);
         imageIdList.add(R.drawable.ic_album_grey600_48dp);
         imageIdList.add(R.drawable.ic_av_timer_black_48dp);
         imageIdList.add(R.drawable.ic_closed_caption_black_48dp);
@@ -57,6 +65,66 @@ public class MainSuggestionFragment extends BaseFragment
 
         viewPager.setInterval(2000);
         viewPager.startAutoScroll();
+    }
+
+    protected void initData()
+    {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.fragment_main_suggestion, container, false);
+        ButterKnife.bind(this, view);
+        initView();
+
+//        indexText = ( TextView)findViewById(R.id.view_pager_index);
+
+
         return view;
     }
+
+
+    private void setDefaultFragment()
+    {
+        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+        if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
+        {
+            ft.show(mainTodayhotFragment);
+        } else
+        {
+            // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+            mainTodayhotFragment = MainTodayhotFragment.getInstance();
+//
+            ft.add(R.id.frag_main_suggestion_fragment, mainTodayhotFragment);
+        }
+        ft.commitAllowingStateLoss();
+        getChildFragmentManager().executePendingTransactions();
+    }
+
+
+
+
+    @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
+    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot})
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.frag_main_suggestion_today_hot:
+
+                break;
+            case R.id.frag_main_suggestion_week_hot:
+                break;
+            case R.id.frag_main_suggestion_month_hot:
+                break;
+        }
+    }
 }
+

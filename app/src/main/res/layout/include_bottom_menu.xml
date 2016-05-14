@@ -8,7 +8,7 @@
     android:layout_alignParentBottom="true">
 
     <RadioButton
-        android:id="@+id/ing"
+        android:id="@+id/include_bottom_ing"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -24,7 +24,7 @@
         />
 
     <RadioButton
-        android:id="@+id/himusic"
+        android:id="@+id/include_bottom_himusic"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -39,7 +39,7 @@
         />
 
     <RadioButton
-        android:id="@+id/suggestion"
+        android:id="@+id/include_bottom_suggestion"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -53,7 +53,7 @@
         />
 
     <RadioButton
-        android:id="@+id/hivideo"
+        android:id="@+id/include_bottom_hivideo"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -67,7 +67,7 @@
         />
 
     <RadioButton
-        android:id="@+id/mine"
+        android:id="@+id/include_bottom_mine"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"

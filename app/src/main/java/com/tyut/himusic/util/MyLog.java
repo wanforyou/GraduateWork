@@ -17,12 +17,12 @@ import android.util.Log;
  */
 public class MyLog
 {
-    public final static String tag = "recruit";
-    private final static boolean logFlag = false;
+    public final static String tag = "graduate";
+    private final static boolean logFlag = true;
     private final static int logLevel = Log.VERBOSE;
     //显示的各自的名字
-    private static final String QINGCHUAN = "@qingchuan@";
-    private static MyLog qcLog;//晴川
+    private static final String FANGZHANG = "@fangzhang@";
+    private static MyLog wjwLog;
     private String mLogName;
 
     private MyLog(String name)
@@ -37,17 +37,17 @@ public class MyLog
      */
     public static MyLog qcLog()
     {
-        if (qcLog == null)
+        if (wjwLog == null)
         {
             synchronized (MyLog.class)
             {
-                if (qcLog == null)
+                if (wjwLog == null)
                 {
-                    qcLog = new MyLog(QINGCHUAN);
+                    wjwLog = new MyLog(FANGZHANG);
                 }
             }
         }
-        return qcLog;
+        return wjwLog;
     }
 
     /**

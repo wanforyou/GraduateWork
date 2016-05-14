@@ -21,15 +21,15 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 {
 
 
-    @Bind(R.id.ing)
+    @Bind(R.id.include_bottom_ing)
     RadioButton ing;
-    @Bind(R.id.himusic)
+    @Bind(R.id.include_bottom_himusic)
     RadioButton himusic;
-    @Bind(R.id.suggestion)
+    @Bind(R.id.include_bottom_suggestion)
     RadioButton suggestion;
-    @Bind(R.id.hivideo)
+    @Bind(R.id.include_bottom_hivideo)
     RadioButton hivideo;
-    @Bind(R.id.mine)
+    @Bind(R.id.include_bottom_mine)
     RadioButton mine;
 
     private MainSuggestionFragment mainSuggestionFragment;
@@ -81,7 +81,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
     }
 
 
-    @OnClick({R.id.ing, R.id.himusic, R.id.suggestion, R.id.hivideo, R.id.mine})
+    @OnClick({R.id.include_bottom_ing, R.id.include_bottom_himusic, R.id.include_bottom_suggestion, R.id.include_bottom_hivideo, R.id.include_bottom_mine})
     public void onClick(View view)
     {
         ing.setTextColor(getColor(R.color.text_color_bottom_grey));
@@ -118,7 +118,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         }
         switch (view.getId())
         {
-            case R.id.ing:
+            case R.id.include_bottom_ing:
                 ing.setTextColor(getColor(R.color.bottom_white));
                 ing.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainIngFragment != null && mainIngFragment.isAdded())
@@ -133,7 +133,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
 
                 break;
-            case R.id.himusic:
+            case R.id.include_bottom_himusic:
                 himusic.setTextColor(getColor(R.color.bottom_white));
                 himusic.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
@@ -147,7 +147,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.add(R.id.act_main_fragment, mainHiMusicFragment);
                 }
                 break;
-            case R.id.suggestion:
+            case R.id.include_bottom_suggestion:
                 suggestion.setTextColor(getColor(R.color.bottom_white));
                 suggestion.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
@@ -161,7 +161,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.add(R.id.act_main_fragment, mainSuggestionFragment);
                 }
                 break;
-            case R.id.hivideo:
+            case R.id.include_bottom_hivideo:
                 hivideo.setTextColor(getColor(R.color.bottom_white));
                 hivideo.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
@@ -175,7 +175,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.add(R.id.act_main_fragment, mainHiVideoFragment);
                 }
                 break;
-            case R.id.mine:
+            case R.id.include_bottom_mine:
                 mine.setTextColor(getColor(R.color.bottom_white));
                 mine.setBackgroundColor(getColor(R.color.bottom_green));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
