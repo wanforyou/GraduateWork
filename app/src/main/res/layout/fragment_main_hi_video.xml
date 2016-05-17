@@ -80,13 +80,26 @@
     </RelativeLayout>
     <View
         style="@style/divider"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <View
+            style="@style/divider"
+            android:layout_height="7dp"
+            android:background="#66cc66"
+
+            />
 
     <LinearLayout
+        android:id="@+id/hivideo_hotandnew"
+        android:background="#00000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="4dp"
+
         >
+
         <TextView
             android:padding="5dp"
             android:id="@+id/hivideo_hot"
@@ -96,8 +109,8 @@
             android:text="最热"
             android:gravity="center_horizontal"
             android:textSize="16dp"
-            android:background="#66cc66"
-            android:textColor="#ffffff"
+            android:textColor="#8f000000"
+            android:background="@drawable/shape1"
             />
         <TextView
             android:padding="5dp"
@@ -108,15 +121,20 @@
             android:text="最新"
             android:textSize="16dp"
             android:layout_weight="1"
-            android:textColor="#6f000000"
+            android:background="@drawable/shape2"
+            android:textColor="#ffffff"
             />
     </LinearLayout>
+
+</RelativeLayout>
     <View
         style="@style/divider"/>
-    <Framelayout
+
+    <FrameLayout
         android:id="@+id/frag_hivideo_mine"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></Framelayout>
+        android:layout_height="match_parent">
+</FrameLayout>
 
 
 </LinearLayout>
