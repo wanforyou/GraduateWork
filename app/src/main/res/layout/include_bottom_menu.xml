@@ -23,19 +23,19 @@
 
         />
 
+
     <RadioButton
-        android:id="@+id/include_bottom_himusic"
+        android:id="@+id/include_bottom_hivideo"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="#ffffff"
+        android:background="@color/bottom_white"
         android:button="@null"
         android:gravity="center"
         android:padding="7dp"
-        android:text="Hi乐"
-        android:textColor="#9f000000"
+        android:text="Hi视"
+        android:textColor="@color/text_color_bottom_grey"
         android:textSize="20dp"
-
         />
 
     <RadioButton
@@ -51,20 +51,22 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         />
-
     <RadioButton
-        android:id="@+id/include_bottom_hivideo"
+        android:id="@+id/include_bottom_himusic"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="@color/bottom_white"
+        android:background="#ffffff"
         android:button="@null"
         android:gravity="center"
         android:padding="7dp"
-        android:text="Hi视"
-        android:textColor="@color/text_color_bottom_grey"
+        android:text="Hi乐"
+        android:textColor="#9f000000"
         android:textSize="20dp"
+
         />
+
+
 
     <RadioButton
         android:id="@+id/include_bottom_mine"
