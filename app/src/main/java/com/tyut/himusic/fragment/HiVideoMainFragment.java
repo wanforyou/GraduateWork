@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import com.tyut.himusic.R;
 
 
-public class MainHiMusicFragment extends BaseFragment
+public class HiVideoMainFragment extends BaseFragment
 {
-    public static MainHiMusicFragment getInstance()
+    public static HiVideoMainFragment getInstance()
     {
-        return new MainHiMusicFragment();
+        return new HiVideoMainFragment();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class MainHiMusicFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_main_hi_music, container, false);
+        View view = inflater.inflate(R.layout.fragment_hivideo_main, container, false);
         return view;
 
     }

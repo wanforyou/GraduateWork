@@ -34,9 +34,19 @@ public class MainSuggestionFragment extends BaseFragment
 
     @Bind(R.id.frag_main_suggestion_banner)
     AutoScrollViewPager viewPager;
+    @Bind(R.id.frag_main_suggestion_today_hot)
+    TextView today;
+    @Bind(R.id.frag_main_suggestion_week_hot)
+    TextView week;
+    @Bind(R.id.frag_main_suggestion_month_hot)
+    TextView month;
+
+
 
 
     private MainTodayhotFragment mainTodayhotFragment;
+    private MainMonthhotFragment mainMonthhotFragment;
+    private MainWeekhotFragment mainWeekhotFragment;
 
 
     private List<Integer> imageIdList = new ArrayList<Integer>();
@@ -52,7 +62,7 @@ public class MainSuggestionFragment extends BaseFragment
 
         super.onCreate(savedInstanceState);
         setDefaultFragment();
-log.d("");
+        log.d("");
     }
 
     protected void initView()
@@ -104,10 +114,6 @@ log.d("");
         View view = inflater.inflate(R.layout.fragment_main_suggestion, container, false);
         ButterKnife.bind(this, view);
         initView();
-
-//        indexText = ( TextView)findViewById(R.id.view_pager_index);
-
-
         return view;
     }
 
@@ -142,16 +148,67 @@ log.d("");
     @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot})
     public void onClick(View view)
     {
+        today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        week.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        month.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+
+        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+
+        if (mainTodayhotFragment != null)
+        {
+            ft.hide(mainTodayhotFragment);
+        }
+        if (mainWeekhotFragment != null)
+        {
+            ft.hide(mainWeekhotFragment);
+        }
+        if (mainMonthhotFragment != null)
+        {
+            ft.hide(mainMonthhotFragment);
+        }
         switch (view.getId())
         {
             case R.id.frag_main_suggestion_today_hot:
-
+                today.setTextColor(getContext().getColor(R.color.bottom_green));
+                if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
+                {
+                    ft.show(mainTodayhotFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    mainTodayhotFragment = MainTodayhotFragment.getInstance();
+                    ft.add(R.id.frag_main_suggestion_fragment, mainTodayhotFragment);
+                }
                 break;
             case R.id.frag_main_suggestion_week_hot:
+                week.setTextColor(getContext().getColor(R.color.bottom_green));
+                if (mainWeekhotFragment != null && mainWeekhotFragment.isAdded())
+                {
+                    ft.show(mainWeekhotFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    mainWeekhotFragment = MainWeekhotFragment.getInstance();
+                    ft.add(R.id.frag_main_suggestion_fragment, mainWeekhotFragment);
+                }
+
                 break;
             case R.id.frag_main_suggestion_month_hot:
+                month.setTextColor(getContext().getColor(R.color.bottom_green));
+                if (mainMonthhotFragment != null && mainMonthhotFragment.isAdded())
+                {
+                    ft.show(mainMonthhotFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    mainMonthhotFragment = MainMonthhotFragment.getInstance();
+                    ft.add(R.id.frag_main_suggestion_fragment, mainMonthhotFragment);
+                }
+
                 break;
         }
+        ft.commitAllowingStateLoss();
+        getChildFragmentManager().executePendingTransactions();
     }
 }
 

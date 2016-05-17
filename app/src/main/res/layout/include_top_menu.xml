@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/top_menu"
+        android:layout_height="40dp"
+        android:background="#d7d7d7">
+
+        <ImageView
+            android:id="@+id/main_suggestion_searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_search_black_24dp"/>
+
+
+        <TextView
+            android:id="@+id/top_menu_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_toEndOf="@+id/main_suggestion_searchView"
+            android:padding="10dp"
+            android:text="热门HI视"/>
+
+        <TextView
+            android:id="@+id/top_menu_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_toEndOf="@+id/top_menu_text1"
+            android:padding="10dp"
+            android:text="热门HI乐"
+            />
+
+        <ImageView
+            android:id="@+id/main_suggestion_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_album_grey600_48dp"
+            />
+    </RelativeLayout>

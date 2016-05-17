@@ -1,7 +1,6 @@
 package com.tyut.himusic.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -43,7 +42,7 @@ public class MainTodayhotFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_main_todayhot, container, false);
+        View view = inflater.inflate(R.layout.fragment_suggestion_todayhot, container, false);
         ButterKnife.bind(this, view);
         initView();
         return view;
