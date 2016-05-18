@@ -3,12 +3,15 @@ package com.tyut.himusic.adapter;
 import android.content.Context;
 
 
+import android.net.Uri;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.activity.MainActivity;
 import com.tyut.himusic.view.AutoScrollViewPager;
 
@@ -20,14 +23,14 @@ import java.util.List;
 public class BannerAdapter extends PagerAdapter {
 
     private Context context = null;
-    private List<Integer> banners = null;
+    private List<String> banners = null;
     private int imageCount = 0;
 
     private AutoScrollViewPager viewPager;
 
 
     public BannerAdapter(Context mcontext,
-                         List<Integer> banners) {
+                         List<String> banners) {
         this.context = mcontext;
         this.banners = banners;
         this.imageCount = banners.size();
@@ -37,10 +40,23 @@ public class BannerAdapter extends PagerAdapter {
 
     @Override
        public Object instantiateItem(ViewGroup container, int position) {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageDrawable(context.getDrawable(banners.get(position % imageCount)));
-        container.addView(imageView);
-        return imageView;
+        SimpleDraweeView draweeView = new SimpleDraweeView(context);
+        draweeView.setAdjustViewBounds(true);
+        draweeView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+        android.view.ViewGroup.LayoutParams params = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        draweeView.setLayoutParams(params);
+
+        if (imageCount != 0)
+        {
+            draweeView.setImageURI(Uri.parse(banners.get(position % imageCount)));
+            container.addView(draweeView);
+
+            draweeView.setOnClickListener(new BannerClickListener(position
+                    % imageCount));
+        }
+        return draweeView;
     }
 
     @Override

@@ -28,4 +28,13 @@ public class ImageUrlTestUtils
         };
         return urls;
     }
+    public static String[] getImageUrls2()
+    {
+        String[] urls = new String[]{
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/Fml0ReKJAilpmum9a6FkOhnHJcSo",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3"
+        };
+        return urls;
+    }
 }
