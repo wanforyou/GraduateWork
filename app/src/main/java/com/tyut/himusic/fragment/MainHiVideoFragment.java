@@ -97,6 +97,7 @@ public class MainHiVideoFragment extends BaseFragment
         topMenuText1.setText("视频");
         topMenuText1.setTextColor(getContext().getColor(R.color.bottom_green));
         topMenuText2.setText("达人");
+        topMenuText2.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         hiVideoMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
