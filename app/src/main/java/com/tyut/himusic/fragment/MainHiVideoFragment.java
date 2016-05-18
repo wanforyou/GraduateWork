@@ -92,6 +92,8 @@ public class MainHiVideoFragment extends BaseFragment
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
+    @OnClick({R.id.top_menu_text1,R.id.top_menu_text2})
     public void onClick(View view)
     {
         topMenuText1.setText("视频");
