@@ -30,17 +30,17 @@ public class MainHiVideoFragment extends BaseFragment
   private HiVideoMainFragment hiVideoMainFragment;
     private HiVideoMvFragment hiVideoMvFragment;
     private HiVideoSeceneFragment hiVideoSeceneFragment;
+    private HiVideoManFragment hiVideoManFragment;
 
-    @Bind(R.id.top_menu_text1)
-    TextView topMenuText1;
-    @Bind(R.id.top_menu_text2)
-    TextView topMenuText2;
-    @Bind(R.id.hivideo_main)
+
+    @Bind(R.id.frag_hivideo_main)
     TextView hiVideoMain;
-    @Bind(R.id.hivideo_secene)
+    @Bind(R.id.frag_hivideo_secene)
     TextView hiVideoScene;
-    @Bind(R.id.hivideo_mv)
+    @Bind(R.id.frag_hivideo_mv)
     TextView hiVideoMv;
+    @Bind(R.id.frag_hivideo_man)
+    TextView hiVideoMan;
 
 
 
@@ -93,16 +93,14 @@ public class MainHiVideoFragment extends BaseFragment
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.top_menu_text1,R.id.top_menu_text2})
+    @OnClick({R.id.frag_hivideo_main,R.id.frag_hivideo_secene,R.id.frag_hivideo_mv,R.id.frag_hivideo_man})
     public void onClick(View view)
     {
-        topMenuText1.setText("视频");
-        topMenuText1.setTextColor(getContext().getColor(R.color.bottom_green));
-        topMenuText2.setText("达人");
-        topMenuText2.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+
         hiVideoMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        hiVideoMv.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        hiVideoMan.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
 
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
@@ -118,10 +116,14 @@ public class MainHiVideoFragment extends BaseFragment
         {
             ft.hide(hiVideoSeceneFragment);
         }
+        if (hiVideoManFragment != null)
+        {
+            ft.hide(hiVideoManFragment);
+        }
         switch (view.getId())
         {
-            case R.id.hivideo_main:
-                hiVideoMain.setTextColor(getContext().getColor(R.color.bottom_green));
+            case R.id.frag_hivideo_main:
+                hiVideoMain.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
                 if (hiVideoMainFragment != null && hiVideoMainFragment.isAdded())
                 {
                     ft.show(hiVideoMainFragment);
@@ -132,9 +134,9 @@ public class MainHiVideoFragment extends BaseFragment
                     ft.add(R.id.frag_hivideo_mine, hiVideoMainFragment);
                 }
                 break;
-            case R.id.hivideo_mv:
-                hiVideoMv.setTextColor(getContext().getColor(R.color.bottom_green));
-                if (hiVideoSeceneFragment != null && hiVideoSeceneFragment.isAdded())
+            case R.id.frag_hivideo_mv:
+                hiVideoMv.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
+                if (hiVideoMvFragment != null && hiVideoMvFragment.isAdded())
                 {
                     ft.show(hiVideoMvFragment);
                 } else
@@ -145,8 +147,8 @@ public class MainHiVideoFragment extends BaseFragment
                 }
 
                 break;
-            case R.id.hivideo_secene:
-                hiVideoScene.setTextColor(getContext().getColor(R.color.bottom_green));
+            case R.id.frag_hivideo_secene:
+                hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
                 if (hiVideoSeceneFragment != null && hiVideoSeceneFragment.isAdded())
                 {
                     ft.show(hiVideoSeceneFragment);
@@ -155,6 +157,19 @@ public class MainHiVideoFragment extends BaseFragment
                     // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     hiVideoSeceneFragment = HiVideoSeceneFragment.getInstance();
                     ft.add(R.id.frag_hivideo_mine, hiVideoSeceneFragment);
+                }
+
+                break;
+            case R.id.frag_hivideo_man:
+                hiVideoMan.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
+                if (hiVideoManFragment != null && hiVideoManFragment.isAdded())
+                {
+                    ft.show(hiVideoManFragment);
+                } else
+                {
+                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
+                    hiVideoManFragment = hiVideoManFragment.getInstance();
+                    ft.add(R.id.frag_hivideo_mine, hiVideoManFragment);
                 }
 
                 break;

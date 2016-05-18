@@ -25,7 +25,7 @@
 
         android:id="@+id/frag_main_suggestion_banner"
         android:layout_width="match_parent"
-        android:layout_height="161dp"/>
+        android:layout_height="132dp"/>
 
     <View
         style="@style/divider"/>

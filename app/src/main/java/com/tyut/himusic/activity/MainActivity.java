@@ -120,7 +120,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         {
             case R.id.include_bottom_ing:
                 ing.setTextColor(getColor(R.color.bottom_white));
-                ing.setBackgroundColor(getColor(R.color.bottom_green));
+                ing.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
                 if (mainIngFragment != null && mainIngFragment.isAdded())
                 {
                     ft.show(mainIngFragment);
@@ -135,7 +135,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_himusic:
                 himusic.setTextColor(getColor(R.color.bottom_white));
-                himusic.setBackgroundColor(getColor(R.color.bottom_green));
+                himusic.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
                 if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
                 {
                     ft.show(mainHiMusicFragment);
@@ -149,7 +149,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_suggestion:
                 suggestion.setTextColor(getColor(R.color.bottom_white));
-                suggestion.setBackgroundColor(getColor(R.color.bottom_green));
+                suggestion.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
                 {
                     ft.show(mainSuggestionFragment);
@@ -163,7 +163,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_hivideo:
                 hivideo.setTextColor(getColor(R.color.bottom_white));
-                hivideo.setBackgroundColor(getColor(R.color.bottom_green));
+                hivideo.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
                 if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
                 {
                     ft.show(mainHiVideoFragment);
@@ -177,7 +177,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_mine:
                 mine.setTextColor(getColor(R.color.bottom_white));
-                mine.setBackgroundColor(getColor(R.color.bottom_green));
+                mine.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
                 {
                     ft.show(mainMineFragment);

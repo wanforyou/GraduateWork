@@ -22,18 +22,7 @@
     <View
         style="@style/divider"/>
 
-    <Button
-        android:layout_width="160dp"
-        android:layout_height="30dp"
-        android:background="@drawable/shape"
-        android:id="@+id/btn_updatevideo"
-        android:text="上传视频"
-        android:textSize="16dp"
-        android:textColor="#ffffff"
-        android:drawableLeft="@drawable/uplocate"
-        android:paddingLeft="20dp"
-        android:layout_margin="2dp"
-        android:layout_gravity="center_horizontal" />
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -44,40 +33,55 @@
     <View
         style="@style/divider"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
->
+        android:layout_gravity="center_horizontal"
+        >
         <TextView
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="原创"
             android:textSize="16dp"
-            android:paddingRight="40dp"
-            android:layout_toStartOf="@+id/hivideo_secene"
-            android:id="@+id/hivideo_main"
+            android:padding="10dp"
+            android:id="@+id/frag_hivideo_main"
             android:textColor="#66cc66"  />
         <TextView
+            android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:text="现场"
-            android:layout_centerInParent="true"
-            android:id="@+id/hivideo_secene"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:id="@+id/frag_hivideo_secene"
             android:textColor="#5f000000"  />
         <TextView
+            android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MV"
-            android:layout_toRightOf="@+id/hivideo_secene"
             android:textSize="16dp"
-            android:paddingLeft="40dp"
-            android:id="@+id/hivideo_mv"
+            android:padding="10dp"
+            android:id="@+id/frag_hivideo_mv"
             android:textColor="#5f000000"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="达人"
+            android:textSize="16dp"
+            android:padding="10dp"
+            android:id="@+id/frag_hivideo_man"
+            android:textColor="#5f000000"
+            android:layout_weight="1"
             />
 
-    </RelativeLayout>
+    </LinearLayout>
     <View
         style="@style/divider"/>
     <RelativeLayout
@@ -87,6 +91,8 @@
             style="@style/divider"
             android:layout_height="7dp"
             android:background="#66cc66"
+            android:layout_width="50dp"
+            android:layout_centerHorizontal="true"
 
             />
 

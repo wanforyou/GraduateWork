@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/bottom_green</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/text_color_lightblue_1</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

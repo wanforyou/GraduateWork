@@ -10,11 +10,11 @@ import com.tyut.himusic.R;
 /**
  * Created by Administrator on 2016/5/17.
  */
-public class HiVideoSeceneFragment extends BaseFragment
+public class HiVideoManFragment extends BaseFragment
 {
-    public static HiVideoSeceneFragment getInstance()
+    public static HiVideoManFragment getInstance()
     {
-        return new HiVideoSeceneFragment();
+        return new HiVideoManFragment();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class HiVideoSeceneFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_hivideo_scene, container, false);
+        View view = inflater.inflate(R.layout.fragment_hivideo_man, container, false);
         return view;
 
     }
