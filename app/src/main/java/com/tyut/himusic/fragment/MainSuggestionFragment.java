@@ -148,8 +148,11 @@ public class MainSuggestionFragment extends BaseFragment
     public void onClick(View view)
     {
         today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        today.setBackgroundColor(getContext().getColor(R.color.bottom_white));
         week.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        week.setBackgroundColor(getContext().getColor(R.color.bottom_white));
         month.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        month.setBackgroundColor(getContext().getColor(R.color.bottom_white));
 
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
@@ -168,7 +171,8 @@ public class MainSuggestionFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.frag_main_suggestion_today_hot:
-                today.setTextColor(getContext().getColor(R.color.bottom_green));
+                today.setTextColor(getContext().getColor(R.color.bottom_white));
+                today.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
                 if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
                 {
                     ft.show(mainTodayhotFragment);
@@ -180,7 +184,8 @@ public class MainSuggestionFragment extends BaseFragment
                 }
                 break;
             case R.id.frag_main_suggestion_week_hot:
-                week.setTextColor(getContext().getColor(R.color.bottom_green));
+                week.setTextColor(getContext().getColor(R.color.bottom_white));
+                week.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
                 if (mainWeekhotFragment != null && mainWeekhotFragment.isAdded())
                 {
                     ft.show(mainWeekhotFragment);
@@ -193,7 +198,8 @@ public class MainSuggestionFragment extends BaseFragment
 
                 break;
             case R.id.frag_main_suggestion_month_hot:
-                month.setTextColor(getContext().getColor(R.color.bottom_green));
+                month.setTextColor(getContext().getColor(R.color.bottom_white));
+                month.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
                 if (mainMonthhotFragment != null && mainMonthhotFragment.isAdded())
                 {
                     ft.show(mainMonthhotFragment);

@@ -98,9 +98,13 @@ public class MainHiVideoFragment extends BaseFragment
     {
 
         hiVideoMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        hiVideoMain.setBackgroundColor(getContext().getColor(R.color.bottom_white));
         hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        hiVideoScene.setBackgroundColor(getContext().getColor(R.color.bottom_white));
         hiVideoMv.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        hiVideoMv.setBackgroundColor(getContext().getColor(R.color.bottom_white));
         hiVideoMan.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        hiVideoMan.setBackgroundColor(getContext().getColor(R.color.bottom_white));
 
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
@@ -123,7 +127,8 @@ public class MainHiVideoFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.frag_hivideo_main:
-                hiVideoMain.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
+                hiVideoMain.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                hiVideoMain.setTextColor(getContext().getColor(R.color.bottom_white));
                 if (hiVideoMainFragment != null && hiVideoMainFragment.isAdded())
                 {
                     ft.show(hiVideoMainFragment);
@@ -135,7 +140,8 @@ public class MainHiVideoFragment extends BaseFragment
                 }
                 break;
             case R.id.frag_hivideo_mv:
-                hiVideoMv.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
+                hiVideoMv.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                hiVideoMv.setTextColor(getContext().getColor(R.color.bottom_white));
                 if (hiVideoMvFragment != null && hiVideoMvFragment.isAdded())
                 {
                     ft.show(hiVideoMvFragment);
@@ -148,7 +154,8 @@ public class MainHiVideoFragment extends BaseFragment
 
                 break;
             case R.id.frag_hivideo_secene:
-                hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
+                hiVideoScene.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                hiVideoScene.setTextColor(getContext().getColor(R.color.bottom_white));
                 if (hiVideoSeceneFragment != null && hiVideoSeceneFragment.isAdded())
                 {
                     ft.show(hiVideoSeceneFragment);
@@ -161,7 +168,8 @@ public class MainHiVideoFragment extends BaseFragment
 
                 break;
             case R.id.frag_hivideo_man:
-                hiVideoMan.setTextColor(getContext().getColor(R.color.text_color_lightblue_2));
+                hiVideoMan.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                hiVideoMan.setTextColor(getContext().getColor(R.color.bottom_white));;
                 if (hiVideoManFragment != null && hiVideoManFragment.isAdded())
                 {
                     ft.show(hiVideoManFragment);

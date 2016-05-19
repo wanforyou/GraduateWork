@@ -3,7 +3,9 @@ package com.tyut.himusic.activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.fragment.MainHiMusicFragment;
@@ -22,15 +24,15 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 
 
     @Bind(R.id.include_bottom_ing)
-    RadioButton ing;
+    Button ing;
     @Bind(R.id.include_bottom_himusic)
-    RadioButton himusic;
+    Button himusic;
     @Bind(R.id.include_bottom_suggestion)
-    RadioButton suggestion;
+    Button suggestion;
     @Bind(R.id.include_bottom_hivideo)
-    RadioButton hivideo;
+    Button hivideo;
     @Bind(R.id.include_bottom_mine)
-    RadioButton mine;
+    Button mine;
 
     private MainSuggestionFragment mainSuggestionFragment;
     private MainMineFragment mainMineFragment;
@@ -120,7 +122,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         {
             case R.id.include_bottom_ing:
                 ing.setTextColor(getColor(R.color.bottom_white));
-                ing.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
+                ing.setBackgroundColor(getColor(R.color.text_color_lightblue_2));
                 if (mainIngFragment != null && mainIngFragment.isAdded())
                 {
                     ft.show(mainIngFragment);
@@ -135,7 +137,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_himusic:
                 himusic.setTextColor(getColor(R.color.bottom_white));
-                himusic.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
+                himusic.setBackgroundColor(getColor(R.color.text_color_lightblue_2));
                 if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
                 {
                     ft.show(mainHiMusicFragment);
@@ -149,7 +151,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_suggestion:
                 suggestion.setTextColor(getColor(R.color.bottom_white));
-                suggestion.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
+                suggestion.setBackgroundColor(getColor(R.color.text_color_lightblue_2));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
                 {
                     ft.show(mainSuggestionFragment);
@@ -163,7 +165,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_hivideo:
                 hivideo.setTextColor(getColor(R.color.bottom_white));
-                hivideo.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
+                hivideo.setBackgroundColor(getColor(R.color.text_color_lightblue_2));
                 if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
                 {
                     ft.show(mainHiVideoFragment);
@@ -177,7 +179,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_mine:
                 mine.setTextColor(getColor(R.color.bottom_white));
-                mine.setBackgroundColor(getColor(R.color.text_color_lightblue_1));
+                mine.setBackgroundColor(getColor(R.color.text_color_lightblue_2));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
                 {
                     ft.show(mainMineFragment);

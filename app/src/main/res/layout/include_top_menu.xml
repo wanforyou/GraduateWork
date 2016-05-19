@@ -17,15 +17,28 @@
             android:padding="5dp"
             android:paddingTop="5dp"
             android:paddingLeft="5dp"
-            android:src="@drawable/ic_search_black_24dp"/>
+            android:src="@drawable/ic_find_in_page_black_48dp"/>
+
 
 
         <ImageView
             android:id="@+id/main_suggestion_imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_album_black_48dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_album_grey600_48dp"
-            />
-    </RelativeLayout>
+            android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi Music"
+        android:textSize="23dp"
+        android:paddingTop="5dp"
+        android:id="@+id/textView"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
