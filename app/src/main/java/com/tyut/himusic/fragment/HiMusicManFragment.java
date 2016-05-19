@@ -25,7 +25,7 @@ public class HiMusicManFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_hivideo_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_hivideo_man, container, false);
         return view;
 
     }

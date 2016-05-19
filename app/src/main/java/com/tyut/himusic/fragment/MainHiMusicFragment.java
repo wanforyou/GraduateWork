@@ -53,8 +53,9 @@ private HiMusicMainFragment hiMusicMainFragment;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_main_hi_music, container, false);
+        ButterKnife.bind(this, view);
+        initView();
         return view;
-
     }
     protected void initView()
     {
@@ -157,7 +158,7 @@ private HiMusicMainFragment hiMusicMainFragment;
                 {
                     // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     hiMusicMainFragment = HiMusicMainFragment.getInstance();
-                    ft.add(R.id.frag_main_himusic_main, hiMusicMainFragment);
+                    ft.add(R.id.frag_main_himusic_fragment, hiMusicMainFragment);
                 }
                 break;
             case R.id.frag_main_himusic_man:
@@ -171,7 +172,7 @@ private HiMusicMainFragment hiMusicMainFragment;
                 {
                     // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     hiMusicManFragment = HiMusicManFragment.getInstance();
-                    ft.add(R.id.frag_main_himusic_man, hiMusicManFragment);
+                    ft.add(R.id.frag_main_himusic_fragment, hiMusicManFragment);
                 }
 
                 break;
