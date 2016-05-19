@@ -45,7 +45,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="今日最热"
-            android:textColor="#0277bd"
+            android:background="#29b6f6"
+            android:textColor="#ffffff"
             android:textSize="16dp"
             />
 
