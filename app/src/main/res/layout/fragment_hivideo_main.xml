@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<!--
+  ~ Copyright (c) 2016.
+  ~ author:wangjiawei
+  ~ school:tyut
+  ~ Hi-Music
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/hivideo_hotandnew"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:id="@+id/hivideo_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="最热"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/shape1"
+            />
+        <TextView
+            android:id="@+id/hivideo_new"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="最新"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:background="#ffffffff"
+            android:textColor="#8f000000"
+
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#03a9f4"
+        ></View>
+
+    <FrameLayout
+        android:id="@+id/frag_hivideo_mine_hotandnew"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
 
 </LinearLayout>

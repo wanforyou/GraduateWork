@@ -5,7 +5,8 @@
         android:layout_width="match_parent"
         android:id="@+id/top_menu"
         android:layout_height="40dp"
-        android:background="#03a9f4">
+        android:elevation="10dp"
+        android:background="#0288d1">
 
         <ImageView
             android:id="@+id/main_suggestion_searchView"

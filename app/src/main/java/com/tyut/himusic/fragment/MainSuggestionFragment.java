@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.LinearLayout;
@@ -37,11 +38,11 @@ public class MainSuggestionFragment extends BaseFragment
     @Bind(R.id.frag_main_suggestion_banner)
     AutoScrollViewPager viewPager;
     @Bind(R.id.frag_main_suggestion_today_hot)
-    TextView today;
+    Button today;
     @Bind(R.id.frag_main_suggestion_week_hot)
-    TextView week;
+    Button week;
     @Bind(R.id.frag_main_suggestion_month_hot)
-    TextView month;
+    Button month;
 
 
 
@@ -149,10 +150,14 @@ public class MainSuggestionFragment extends BaseFragment
     {
         today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         today.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        today.setElevation(10);
         week.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         week.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        week.setElevation(10);
         month.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
         month.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        month.setElevation(10);
+
 
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
@@ -173,6 +178,7 @@ public class MainSuggestionFragment extends BaseFragment
             case R.id.frag_main_suggestion_today_hot:
                 today.setTextColor(getContext().getColor(R.color.bottom_white));
                 today.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                today.setElevation(3);
                 if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
                 {
                     ft.show(mainTodayhotFragment);
@@ -186,6 +192,7 @@ public class MainSuggestionFragment extends BaseFragment
             case R.id.frag_main_suggestion_week_hot:
                 week.setTextColor(getContext().getColor(R.color.bottom_white));
                 week.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                week.setElevation(3);
                 if (mainWeekhotFragment != null && mainWeekhotFragment.isAdded())
                 {
                     ft.show(mainWeekhotFragment);
@@ -200,6 +207,7 @@ public class MainSuggestionFragment extends BaseFragment
             case R.id.frag_main_suggestion_month_hot:
                 month.setTextColor(getContext().getColor(R.color.bottom_white));
                 month.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                month.setElevation(3);
                 if (mainMonthhotFragment != null && mainMonthhotFragment.isAdded())
                 {
                     ft.show(mainMonthhotFragment);

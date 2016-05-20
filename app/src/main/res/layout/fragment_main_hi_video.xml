@@ -12,16 +12,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
-        style="@style/divider"/>
 
     <include android:id="@+id/top_menu_hivideo"
         layout="@layout/include_top_menu">
 
     </include>
-    <View
-        style="@style/divider"
-        android:background="#01579b"/>
+
 
 
 
@@ -31,17 +27,14 @@
         android:background="#b3e5fc"
         android:id="@+id/imageView"
         android:layout_gravity="center_horizontal" />
-    <View
-        style="@style/divider"
-        android:layout_marginTop="2dp"
-        android:background="#2f000000"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         >
-        <TextView
+        <Button
             android:gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_width="wrap_content"
@@ -49,21 +42,23 @@
             android:text="原创"
             android:background="#03a9f4"
             android:textSize="16dp"
+            android:elevation="2dp"
             android:padding="10dp"
             android:id="@+id/frag_hivideo_main"
             android:textColor="#ffffff"  />
-        <TextView
+        <Button
             android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:text="现场"
+            android:elevation="7dp"
             android:padding="10dp"
             android:layout_weight="1"
             android:background="#ffffff"
             android:id="@+id/frag_hivideo_secene"
             android:textColor="#5f000000"  />
-        <TextView
+        <Button
             android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,8 +69,9 @@
             android:textColor="#5f000000"
             android:layout_weight="1"
             android:background="#ffffff"
+            android:elevation="7dp"
             />
-        <TextView
+        <Button
             android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,67 +82,15 @@
             android:textColor="#5f000000"
             android:layout_weight="1"
             android:background="#ffffff"
+            android:elevation="7dp"
             />
 
     </LinearLayout>
-    <View
-        style="@style/divider"
-        android:background="#03a9f4"/>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <View
-            style="@style/divider"
-            android:layout_height="7dp"
-            android:background="#03a9f4"
-            android:layout_width="50dp"
-            android:layout_centerHorizontal="true"
 
-            />
 
-    <LinearLayout
-        android:id="@+id/hivideo_hotandnew"
-        android:background="#00000000"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="4dp"
-
-        >
-
-        <TextView
-            android:padding="5dp"
-            android:id="@+id/hivideo_hot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="最热"
-            android:gravity="center_horizontal"
-            android:textSize="16dp"
-            android:textColor="#8f000000"
-            android:background="@drawable/shape1"
-            />
-        <TextView
-            android:padding="5dp"
-            android:id="@+id/hivideo_new"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="最新"
-            android:textSize="16dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape2"
-            android:textColor="#ffffff"
-            />
-    </LinearLayout>
-
-</RelativeLayout>
-    <View
-        style="@style/divider"
-        android:background="#2f000000"/>
 
     <FrameLayout
-        android:id="@+id/frag_hivideo_mine"
+        android:id="@+id/frag_hivideo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 </FrameLayout>

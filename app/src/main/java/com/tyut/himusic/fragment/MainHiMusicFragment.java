@@ -111,7 +111,7 @@ private HiMusicMainFragment hiMusicMainFragment;
             // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
             hiMusicMainFragment = HiMusicMainFragment.getInstance();
 //
-            ft.add(R.id.frag_main_suggestion_fragment, hiMusicMainFragment);
+            ft.add(R.id.frag_main_himusic_fragment, hiMusicMainFragment);
         }
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
