@@ -6,10 +6,292 @@
   ~ Hi-Music
   -->
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
+    android:background="@color/text_color_lightblue_4"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="13dp"
+        android:background="@color/text_color_lightblue_3"
+>
+
+        <com.tyut.himusic.view.CircleImageView
+
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/my_head_img"
+            android:padding="5dp"
+            android:src="@drawable/ic_album_black_48dp"
+            app:border_color="#ffffff"
+ />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My name"
+            android:paddingTop="10dp"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/my_my_name"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/my_head_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="今日听歌时间"
+            android:paddingLeft="10dp"
+            android:id="@+id/my_today_music_time"
+            android:layout_below="@+id/my_my_name"
+            android:layout_toEndOf="@+id/my_head_img" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:id="@+id/my_imformation_more"
+            android:background="@drawable/ic_chevron_right_grey600_24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#00000000"
+        ></View>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:elevation="7dp"
+        android:paddingBottom="7dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="7dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/ic_play_circle_outline_grey600_48dp"
+            android:id="@+id/my_video"
+            android:paddingTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="73dp" />
+
+        <ImageView
+            android:layout_marginTop="7dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/ic_album_grey600_48dp"
+            android:id="@+id/my_music"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="73dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的视频"
+            android:paddingTop="7dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/my_video_text"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/my_video"
+            android:layout_alignStart="@+id/my_video" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的音乐"
+            android:textColor="#ffffff"
+            android:paddingTop="7dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/my_music_text"
+            android:layout_below="@+id/my_music"
+            android:layout_alignStart="@+id/my_music" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/ic_wifi_tethering_grey600_48dp"
+            android:id="@+id/my_nosim"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/my_video_text"
+            android:layout_alignStart="@+id/my_video_text" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/ic_attach_money_grey600_48dp"
+            android:id="@+id/my_vip"
+            android:layout_alignTop="@+id/my_nosim"
+            android:layout_alignEnd="@+id/my_music" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="免流量服务"
+            android:paddingTop="7dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/my_nosim_text"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/my_nosim"
+            android:layout_alignStart="@+id/my_nosim" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="会员服务"
+            android:paddingTop="7dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/my_vip_text"
+            android:layout_below="@+id/my_vip"
+            android:layout_alignStart="@+id/my_vip" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#00000000"
+        ></View>
+
+
+
+    <RelativeLayout
+        android:elevation="3dp"
+        android:id="@+id/my_setting"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"
+             />
+
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_chevron_right_grey600_24dp"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:elevation="3dp"
+        android:id="@+id/my_save"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="离线缓存"/>
+
+        <Switch
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_switch_save"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:elevation="3dp"
+        android:id="@+id/my_time_close"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="定时关闭"/>
+
+        <Switch
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_switch_clock"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_theme">
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个性主题"/>
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_chevron_right_grey600_24dp"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_about_himusic"
+        >
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关于Hi乐"/>
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_chevron_right_grey600_24dp"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#00000000"
+        ></View>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:id="@+id/my_button_outline"
+        android:background="@drawable/shape_my_button"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>
