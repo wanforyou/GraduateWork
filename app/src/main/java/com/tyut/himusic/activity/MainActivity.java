@@ -88,19 +88,14 @@ public class MainActivity extends BashActivity implements View.OnClickListener
     {
         ing.setTextColor(getColor(R.color.text_color_bottom_grey));
         ing.setBackgroundColor(getColor(R.color.bottom_white));
-        ing.setElevation(20);
         himusic.setTextColor(getColor(R.color.text_color_bottom_grey));
         himusic.setBackgroundColor(getColor(R.color.bottom_white));
-        himusic.setElevation(20);
         hivideo.setTextColor(getColor(R.color.text_color_bottom_grey));
         hivideo.setBackgroundColor(getColor(R.color.bottom_white));
-        hivideo.setElevation(20);
         suggestion.setTextColor(getColor(R.color.text_color_bottom_grey));
         suggestion.setBackgroundColor(getColor(R.color.bottom_white));
-        suggestion.setElevation(20);
         mine.setTextColor(getColor(R.color.text_color_bottom_grey));
         mine.setBackgroundColor(getColor(R.color.bottom_white));
-        mine.setElevation(20);
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mainSuggestionFragment != null)
@@ -127,8 +122,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         {
             case R.id.include_bottom_ing:
                 ing.setTextColor(getColor(R.color.bottom_white));
-                ing.setBackgroundColor(getColor(R.color.text_color_lightblue_3));
-                ing.setElevation(7);
+                ing.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainIngFragment != null && mainIngFragment.isAdded())
                 {
                     ft.show(mainIngFragment);
@@ -143,8 +137,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_himusic:
                 himusic.setTextColor(getColor(R.color.bottom_white));
-                himusic.setBackgroundColor(getColor(R.color.text_color_lightblue_3));
-                himusic.setElevation(7);
+                himusic.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
                 {
                     ft.show(mainHiMusicFragment);
@@ -158,8 +151,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_suggestion:
                 suggestion.setTextColor(getColor(R.color.bottom_white));
-                suggestion.setBackgroundColor(getColor(R.color.text_color_lightblue_3));
-                suggestion.setElevation(7);
+                suggestion.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
                 {
                     ft.show(mainSuggestionFragment);
@@ -173,8 +165,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_hivideo:
                 hivideo.setTextColor(getColor(R.color.bottom_white));
-                hivideo.setBackgroundColor(getColor(R.color.text_color_lightblue_3));
-                hivideo.setElevation(7);
+                hivideo.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
                 {
                     ft.show(mainHiVideoFragment);
@@ -188,8 +179,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 break;
             case R.id.include_bottom_mine:
                 mine.setTextColor(getColor(R.color.bottom_white));
-                mine.setBackgroundColor(getColor(R.color.text_color_lightblue_3));
-                mine.setElevation(7);
+                mine.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
                 {
                     ft.show(mainMineFragment);
