@@ -131,7 +131,7 @@ public class MainHiVideoFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.frag_hivideo_main:
-                hiVideoMain.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue_1));
+                hiVideoMain.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 hiVideoMain.setTextColor(getContext().getColor(R.color.bottom_white));
                 hiVideoMain.setElevation(2);
                 if (hiVideoMainFragment != null && hiVideoMainFragment.isAdded())
@@ -145,7 +145,7 @@ public class MainHiVideoFragment extends BaseFragment
                 }
                 break;
             case R.id.frag_hivideo_mv:
-                hiVideoMv.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue_1));
+                hiVideoMv.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 hiVideoMv.setTextColor(getContext().getColor(R.color.bottom_white));
                 hiVideoMv.setElevation(2);
                 if (hiVideoMvFragment != null && hiVideoMvFragment.isAdded())
@@ -160,7 +160,7 @@ public class MainHiVideoFragment extends BaseFragment
 
                 break;
             case R.id.frag_hivideo_secene:
-                hiVideoScene.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue_1));
+                hiVideoScene.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 hiVideoScene.setTextColor(getContext().getColor(R.color.bottom_white));
                 hiVideoScene.setElevation(2);
                 if (hiVideoSeceneFragment != null && hiVideoSeceneFragment.isAdded())
@@ -175,7 +175,7 @@ public class MainHiVideoFragment extends BaseFragment
 
                 break;
             case R.id.frag_hivideo_man:
-                hiVideoMan.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue_1));
+                hiVideoMan.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 hiVideoMan.setTextColor(getContext().getColor(R.color.bottom_white));
                 hiVideoMan.setElevation(2);
                 if (hiVideoManFragment != null && hiVideoManFragment.isAdded())
