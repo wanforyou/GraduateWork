@@ -10,11 +10,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
-    android:background="@color/text_color_lightblue_4"
+              android:background="@color/text_color_lightblue_4"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/my_imformation_more"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:elevation="13dp"
@@ -23,10 +24,11 @@
 
         <com.tyut.himusic.view.CircleImageView
 
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:id="@+id/my_head_img"
-            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/ic_album_black_48dp"
             app:border_color="#ffffff"
  />
@@ -48,14 +50,12 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="今日听歌时间"
             android:paddingLeft="10dp"
-            android:id="@+id/my_today_music_time"
             android:layout_below="@+id/my_my_name"
             android:layout_toEndOf="@+id/my_head_img" />
 
         <Button
             android:layout_width="50dp"
             android:layout_height="40dp"
-            android:id="@+id/my_imformation_more"
             android:background="@drawable/ic_chevron_right_grey600_24dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />
@@ -74,8 +74,8 @@
 
         <ImageView
             android:layout_marginTop="7dp"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="@drawable/ic_play_circle_outline_grey600_48dp"
             android:id="@+id/my_video"
             android:paddingTop="20dp"
@@ -85,8 +85,8 @@
 
         <ImageView
             android:layout_marginTop="7dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="@drawable/ic_album_grey600_48dp"
             android:id="@+id/my_music"
             android:layout_alignParentTop="true"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:text="我的视频"
             android:paddingTop="7dp"
-            android:paddingLeft="10dp"
+
             android:id="@+id/my_video_text"
             android:textColor="#ffffff"
             android:layout_below="@+id/my_video"
@@ -107,17 +107,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我的音乐"
+            android:text=" 我的音乐"
             android:textColor="#ffffff"
             android:paddingTop="7dp"
-            android:paddingLeft="10dp"
             android:id="@+id/my_music_text"
             android:layout_below="@+id/my_music"
             android:layout_alignStart="@+id/my_music" />
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="@drawable/ic_wifi_tethering_grey600_48dp"
             android:id="@+id/my_nosim"
             android:layout_marginTop="15dp"
@@ -125,8 +124,8 @@
             android:layout_alignStart="@+id/my_video_text" />
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="@drawable/ic_attach_money_grey600_48dp"
             android:id="@+id/my_vip"
             android:layout_alignTop="@+id/my_nosim"
@@ -137,7 +136,7 @@
             android:layout_height="wrap_content"
             android:text="免流量服务"
             android:paddingTop="7dp"
-            android:paddingLeft="5dp"
+
             android:id="@+id/my_nosim_text"
             android:textColor="#ffffff"
             android:layout_below="@+id/my_nosim"
@@ -149,7 +148,6 @@
             android:textColor="#ffffff"
             android:text="会员服务"
             android:paddingTop="7dp"
-            android:paddingLeft="10dp"
             android:id="@+id/my_vip_text"
             android:layout_below="@+id/my_vip"
             android:layout_alignStart="@+id/my_vip" />
@@ -173,7 +171,7 @@
 
         <TextView
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -198,7 +196,7 @@
         android:layout_height="wrap_content">
         <TextView
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -222,7 +220,7 @@
         android:layout_height="wrap_content">
         <TextView
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -247,7 +245,7 @@
         android:id="@+id/my_theme">
         <TextView
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -272,7 +270,7 @@
         >
         <TextView
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
