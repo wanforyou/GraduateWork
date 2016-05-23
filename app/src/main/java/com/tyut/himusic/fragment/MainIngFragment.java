@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainIngListData;
+import com.tyut.himusic.view.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,11 +107,13 @@ public class MainIngFragment extends BaseFragment
 
     void initView()
     {
-        recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         recyclerview.setHasFixedSize(true);
         adapter = new MainIngAdapter(datasActivity, getContext());
         recyclerview.setAdapter(adapter);
         imgPicture.setImageURI(Uri.parse(datasActivity.get(0).getImgurl()));
+        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
+        recyclerview.addItemDecoration(decoration);
     }
 
     @Override
