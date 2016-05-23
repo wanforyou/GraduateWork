@@ -18,7 +18,7 @@
 
     <com.tyut.himusic.view.AutoScrollViewPager
 
-        android:id="@+id/frag_main_suggestion_banner"
+        android:id="@+id/frag_main_banner"
         android:layout_width="match_parent"
         android:layout_height="134dp"/>
 

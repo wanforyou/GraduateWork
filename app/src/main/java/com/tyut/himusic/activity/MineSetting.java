@@ -3,6 +3,8 @@ package com.tyut.himusic.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.tyut.himusic.R;
+
 public class MineSetting extends AppCompatActivity {
 
     @Override
