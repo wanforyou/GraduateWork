@@ -52,43 +52,46 @@
         android:layout_below="@+id/relativeLayout"
         android:layout_alignParentStart="true"
         android:id="@+id/relativeLayout2">
-
+        <ImageView
+            android:src="@drawable/ic_brightness_7_white_48dp"
+            android:layout_width="30dp"
+            android:padding="5dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView3"
+            android:layout_marginStart="105dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="天秤座"
             android:textColor="#ffffff"
-            android:layout_marginStart="164dp"
             android:id="@+id/textView2"
             android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="海南"
-            android:textColor="#ffffff"
-            android:id="@+id/textView3"
-            android:layout_alignTop="@+id/textView2"
-            android:layout_toEndOf="@+id/imageView2" />
-
+            android:layout_toEndOf="@+id/imageView3" />
         <ImageView
             android:src="@drawable/ic_pin_drop_white_48dp"
             android:layout_width="30dp"
             android:padding="5dp"
             android:layout_height="30dp"
             android:id="@+id/imageView2"
-            android:layout_marginStart="28dp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/textView2" />
 
-        <ImageView
-            android:src="@drawable/ic_brightness_7_white_48dp"
-            android:layout_width="30dp"
-            android:padding="5dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="38dp"
+            android:layout_marginEnd="28dp"
             android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/textView2" />
+            android:layout_alignEnd="@+id/textView3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="海南"
+            android:textColor="#ffffff"
+            android:layout_marginStart="79dp"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_toEndOf="@+id/textView2"
+            android:id="@+id/textView3" />
+
+
+
+
     </RelativeLayout>
 
     <RelativeLayout
