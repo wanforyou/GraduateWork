@@ -14,17 +14,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,7 +30,7 @@ import butterknife.OnClick;
 public class MainSuggestionFragment extends BaseFragment
 {
 
-    @Bind(R.id.frag_main_suggestion_banner)
+    @Bind(R.id.frag_main_banner)
     AutoScrollViewPager viewPager;
     @Bind(R.id.frag_main_suggestion_today_hot)
     Button today;
