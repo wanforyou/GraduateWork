@@ -28,8 +28,6 @@ public class MyApplication extends Application
      */
     private static MyApplication mInstance;
     private static GlobalData sData;
-    //    private static ImageLoader imageLoader = ImageLoader.getInstance();
-    //微信API
     private static Boolean isMainActivityRunning = false;
 
     public static MyApplication getInstance()

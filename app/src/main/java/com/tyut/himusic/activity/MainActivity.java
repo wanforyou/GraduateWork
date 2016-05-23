@@ -75,7 +75,6 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         {
             // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
             mainSuggestionFragment = MainSuggestionFragment.getInstance();
-//
             ft.add(R.id.act_main_fragment, mainSuggestionFragment);
         }
         ft.commitAllowingStateLoss();
@@ -128,9 +127,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.show(mainIngFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     mainIngFragment = MainIngFragment.getInstance();
-//
                     ft.add(R.id.act_main_fragment, mainIngFragment);
                 }
 
@@ -143,9 +140,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.show(mainHiMusicFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     mainHiMusicFragment = MainHiMusicFragment.getInstance();
-//
                     ft.add(R.id.act_main_fragment, mainHiMusicFragment);
                 }
                 break;
@@ -157,9 +152,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.show(mainSuggestionFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     mainSuggestionFragment = MainSuggestionFragment.getInstance();
-//
                     ft.add(R.id.act_main_fragment, mainSuggestionFragment);
                 }
                 break;
@@ -171,9 +164,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.show(mainHiVideoFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     mainHiVideoFragment = MainHiVideoFragment.getInstance();
-//
                     ft.add(R.id.act_main_fragment, mainHiVideoFragment);
                 }
                 break;
@@ -185,9 +176,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                     ft.show(mainMineFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     mainMineFragment = MainMineFragment.getInstance();
-//
                     ft.add(R.id.act_main_fragment, mainMineFragment);
                 }
                 break;
