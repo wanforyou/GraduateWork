@@ -45,7 +45,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+         ButterKnife.bind(this);
         initView();
         initData();
 
