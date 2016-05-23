@@ -14,6 +14,7 @@ import android.os.Build;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig;
+import com.tyut.himusic.util.FontsOverride;
 import com.tyut.himusic.util.GlobalData;
 
 /**
@@ -104,13 +105,14 @@ public class MyApplication extends Application
     public void onCreate()
     {
         super.onCreate();
-
-        // 初始化imageloader
         if (mInstance == null)
         {
             mInstance = this;
         }
-
+        FontsOverride.setDefaultFont(this, "DEFAULT", "ios8.ttf");
+        FontsOverride.setDefaultFont(this, "MONOSPACE", "ios8.ttf");
+        FontsOverride.setDefaultFont(this, "SERIF", "ios8.ttf");
+        FontsOverride.setDefaultFont(this, "SANS_SERIF", "ios8.ttf");
 
         if (getPackageName().equals(getCurProcessName(getApplicationContext())))
         {
