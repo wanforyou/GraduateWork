@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
+import com.tyut.himusic.bean.MainIngListData;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,20 +24,26 @@ import butterknife.ButterKnife;
  */
 public class MainIngAdapter extends RecyclerView.Adapter<MainIngAdapter.ViewHolder>
 {
-    private String[] imgUrls;
+
+    private List<MainIngListData> datas;
     private Context context;
 
-    public MainIngAdapter(String[] imgUrls, Context context)
+    public MainIngAdapter(List<MainIngListData> datas, Context context)
     {
         super();
-        this.imgUrls = imgUrls;
+        this.datas = datas;
         this.context = context;
+    }
+
+    public void setDatas(List<MainIngListData> datas)
+    {
+        this.datas = datas;
     }
 
     @Override
     public int getItemCount()
     {
-        return imgUrls.length;
+        return datas.size();
     }
 
     @Override
@@ -49,9 +58,10 @@ public class MainIngAdapter extends RecyclerView.Adapter<MainIngAdapter.ViewHold
     public void onBindViewHolder(ViewHolder viewHolder, int position)
     {
         // 建立起ViewHolder中视图与数据的关联
-        String imgUrl = imgUrls[position];
-        viewHolder.imgPisture.setImageURI(Uri.parse(imgUrl));
-
+        viewHolder.txtTitle.setText(datas.get(position).getTitle());
+        viewHolder.imgPisture.setImageURI(Uri.parse(datas.get(position).getImgurl()));
+        viewHolder.txtDate.setText(datas.get(position).getData());
+        viewHolder.txtInformation.setText(datas.get(position).getIntroduction());
 
     }
 

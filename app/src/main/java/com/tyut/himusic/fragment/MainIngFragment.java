@@ -19,7 +19,10 @@ import android.widget.Button;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.MainIngAdapter;
-import com.tyut.himusic.util.ImageUrlTestUtils;
+import com.tyut.himusic.bean.MainIngListData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -40,7 +43,9 @@ public class MainIngFragment extends BaseFragment
 
 
     private MainIngAdapter adapter;
-    private String[] imgUrls;
+    private List<MainIngListData> datasActivity;
+    private List<MainIngListData> datasNew;
+    private List<MainIngListData> datasHot;
 
     public static MainIngFragment getInstance()
     {
@@ -51,7 +56,40 @@ public class MainIngFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        imgUrls = ImageUrlTestUtils.getImageUrls();
+        datasActivity = new ArrayList<MainIngListData>();
+        datasNew = new ArrayList<MainIngListData>();
+        datasHot = new ArrayList<MainIngListData>();
+        datasActivity.add(new MainIngListData("标题1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 45));
+        datasActivity.add(new MainIngListData("标题2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 33));
+        datasActivity.add(new MainIngListData("标题3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 435));
+        datasActivity.add(new MainIngListData("标题4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 1));
+        datasActivity.add(new MainIngListData("标题5",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 4));
+        datasNew.add(new MainIngListData("标题11",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 145));
+        datasNew.add(new MainIngListData("标题12",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 133));
+        datasNew.add(new MainIngListData("标题13",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 1435));
+        datasNew.add(new MainIngListData("标题14",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 11));
+        datasNew.add(new MainIngListData("标题15",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 14));
+        datasHot.add(new MainIngListData("标题21",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 345));
+        datasHot.add(new MainIngListData("标题22",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 33));
+        datasHot.add(new MainIngListData("标题23",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 3435));
+        datasHot.add(new MainIngListData("标题24",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 31));
+        datasHot.add(new MainIngListData("标题25",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 34));
+
 
     }
 
@@ -69,9 +107,9 @@ public class MainIngFragment extends BaseFragment
     {
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
-        adapter = new MainIngAdapter(imgUrls, getContext());
+        adapter = new MainIngAdapter(datasActivity, getContext());
         recyclerview.setAdapter(adapter);
-        imgPicture.setImageURI(Uri.parse(imgUrls[0]));
+        imgPicture.setImageURI(Uri.parse(datasActivity.get(0).getImgurl()));
     }
 
     @Override
@@ -99,16 +137,22 @@ public class MainIngFragment extends BaseFragment
                 fragIngActivity.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 fragIngActivity.setTextColor(getContext().getColor(R.color.bottom_white));
                 fragIngActivity.setElevation(2);
+                adapter.setDatas(datasActivity);
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.frag_ing_new:
                 fragIngNew.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 fragIngNew.setTextColor(getContext().getColor(R.color.bottom_white));
                 fragIngNew.setElevation(2);
+                adapter.setDatas(datasNew);
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.frag_ing_hot:
                 fragIngHot.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 fragIngHot.setTextColor(getContext().getColor(R.color.bottom_white));
                 fragIngHot.setElevation(2);
+                adapter.setDatas(datasHot);
+                adapter.notifyDataSetChanged();
                 break;
         }
     }
