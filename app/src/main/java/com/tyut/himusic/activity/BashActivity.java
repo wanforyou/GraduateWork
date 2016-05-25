@@ -52,7 +52,6 @@ public abstract class BashActivity extends FragmentActivity
     }
 
 
-
     //小米专用设置状态栏模式(黑色白色)
     public void setStatusBarDarkMode(boolean darkmode, Activity activity)
     {
