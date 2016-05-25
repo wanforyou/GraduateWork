@@ -23,50 +23,46 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="134dp"
         android:background="#b3e5fc"
         android:id="@+id/imageView"
-        android:layout_marginBottom="4dp"
         android:layout_gravity="center_horizontal" />
 
 
     <LinearLayout
+        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:elevation="14dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
         >
         <Button
-            android:gravity="center_horizontal"
-            android:layout_width="98dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:text="原创"
+            android:gravity="center"
             android:background="@drawable/bottom7dp"
             android:textSize="16dp"
             android:elevation="7dp"
-            android:padding="10dp"
             android:id="@+id/frag_hivideo_main"
             android:textColor="#ffffff"
             android:layout_weight="1" />
         <Button
-            android:gravity="center_horizontal"
-            android:layout_width="98dp"
-            android:layout_height="52dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:textSize="16dp"
             android:text="现场"
             android:elevation="14dp"
-            android:padding="10dp"
             android:layout_weight="1"
             android:background="#ffffff"
             android:id="@+id/frag_hivideo_secene"
             android:textColor="#5f000000"  />
         <Button
-            android:gravity="center_horizontal"
-            android:layout_width="98dp"
-            android:layout_height="52dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:text="MV"
             android:textSize="16dp"
-            android:padding="10dp"
             android:id="@+id/frag_hivideo_mv"
             android:textColor="#5f000000"
             android:layout_weight="1"
@@ -74,12 +70,11 @@
             android:elevation="14dp"
             />
         <Button
-            android:gravity="center_horizontal"
-            android:layout_width="98dp"
-            android:layout_height="52dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:text="达人"
             android:textSize="16dp"
-            android:padding="10dp"
             android:id="@+id/frag_hivideo_man"
             android:textColor="#5f000000"
             android:layout_weight="1"
@@ -92,7 +87,6 @@
 
 
     <FrameLayout
-        android:layout_marginTop="7dp"
         android:id="@+id/frag_hivideo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -18,6 +18,7 @@ import android.widget.Button;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
+import com.tyut.himusic.adapter.ExStaggeredGridLayoutManager;
 import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainIngListData;
 import com.tyut.himusic.view.SpacesItemDecoration;
@@ -106,7 +107,7 @@ public class MainIngFragment extends BaseFragment
 
     void initView()
     {
-        recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        recyclerview.setLayoutManager(new ExStaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         recyclerview.setHasFixedSize(true);
         adapter = new MainIngAdapter(datasActivity, getContext());
         recyclerview.setAdapter(adapter);
