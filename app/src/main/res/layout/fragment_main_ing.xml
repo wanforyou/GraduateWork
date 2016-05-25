@@ -5,22 +5,29 @@
   ~ school:tyut
   ~ Hi-Music
   -->
-
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include android:id="@+id/top_menu_hivideo"
+        layout="@layout/include_top_menu">   </include>
+
+
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/frag_main_ing_picture"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="132dp"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="37dp"
         android:orientation="horizontal"
         android:elevation="14dp"
         >
@@ -70,3 +77,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
+</ScrollView>

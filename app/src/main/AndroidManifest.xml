@@ -29,7 +29,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".activity.HiMusicActivity" />
         <activity android:name=".activity.MyInformation" />
         <activity android:name=".activity.MineMyVideo" />
         <activity android:name=".activity.MineMyMusic" />

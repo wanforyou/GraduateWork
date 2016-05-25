@@ -144,13 +144,13 @@ public class MainSuggestionFragment extends BaseFragment
     public void onClick(View view)
     {
         today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        today.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        today.setBackgroundColor(getContext().getColor(R.color.color_text));
         today.setElevation(10);
         week.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        week.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        week.setBackgroundColor(getContext().getColor(R.color.color_text));
         week.setElevation(10);
         month.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        month.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        month.setBackgroundColor(getContext().getColor(R.color.color_text));
         month.setElevation(10);
 
 
@@ -171,8 +171,8 @@ public class MainSuggestionFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.frag_main_suggestion_today_hot:
-                today.setTextColor(getContext().getColor(R.color.bottom_white));
-                today.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                today.setTextColor(getContext().getColor(R.color.color_text));
+                today.setBackgroundColor(getContext().getColor(R.color.color1));
                 today.setElevation(3);
                 if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
                 {
@@ -185,8 +185,8 @@ public class MainSuggestionFragment extends BaseFragment
                 }
                 break;
             case R.id.frag_main_suggestion_week_hot:
-                week.setTextColor(getContext().getColor(R.color.bottom_white));
-                week.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                week.setTextColor(getContext().getColor(R.color.color_text));
+                week.setBackgroundColor(getContext().getColor(R.color.color1));
                 week.setElevation(3);
                 if (mainWeekhotFragment != null && mainWeekhotFragment.isAdded())
                 {
@@ -200,8 +200,8 @@ public class MainSuggestionFragment extends BaseFragment
 
                 break;
             case R.id.frag_main_suggestion_month_hot:
-                month.setTextColor(getContext().getColor(R.color.bottom_white));
-                month.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                month.setTextColor(getContext().getColor(R.color.color_text));
+                month.setBackgroundColor(getContext().getColor(R.color.color1));
                 month.setElevation(3);
                 if (mainMonthhotFragment != null && mainMonthhotFragment.isAdded())
                 {

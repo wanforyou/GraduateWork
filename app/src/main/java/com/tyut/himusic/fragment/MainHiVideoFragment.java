@@ -13,14 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.tyut.himusic.R;
 
 import butterknife.ButterKnife;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -99,16 +97,16 @@ public class MainHiVideoFragment extends BaseFragment
     {
 
         hiVideoMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoMain.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        hiVideoMain.setBackgroundColor(getContext().getColor(R.color.color_text));
         hiVideoMain.setElevation(7);
         hiVideoScene.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoScene.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        hiVideoScene.setBackgroundColor(getContext().getColor(R.color.color_text));
         hiVideoScene.setElevation(7);
         hiVideoMv.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoMv.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        hiVideoMv.setBackgroundColor(getContext().getColor(R.color.color_text));
         hiVideoMv.setElevation(7);
         hiVideoMan.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoMan.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        hiVideoMan.setBackgroundColor(getContext().getColor(R.color.color_text));
         hiVideoMan.setElevation(7);
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
@@ -132,7 +130,7 @@ public class MainHiVideoFragment extends BaseFragment
         {
             case R.id.frag_hivideo_main:
                 hiVideoMain.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                hiVideoMain.setTextColor(getContext().getColor(R.color.bottom_white));
+                hiVideoMain.setTextColor(getContext().getColor(R.color.color_text));
                 hiVideoMain.setElevation(2);
                 if (hiVideoMainFragment != null && hiVideoMainFragment.isAdded())
                 {
@@ -146,7 +144,7 @@ public class MainHiVideoFragment extends BaseFragment
                 break;
             case R.id.frag_hivideo_mv:
                 hiVideoMv.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                hiVideoMv.setTextColor(getContext().getColor(R.color.bottom_white));
+                hiVideoMv.setTextColor(getContext().getColor(R.color.color_text));
                 hiVideoMv.setElevation(2);
                 if (hiVideoMvFragment != null && hiVideoMvFragment.isAdded())
                 {
@@ -161,7 +159,7 @@ public class MainHiVideoFragment extends BaseFragment
                 break;
             case R.id.frag_hivideo_secene:
                 hiVideoScene.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                hiVideoScene.setTextColor(getContext().getColor(R.color.bottom_white));
+                hiVideoScene.setTextColor(getContext().getColor(R.color.color_text));
                 hiVideoScene.setElevation(2);
                 if (hiVideoSeceneFragment != null && hiVideoSeceneFragment.isAdded())
                 {
@@ -176,7 +174,7 @@ public class MainHiVideoFragment extends BaseFragment
                 break;
             case R.id.frag_hivideo_man:
                 hiVideoMan.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                hiVideoMan.setTextColor(getContext().getColor(R.color.bottom_white));
+                hiVideoMan.setTextColor(getContext().getColor(R.color.color_text));
                 hiVideoMan.setElevation(2);
                 if (hiVideoManFragment != null && hiVideoManFragment.isAdded())
                 {

@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.TextView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.fragment.MainHiMusicFragment;
@@ -87,15 +85,15 @@ public class MainActivity extends BashActivity implements View.OnClickListener
     public void onClick(View view)
     {
         ing.setTextColor(getColor(R.color.text_color_bottom_grey));
-        ing.setBackgroundColor(getColor(R.color.bottom_white));
+        ing.setBackgroundColor(getColor(R.color.color_text));
         himusic.setTextColor(getColor(R.color.text_color_bottom_grey));
-        himusic.setBackgroundColor(getColor(R.color.bottom_white));
+        himusic.setBackgroundColor(getColor(R.color.color_text));
         hivideo.setTextColor(getColor(R.color.text_color_bottom_grey));
-        hivideo.setBackgroundColor(getColor(R.color.bottom_white));
+        hivideo.setBackgroundColor(getColor(R.color.color_text));
         suggestion.setTextColor(getColor(R.color.text_color_bottom_grey));
-        suggestion.setBackgroundColor(getColor(R.color.bottom_white));
+        suggestion.setBackgroundColor(getColor(R.color.color_text));
         mine.setTextColor(getColor(R.color.text_color_bottom_grey));
-        mine.setBackgroundColor(getColor(R.color.bottom_white));
+        mine.setBackgroundColor(getColor(R.color.color_text));
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mainSuggestionFragment != null)
@@ -121,7 +119,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         switch (view.getId())
         {
             case R.id.include_bottom_ing:
-                ing.setTextColor(getColor(R.color.bottom_white));
+                ing.setTextColor(getColor(R.color.color_text));
                 ing.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainIngFragment != null && mainIngFragment.isAdded())
                 {
@@ -136,7 +134,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 
                 break;
             case R.id.include_bottom_himusic:
-                himusic.setTextColor(getColor(R.color.bottom_white));
+                himusic.setTextColor(getColor(R.color.color_text));
                 himusic.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
                 {
@@ -150,7 +148,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.include_bottom_suggestion:
-                suggestion.setTextColor(getColor(R.color.bottom_white));
+                suggestion.setTextColor(getColor(R.color.color_text));
                 suggestion.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
                 {
@@ -164,7 +162,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.include_bottom_hivideo:
-                hivideo.setTextColor(getColor(R.color.bottom_white));
+                hivideo.setTextColor(getColor(R.color.color_text));
                 hivideo.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
                 {
@@ -178,7 +176,7 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.include_bottom_mine:
-                mine.setTextColor(getColor(R.color.bottom_white));
+                mine.setTextColor(getColor(R.color.color_text));
                 mine.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
                 {
