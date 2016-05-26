@@ -131,10 +131,10 @@ private HiMusicMainFragment hiMusicMainFragment;
     public void onClick(View view)
     {
         himusicMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        himusicMain.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        himusicMain.setBackgroundColor(getContext().getColor(R.color.color_text));
 
         himusicMan.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        himusicMan.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        himusicMan.setBackgroundColor(getContext().getColor(R.color.color_text));
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
         if (hiMusicMainFragment != null)
@@ -149,8 +149,8 @@ private HiMusicMainFragment hiMusicMainFragment;
         switch (view.getId())
         {
             case R.id.frag_main_himusic_main:
-                himusicMain.setTextColor(getContext().getColor(R.color.bottom_white));
-                himusicMain.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                himusicMain.setTextColor(getContext().getColor(R.color.color_text));
+                himusicMain.setBackgroundColor(getContext().getColor(R.color.color1));
                 if (hiMusicMainFragment != null && hiMusicMainFragment.isAdded())
                 {
                     ft.show(hiMusicMainFragment);
@@ -162,8 +162,8 @@ private HiMusicMainFragment hiMusicMainFragment;
                 }
                 break;
             case R.id.frag_main_himusic_man:
-                himusicMan.setTextColor(getContext().getColor(R.color.bottom_white));
-                himusicMan.setBackgroundColor(getContext().getColor(R.color.text_color_lightblue));
+                himusicMan.setTextColor(getContext().getColor(R.color.color_text));
+                himusicMan.setBackgroundColor(getContext().getColor(R.color.color1));
 
                 if (hiMusicManFragment != null && hiMusicManFragment.isAdded())
                 {

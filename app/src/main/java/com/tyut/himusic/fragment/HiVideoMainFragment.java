@@ -77,9 +77,9 @@ public class HiVideoMainFragment extends BaseFragment
     public void onClick(View view)
     {
         hiVideoHot.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoHot.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        hiVideoHot.setBackgroundColor(getContext().getColor(R.color.color_text));
         hiVideoNew.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        hiVideoNew.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        hiVideoNew.setBackgroundColor(getContext().getColor(R.color.color_text));
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         if (hiVideoMainHotFragment != null)
         {
@@ -92,7 +92,7 @@ public class HiVideoMainFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.hivideo_hot:
-                hiVideoHot.setTextColor(getContext().getColor(R.color.bottom_white));
+                hiVideoHot.setTextColor(getContext().getColor(R.color.color_text));
                 hiVideoHot.setBackground(getContext().getDrawable(R.drawable.shape1));
                 if (hiVideoMainHotFragment != null && hiVideoMainHotFragment.isAdded())
                 {
@@ -105,7 +105,7 @@ public class HiVideoMainFragment extends BaseFragment
                 }
                 break;
             case R.id.hivideo_new:
-                hiVideoNew.setTextColor(getContext().getColor(R.color.bottom_white));
+                hiVideoNew.setTextColor(getContext().getColor(R.color.color_text));
                 hiVideoNew.setBackground(getContext().getDrawable(R.drawable.shape2));
                 if (hiVideoMainNewFragment != null && hiVideoMainNewFragment.isAdded())
                 {

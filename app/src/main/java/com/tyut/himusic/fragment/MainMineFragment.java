@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.MineSetting;
 import com.tyut.himusic.activity.MyInformation;
 
 import butterknife.Bind;
@@ -87,7 +88,11 @@ public class MainMineFragment extends BaseFragment
             case R.id.my_imformation_more:
                 startActivity(new Intent(getContext(),MyInformation.class));
                 break;
-        }
 
+             case R.id.my_setting:
+                 startActivity(new Intent(getContext(),MineSetting.class));
+                break;
+    }
 }
 }
+

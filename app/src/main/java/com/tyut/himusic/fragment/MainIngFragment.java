@@ -9,7 +9,6 @@ package com.tyut.himusic.fragment;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -19,6 +18,7 @@ import android.widget.Button;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
+import com.tyut.himusic.adapter.ExStaggeredGridLayoutManager;
 import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainIngListData;
 import com.tyut.himusic.view.SpacesItemDecoration;
@@ -107,7 +107,7 @@ public class MainIngFragment extends BaseFragment
 
     void initView()
     {
-        recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        recyclerview.setLayoutManager(new ExStaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         recyclerview.setHasFixedSize(true);
         adapter = new MainIngAdapter(datasActivity, getContext());
         recyclerview.setAdapter(adapter);
@@ -127,33 +127,33 @@ public class MainIngFragment extends BaseFragment
     public void onClick(View view)
     {
         fragIngActivity.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        fragIngActivity.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        fragIngActivity.setBackgroundColor(getContext().getColor(R.color.color_text));
         fragIngActivity.setElevation(7);
         fragIngNew.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        fragIngNew.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        fragIngNew.setBackgroundColor(getContext().getColor(R.color.color_text));
         fragIngNew.setElevation(7);
         fragIngHot.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        fragIngHot.setBackgroundColor(getContext().getColor(R.color.bottom_white));
+        fragIngHot.setBackgroundColor(getContext().getColor(R.color.color_text));
         fragIngHot.setElevation(7);
         switch (view.getId())
         {
             case R.id.frag_ing_activity:
                 fragIngActivity.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                fragIngActivity.setTextColor(getContext().getColor(R.color.bottom_white));
+                fragIngActivity.setTextColor(getContext().getColor(R.color.color_text));
                 fragIngActivity.setElevation(2);
                 adapter.setDatas(datasActivity);
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.frag_ing_new:
                 fragIngNew.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                fragIngNew.setTextColor(getContext().getColor(R.color.bottom_white));
+                fragIngNew.setTextColor(getContext().getColor(R.color.color_text));
                 fragIngNew.setElevation(2);
                 adapter.setDatas(datasNew);
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.frag_ing_hot:
                 fragIngHot.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
-                fragIngHot.setTextColor(getContext().getColor(R.color.bottom_white));
+                fragIngHot.setTextColor(getContext().getColor(R.color.color_text));
                 fragIngHot.setElevation(2);
                 adapter.setDatas(datasHot);
                 adapter.notifyDataSetChanged();
