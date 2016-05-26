@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/frag_main_ing_picture"
+        android:layout_width="match_parent"
+        android:layout_height="134dp"
+        android:background="@color/color3"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal"
+        android:elevation="14dp"
+        >
+
+        <Button
+            android:id="@+id/frag_ing_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom7dp"
+            android:elevation="7dp"
+            android:gravity="center"
+            android:text="活动"
+            android:textColor="#ffffff"
+            android:textSize="16dp"/>
+
+        <Button
+            android:id="@+id/frag_ing_new"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:elevation="14dp"
+            android:gravity="center"
+            android:text="最新"
+            android:textColor="#5f000000"
+            android:textSize="16dp"/>
+
+        <Button
+            android:id="@+id/frag_ing_hot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:elevation="14dp"
+            android:gravity="center"
+            android:text="最热"
+            android:textColor="#5f000000"
+            android:textSize="16dp"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

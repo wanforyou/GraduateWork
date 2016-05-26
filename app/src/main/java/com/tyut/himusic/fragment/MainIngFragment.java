@@ -18,7 +18,6 @@ import android.widget.Button;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
-import com.tyut.himusic.adapter.ExStaggeredGridLayoutManager;
 import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainIngListData;
 import com.tyut.himusic.view.SpacesItemDecoration;
@@ -28,20 +27,16 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class MainIngFragment extends BaseFragment
+public class MainIngFragment extends BaseFragment implements View.OnClickListener
 {
-    @Bind(R.id.frag_main_ing_picture)
     SimpleDraweeView imgPicture;
     @Bind(R.id.frag_main_ing_recyclerview)
     RecyclerView recyclerview;
-    @Bind(R.id.frag_ing_activity)
     Button fragIngActivity;
-    @Bind(R.id.frag_ing_new)
     Button fragIngNew;
-    @Bind(R.id.frag_ing_hot)
     Button fragIngHot;
+    private View mListViewHeader;
 
 
     private MainIngAdapter adapter;
@@ -91,6 +86,7 @@ public class MainIngFragment extends BaseFragment
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 31));
         datasHot.add(new MainIngListData("标题25",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 34));
+        mListViewHeader = getActivity().getLayoutInflater().inflate(R.layout.main_ing_frag_headview, null);
 
 
     }
@@ -107,13 +103,20 @@ public class MainIngFragment extends BaseFragment
 
     void initView()
     {
-        recyclerview.setLayoutManager(new ExStaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        imgPicture = (SimpleDraweeView) mListViewHeader.findViewById(R.id.frag_main_ing_picture);
+        fragIngActivity = (Button) mListViewHeader.findViewById(R.id.frag_ing_activity);
+        fragIngActivity.setOnClickListener(this);
+        fragIngNew = (Button) mListViewHeader.findViewById(R.id.frag_ing_new);
+        fragIngNew.setOnClickListener(this);
+        fragIngHot = (Button) mListViewHeader.findViewById(R.id.frag_ing_hot);
+        fragIngHot.setOnClickListener(this);
+        recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerview.setHasFixedSize(true);
         adapter = new MainIngAdapter(datasActivity, getContext());
         recyclerview.setAdapter(adapter);
+        adapter.setHeaderView(mListViewHeader);
         imgPicture.setImageURI(Uri.parse(datasActivity.get(0).getImgurl()));
-        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
-        recyclerview.addItemDecoration(decoration);
+
     }
 
     @Override
@@ -123,7 +126,6 @@ public class MainIngFragment extends BaseFragment
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.frag_ing_activity, R.id.frag_ing_new, R.id.frag_ing_hot})
     public void onClick(View view)
     {
         fragIngActivity.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
