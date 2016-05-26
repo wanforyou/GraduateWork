@@ -10,9 +10,12 @@ import android.widget.TextView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.BannerAdapter;
+import com.tyut.himusic.adapter.MainHimusicManAdapter;
+import com.tyut.himusic.bean.MainHimusicListData;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,10 +29,13 @@ public class MainHiMusicFragment extends BaseFragment
     @Bind(R.id.frag_main_himusic_banner)
     AutoScrollViewPager viewHimusicPager;
     @Bind(R.id.frag_main_himusic_main)
-    TextView himusicMain;
+    TextView fraghimusicMain;
     @Bind(R.id.frag_main_himusic_man)
-    TextView himusicMan;
+    TextView fraghimusicMan;
+    private View mListViewHeader;
 
+    private MainHimusicManAdapter adapter;
+    private List<MainHimusicListData> datasman;
 
 private HiMusicMainFragment hiMusicMainFragment;
     private HiMusicManFragment hiMusicManFragment;
@@ -45,8 +51,44 @@ private HiMusicMainFragment hiMusicMainFragment;
     {
 
         super.onCreate(savedInstanceState);
-        setDefaultFragment();
-        log.d("");
+        datasman = new ArrayList<MainHimusicListData>();
+        datasman.add(new MainHimusicListData("热门",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman.add(new MainHimusicListData("心情",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman.add(new MainHimusicListData("主题",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman.add(new MainHimusicListData("场景",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman.add(new MainHimusicListData("语种",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman.add(new MainHimusicListData("流派",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        mListViewHeader = getActivity().getLayoutInflater().inflate(R.layout.main_himusic_frag_headview, null);
     }
 
     @Override
@@ -61,7 +103,6 @@ private HiMusicMainFragment hiMusicMainFragment;
     {
         himusicImageIdList= Arrays.asList(ImageUrlTestUtils.getImageUrls2());
         viewHimusicPager.setAdapter(new BannerAdapter(getContext(), himusicImageIdList));
-//        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
         viewHimusicPager
                 .setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);
         viewHimusicPager.setInterval(2000);
@@ -91,6 +132,8 @@ private HiMusicMainFragment hiMusicMainFragment;
                 return false;
             }
         });
+
+
     }
 
     protected void initData()
@@ -130,11 +173,11 @@ private HiMusicMainFragment hiMusicMainFragment;
     @OnClick({R.id.frag_main_himusic_main, R.id.frag_main_himusic_man})
     public void onClick(View view)
     {
-        himusicMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        himusicMain.setBackgroundColor(getContext().getColor(R.color.color_text));
+        fraghimusicMain.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        fraghimusicMain.setBackgroundColor(getContext().getColor(R.color.color_text));
 
-        himusicMan.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
-        himusicMan.setBackgroundColor(getContext().getColor(R.color.color_text));
+        fraghimusicMan.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        fraghimusicMan.setBackgroundColor(getContext().getColor(R.color.color_text));
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
         if (hiMusicMainFragment != null)
@@ -149,28 +192,30 @@ private HiMusicMainFragment hiMusicMainFragment;
         switch (view.getId())
         {
             case R.id.frag_main_himusic_main:
-                himusicMain.setTextColor(getContext().getColor(R.color.color_text));
-                himusicMain.setBackgroundColor(getContext().getColor(R.color.color1));
+                fraghimusicMain.setTextColor(getContext().getColor(R.color.color_text));
+                fraghimusicMain.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
+                fraghimusicMain.setElevation(2);
+
                 if (hiMusicMainFragment != null && hiMusicMainFragment.isAdded())
                 {
                     ft.show(hiMusicMainFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     hiMusicMainFragment = HiMusicMainFragment.getInstance();
                     ft.add(R.id.frag_main_himusic_fragment, hiMusicMainFragment);
                 }
                 break;
             case R.id.frag_main_himusic_man:
-                himusicMan.setTextColor(getContext().getColor(R.color.color_text));
-                himusicMan.setBackgroundColor(getContext().getColor(R.color.color1));
-
+                fraghimusicMan.setTextColor(getContext().getColor(R.color.color_text));
+                fraghimusicMan.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
+                fraghimusicMain.setElevation(2);
+                adapter.setDatas(datasman);
+                adapter.notifyDataSetChanged();
                 if (hiMusicManFragment != null && hiMusicManFragment.isAdded())
                 {
                     ft.show(hiMusicManFragment);
                 } else
                 {
-                    // 否则是第一次切换则添加fragment，注意添加后是会显示出来的，replace方法也是先remove后add
                     hiMusicManFragment = HiMusicManFragment.getInstance();
                     ft.add(R.id.frag_main_himusic_fragment, hiMusicManFragment);
                 }

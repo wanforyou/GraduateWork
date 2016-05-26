@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+    android:id="@+id/himusic_main_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="热门"
+        android:layout_marginLeft="24dp"
+        android:id="@+id/himusic_title"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_chevron_right_black_24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/himusic_main_title"
+>
+        <com.tyut.himusic.view.CircleImageView
+            android:id="@+id/himusic_circleIMG1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_album_black_48dp"
+            app:border_color="#6f0000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:id="@+id/himusic_title1"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/himusic_circleIMG1"
+            android:layout_alignStart="@+id/himusic_circleIMG1" />
+        <com.tyut.himusic.view.CircleImageView
+            android:id="@+id/himusic_circleIMG2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_album_black_48dp"
+            android:layout_toRightOf="@id/himusic_circleIMG1"
+            app:border_color="#6f0000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:id="@+id/himusic_title2"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/himusic_circleIMG2"
+            android:layout_alignStart="@+id/himusic_circleIMG2" />
+        <com.tyut.himusic.view.CircleImageView
+            android:id="@+id/himusic_circleIMG3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_album_black_48dp"
+            android:layout_toRightOf="@id/himusic_circleIMG2"
+            app:border_color="#6f0000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:id="@+id/himusic_title3"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/himusic_circleIMG3"
+            android:layout_alignStart="@+id/himusic_circleIMG3" />
+        <com.tyut.himusic.view.CircleImageView
+            android:id="@+id/himusic_circleIMG4"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_album_black_48dp"
+            android:layout_toRightOf="@id/himusic_circleIMG3"
+            app:border_color="#6f0000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:id="@+id/himusic_title4"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/himusic_circleIMG4"
+            android:layout_alignStart="@+id/himusic_circleIMG4" />
+        <com.tyut.himusic.view.CircleImageView
+            android:id="@+id/himusic_circleIMG5"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_album_black_48dp"
+            android:layout_toRightOf="@id/himusic_circleIMG4"
+            app:border_color="#6f0000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:id="@+id/himusic_title5"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/himusic_circleIMG5"
+            android:layout_alignStart="@+id/himusic_circleIMG5" />
+    </RelativeLayout>
+</RelativeLayout>

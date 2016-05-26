@@ -10,15 +10,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4f000000"
     android:orientation="vertical">
 
-    <include android:id="@+id/top_menu_hivideo"
-        layout="@layout/include_top_menu">   </include>
-
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/frag_main_ing_recyclerview"
+        android:id="@+id/frag_himusic_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

@@ -10,11 +10,18 @@ package com.tyut.himusic.fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.adapter.BannerAdapter;
+import com.tyut.himusic.util.ImageUrlTestUtils;
+import com.tyut.himusic.view.AutoScrollViewPager;
+
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -40,6 +47,12 @@ public class MainHiVideoFragment extends BaseFragment
     Button hiVideoMv;
     @Bind(R.id.frag_hivideo_man)
     Button hiVideoMan;
+
+
+    @Bind(R.id.frag_main_hivideo_banner)
+    AutoScrollViewPager viewPagerHivideo;
+
+    private List<String> imageIdList ;
 
 
 
@@ -80,6 +93,41 @@ public class MainHiVideoFragment extends BaseFragment
         }
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
+    }
+    protected void initView()
+    {
+        imageIdList= Arrays.asList(ImageUrlTestUtils.getImageUrls2());
+        viewPagerHivideo.setAdapter(new BannerAdapter(getContext(), imageIdList));
+//        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
+        viewPagerHivideo
+                .setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);
+        viewPagerHivideo.setInterval(2000);
+        viewPagerHivideo.startAutoScroll();
+        viewPagerHivideo.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent event)
+            {
+
+                switch (event.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        viewPagerHivideo.stopAutoScroll();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        viewPagerHivideo.startAutoScroll();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        viewPagerHivideo.startAutoScroll();
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
     }
     protected void initData()
     {

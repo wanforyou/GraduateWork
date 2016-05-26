@@ -19,8 +19,8 @@ import butterknife.ButterKnife;
 public class HiVideoMainHotFragment extends BaseFragment
 {
     @Bind(R.id.frag_hivideo_hot_recyclerview)
-
     RecyclerView hiVideoHotRecyclerView;
+
     private HotAdapter videoHotAdapter;
     private String[] imgUrls;
 
