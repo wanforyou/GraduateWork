@@ -32,11 +32,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.MineSetting"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.VideoPlayerActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activity.MusicRunningActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.MusicRunningActivity" />
+        <activity android:name=".activity.MusicListActivity" />
+        <activity android:name=".activity.MusicSettingActivity"></activity>
     </application>
 
 </manifest>

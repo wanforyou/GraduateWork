@@ -7,6 +7,7 @@
 
 package com.tyut.himusic.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -14,8 +15,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.MusicRunningActivity;
+import com.tyut.himusic.activity.MyInformation;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
@@ -38,6 +42,8 @@ public class MainSuggestionFragment extends BaseFragment
     Button week;
     @Bind(R.id.frag_main_suggestion_month_hot)
     Button month;
+    @Bind(R.id.main_top_music_running)
+    ImageView goToMusicRunning;
 
 
 
@@ -140,7 +146,7 @@ public class MainSuggestionFragment extends BaseFragment
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot})
+    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot,R.id.main_top_music_running})
     public void onClick(View view)
     {
         today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
@@ -213,6 +219,9 @@ public class MainSuggestionFragment extends BaseFragment
                     ft.add(R.id.frag_main_suggestion_fragment, mainMonthhotFragment);
                 }
 
+                break;
+            case R.id.main_top_music_running:
+                startActivity(new Intent(getContext(),MusicRunningActivity.class));
                 break;
         }
         ft.commitAllowingStateLoss();

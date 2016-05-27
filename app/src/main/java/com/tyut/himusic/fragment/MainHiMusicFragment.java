@@ -112,7 +112,7 @@ private HiMusicMainFragment hiMusicMainFragment;
         fraghimusicMan = (TextView)mListViewHeader.findViewById(R.id.frag_main_himusic_man) ;
         fraghimusicMan.setOnClickListener(this);
         himusicImageIdList= Arrays.asList(ImageUrlTestUtils.getImageUrls2());
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
         adapter = new MainHimusicManAdapter(datasman, getContext());
         recyclerView.setAdapter(adapter);
@@ -210,7 +210,8 @@ private HiMusicMainFragment hiMusicMainFragment;
                 fraghimusicMain.setTextColor(getContext().getColor(R.color.color_text));
                 fraghimusicMain.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 fraghimusicMain.setElevation(2);
-
+                adapter.setDatas(datasman);
+                adapter.notifyDataSetChanged();
                 if (hiMusicMainFragment != null && hiMusicMainFragment.isAdded())
                 {
                     ft.show(hiMusicMainFragment);
@@ -224,8 +225,7 @@ private HiMusicMainFragment hiMusicMainFragment;
                 fraghimusicMan.setTextColor(getContext().getColor(R.color.color_text));
                 fraghimusicMan.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 fraghimusicMain.setElevation(2);
-                adapter.setDatas(datasman);
-                adapter.notifyDataSetChanged();
+
                 if (hiMusicManFragment != null && hiMusicManFragment.isAdded())
                 {
                     ft.show(hiMusicManFragment);

@@ -21,7 +21,7 @@
 
 
         <ImageView
-            android:id="@+id/main_suggestion_imageView"
+            android:id="@+id/main_top_music_running"
             android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
