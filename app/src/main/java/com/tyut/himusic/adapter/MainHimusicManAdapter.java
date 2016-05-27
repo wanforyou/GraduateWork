@@ -112,7 +112,7 @@ public class MainHimusicManAdapter extends RecyclerView.Adapter<MainHimusicManAd
     class ViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener
     {
-        @Bind(R.id.item_frag_main_ing_title)
+        @Bind(R.id.himusic_title)
         TextView txtTitle;
 
         @Bind(R.id.himusic_circleIMG1)

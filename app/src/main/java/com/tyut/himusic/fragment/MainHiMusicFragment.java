@@ -29,7 +29,7 @@ import butterknife.OnClick;
 
 public class MainHiMusicFragment extends BaseFragment implements View.OnClickListener
 {
-    @Bind(R.id.frag_main_himusic_banner)
+//    @Bind(R.id.frag_main_himusic_banner)
     AutoScrollViewPager viewHimusicPager;
 //    @Bind(R.id.frag_main_himusic_main)
     TextView fraghimusicMain;
@@ -116,6 +116,7 @@ private HiMusicMainFragment hiMusicMainFragment;
         adapter = new MainHimusicManAdapter(datasman, getContext());
         recyclerView.setAdapter(adapter);
         adapter.setHeaderView(mListViewHeader);
+        viewHimusicPager=(AutoScrollViewPager)mListViewHeader.findViewById(R.id.frag_main_himusic_banner);
         viewHimusicPager.setAdapter(new BannerAdapter(getContext(), himusicImageIdList));
         viewHimusicPager
                 .setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);

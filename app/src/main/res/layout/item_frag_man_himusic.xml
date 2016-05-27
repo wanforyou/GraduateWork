@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:fresco="http://schemas.android.com/apk/res-auto">
 
 <RelativeLayout
     android:id="@+id/himusic_main_title"
@@ -35,10 +36,12 @@
         android:layout_marginBottom="16dp"
         android:layout_below="@+id/himusic_main_title"
 >
-        <com.tyut.himusic.view.CircleImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+
             android:id="@+id/himusic_circleIMG1"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            fresco:roundAsCircle="true"
             android:layout_marginLeft="16dp"
             android:src="@drawable/ic_album_black_48dp"
             app:border_color="#6f0000"
@@ -51,7 +54,8 @@
             android:layout_marginLeft="16dp"
             android:layout_below="@+id/himusic_circleIMG1"
             android:layout_alignStart="@+id/himusic_circleIMG1" />
-        <com.tyut.himusic.view.CircleImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:roundAsCircle="true"
             android:id="@+id/himusic_circleIMG2"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -68,7 +72,8 @@
             android:layout_marginLeft="16dp"
             android:layout_below="@+id/himusic_circleIMG2"
             android:layout_alignStart="@+id/himusic_circleIMG2" />
-        <com.tyut.himusic.view.CircleImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:roundAsCircle="true"
             android:id="@+id/himusic_circleIMG3"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -85,7 +90,8 @@
             android:layout_marginLeft="16dp"
             android:layout_below="@+id/himusic_circleIMG3"
             android:layout_alignStart="@+id/himusic_circleIMG3" />
-        <com.tyut.himusic.view.CircleImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:roundAsCircle="true"
             android:id="@+id/himusic_circleIMG4"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -102,14 +108,15 @@
             android:layout_marginLeft="16dp"
             android:layout_below="@+id/himusic_circleIMG4"
             android:layout_alignStart="@+id/himusic_circleIMG4" />
-        <com.tyut.himusic.view.CircleImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:roundAsCircle="true"
             android:id="@+id/himusic_circleIMG5"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginLeft="16dp"
             android:src="@drawable/ic_album_black_48dp"
             android:layout_toRightOf="@id/himusic_circleIMG4"
-            app:border_color="#6f0000"
+
             />
         <TextView
             android:layout_width="wrap_content"
