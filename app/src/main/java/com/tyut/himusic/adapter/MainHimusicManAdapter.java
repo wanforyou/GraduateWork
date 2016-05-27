@@ -144,7 +144,6 @@ public class MainHimusicManAdapter extends RecyclerView.Adapter<MainHimusicManAd
             ButterKnife.bind(this, convertView);
         }
 
-        // 通过接口回调来实现RecyclerView的点击事件
         @Override
         public void onClick(final View v)
         {
