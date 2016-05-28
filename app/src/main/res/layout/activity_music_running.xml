@@ -38,8 +38,16 @@
             android:layout_height="wrap_content"
             android:text="giligilieye"
             android:textSize="23dp"
-            android:id="@+id/musicTitle"
-            android:layout_centerVertical="true"
+            android:id="@+id/music_title"
+            android:layout_alignTop="@+id/muisc_list"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small Text"
+            android:id="@+id/music_artist"
+            android:layout_below="@+id/music_title"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
@@ -107,7 +115,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
@@ -119,10 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="54dp"
-
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="44dp"
             android:src="@drawable/ic_thumb_up_white_24dp"
              />
         <ImageView
@@ -130,8 +135,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="5dp"
             android:src="@drawable/ic_loop_white_24dp"
             />
         <ImageView
@@ -139,8 +144,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:src="@drawable/ic_inbox_white_24dp"
             />
         <ImageView
@@ -148,8 +153,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="35dp"
             android:src="@drawable/ic_send_white_24dp"
             />
         <ImageView
@@ -158,17 +163,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="40dp"
             />
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:id="@+id/relativeLayout14"
         android:layout_above="@+id/linearLayout2"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="21dp"
-        android:id="@+id/relativeLayout14">
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:layout_width="wrap_content"
