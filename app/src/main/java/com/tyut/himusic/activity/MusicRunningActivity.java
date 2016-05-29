@@ -145,7 +145,14 @@ public class MusicRunningActivity extends AppCompatActivity {
                 startActivity(new Intent(this,MusicSettingActivity.class));
             break;
             case R.id.play_music :
-                musicplay.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_white_48dp));
+                if(!isPause) {
+                    musicplay.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_white_48dp));
+                    isPause = true;
+                }else {
+                    musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+                    isPause = false;
+                }
+
             break;
             case R.id.previous_music :
 //                上一首歌逻辑
@@ -173,7 +180,6 @@ public class MusicRunningActivity extends AppCompatActivity {
             musicProgressBar.setMax(duration);
             finalProgress.setText(MediaUtil.formatTime(duration));
         } else if (action.equals(UPDATE_ACTION)) {
-
             listPosition = event.getMsg();
             url = mp3Infos.get(listPosition).getUrl();
             if (listPosition >= 0) {
