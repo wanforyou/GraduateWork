@@ -19,7 +19,6 @@ import android.widget.ImageView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.activity.MusicRunningActivity;
-import com.tyut.himusic.activity.MyInformation;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
@@ -46,14 +45,12 @@ public class MainSuggestionFragment extends BaseFragment
     ImageView goToMusicRunning;
 
 
-
-
     private MainTodayhotFragment mainTodayhotFragment;
     private MainMonthhotFragment mainMonthhotFragment;
     private MainWeekhotFragment mainWeekhotFragment;
 
 
-    private List<String> imageIdList ;
+    private List<String> imageIdList;
 
     public static MainSuggestionFragment getInstance()
     {
@@ -71,7 +68,7 @@ public class MainSuggestionFragment extends BaseFragment
 
     protected void initView()
     {
-        imageIdList=Arrays.asList(ImageUrlTestUtils.getImageUrls2());
+        imageIdList = Arrays.asList(ImageUrlTestUtils.getImageUrls2());
         viewPager.setAdapter(new BannerAdapter(getContext(), imageIdList));
 //        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
         viewPager
@@ -137,8 +134,6 @@ public class MainSuggestionFragment extends BaseFragment
     }
 
 
-
-
     @Override
     public void onDestroyView()
     {
@@ -146,7 +141,7 @@ public class MainSuggestionFragment extends BaseFragment
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot,R.id.main_top_music_running})
+    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot, R.id.main_top_music_running})
     public void onClick(View view)
     {
         today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
@@ -221,7 +216,7 @@ public class MainSuggestionFragment extends BaseFragment
 
                 break;
             case R.id.main_top_music_running:
-                startActivity(new Intent(getContext(),MusicRunningActivity.class));
+                startActivity(new Intent(getContext(), MusicRunningActivity.class));
                 break;
         }
         ft.commitAllowingStateLoss();

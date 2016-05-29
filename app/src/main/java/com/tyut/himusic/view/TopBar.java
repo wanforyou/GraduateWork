@@ -16,15 +16,16 @@ import android.widget.TextView;
 
 import com.tyut.himusic.R;
 
-public class TopBar extends RelativeLayout {
+public class TopBar extends RelativeLayout
+{
 
     // 包含topbar上的元素：左按钮、右按钮、标题
-    private Button mSearchButton, mRunningButton ;
+    private Button mSearchButton, mRunningButton;
     private TextView mHimusicView;
     private TextView mHivideoView;
 
     // 布局属性，用来控制组件元素在ViewGroup中的位置
-    private LayoutParams mSearchParams,mHimusicParams, mHivideoParams,mRunningParams ;
+    private LayoutParams mSearchParams, mHimusicParams, mHivideoParams, mRunningParams;
 
     // 左按钮的属性值，即我们在atts.xml文件中定义的属性
 
@@ -46,15 +47,18 @@ public class TopBar extends RelativeLayout {
     // 映射传入的接口对象
     private topbarClickListener mListener;
 
-    public TopBar(Context context, AttributeSet attrs, int defStyle) {
+    public TopBar(Context context, AttributeSet attrs, int defStyle)
+    {
         super(context, attrs, defStyle);
     }
 
-    public TopBar(Context context) {
+    public TopBar(Context context)
+    {
         super(context);
     }
 
-    public TopBar(Context context, AttributeSet attrs) {
+    public TopBar(Context context, AttributeSet attrs)
+    {
         super(context, attrs);
         // 设置topbar的背景
         setBackgroundColor(0x0000FFF);
@@ -140,18 +144,22 @@ public class TopBar extends RelativeLayout {
 
         // 按钮的点击事件，不需要具体的实现，
         // 只需调用接口的方法，回调的时候，会有具体的实现
-        mSearchButton.setOnClickListener(new OnClickListener() {
+        mSearchButton.setOnClickListener(new OnClickListener()
+        {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 mListener.searchClick();
             }
         });
 
-        mRunningButton.setOnClickListener(new OnClickListener() {
+        mRunningButton.setOnClickListener(new OnClickListener()
+        {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 mListener.runningClick();
             }
         });
@@ -159,7 +167,8 @@ public class TopBar extends RelativeLayout {
 
     // 暴露一个方法给调用者来注册接口回调
     // 通过接口来获得回调者对接口方法的实现
-    public void setOnTopbarClickListener(topbarClickListener mListener) {
+    public void setOnTopbarClickListener(topbarClickListener mListener)
+    {
         this.mListener = mListener;
     }
 
@@ -169,17 +178,24 @@ public class TopBar extends RelativeLayout {
      * @param id   id
      * @param flag 是否显示
      */
-    public void setButtonVisable(int id, boolean flag) {
-        if (flag) {
-            if (id == 0) {
+    public void setButtonVisable(int id, boolean flag)
+    {
+        if (flag)
+        {
+            if (id == 0)
+            {
                 mSearchButton.setVisibility(View.VISIBLE);
-            } else {
+            } else
+            {
                 mSearchButton.setVisibility(View.VISIBLE);
             }
-        } else {
-            if (id == 0) {
+        } else
+        {
+            if (id == 0)
+            {
                 mRunningButton.setVisibility(View.GONE);
-            } else {
+            } else
+            {
                 mRunningButton.setVisibility(View.GONE);
             }
         }
@@ -189,9 +205,11 @@ public class TopBar extends RelativeLayout {
     // 接口对象，实现回调机制，在回调方法中
     // 通过映射的接口对象调用接口中的方法
     // 而不用去考虑如何实现，具体的实现由调用者去创建
-    public interface topbarClickListener {
+    public interface topbarClickListener
+    {
         // 左按钮点击事件
         void searchClick();
+
         // 右按钮点击事件
         void runningClick();
     }

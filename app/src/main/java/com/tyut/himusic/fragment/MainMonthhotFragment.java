@@ -1,4 +1,3 @@
-
 package com.tyut.himusic.fragment;
 
 import android.os.Bundle;
@@ -49,11 +48,11 @@ public class MainMonthhotFragment extends BaseFragment
     void initView()
     {
 
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
-        hotAdapter=new HotAdapter(imgUrls, getContext());
+        hotAdapter = new HotAdapter(imgUrls, getContext());
         recyclerView.setAdapter(hotAdapter);
-        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
+        SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         recyclerView.addItemDecoration(decoration);
         log.d("");
     }

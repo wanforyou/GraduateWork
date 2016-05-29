@@ -63,15 +63,18 @@ public class MainIngAdapter extends RecyclerView.Adapter<MainIngAdapter.ViewHold
     }
 
     @Override
-    public void onViewAttachedToWindow(MainIngAdapter.ViewHolder holder) {
+    public void onViewAttachedToWindow(MainIngAdapter.ViewHolder holder)
+    {
         super.onViewAttachedToWindow(holder);
         ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
-        if(lp != null
-                && lp instanceof StaggeredGridLayoutManager.LayoutParams) {
+        if (lp != null
+                && lp instanceof StaggeredGridLayoutManager.LayoutParams)
+        {
             StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) lp;
             p.setFullSpan(holder.getLayoutPosition() == 0);
         }
     }
+
     @Override
     public int getItemCount()
     {

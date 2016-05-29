@@ -23,21 +23,13 @@ import com.tyut.himusic.view.AutoScrollViewPager;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.ButterKnife;
-
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
-
 
 
 public class MainHiVideoFragment extends BaseFragment
 {
-
-    private HiVideoMainFragment hiVideoMainFragment;
-    private HiVideoMvFragment hiVideoMvFragment;
-    private HiVideoSeceneFragment hiVideoSeceneFragment;
-    private HiVideoManFragment hiVideoManFragment;
-
 
     @Bind(R.id.frag_hivideo_main)
     Button hiVideoMain;
@@ -47,14 +39,13 @@ public class MainHiVideoFragment extends BaseFragment
     Button hiVideoMv;
     @Bind(R.id.frag_hivideo_man)
     Button hiVideoMan;
-
-
     @Bind(R.id.frag_main_hivideo_banner)
     AutoScrollViewPager viewPagerHivideo;
-
-    private List<String> imageIdList ;
-
-
+    private HiVideoMainFragment hiVideoMainFragment;
+    private HiVideoMvFragment hiVideoMvFragment;
+    private HiVideoSeceneFragment hiVideoSeceneFragment;
+    private HiVideoManFragment hiVideoManFragment;
+    private List<String> imageIdList;
 
 
     public static MainHiVideoFragment getInstance()
@@ -78,6 +69,7 @@ public class MainHiVideoFragment extends BaseFragment
         ButterKnife.bind(this, view);
         return view;
     }
+
     private void setDefaultFragment()
     {
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
@@ -94,9 +86,10 @@ public class MainHiVideoFragment extends BaseFragment
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
     }
+
     protected void initView()
     {
-        imageIdList= Arrays.asList(ImageUrlTestUtils.getImageUrls2());
+        imageIdList = Arrays.asList(ImageUrlTestUtils.getImageUrls2());
         viewPagerHivideo.setAdapter(new BannerAdapter(getContext(), imageIdList));
 //        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
         viewPagerHivideo
@@ -129,6 +122,7 @@ public class MainHiVideoFragment extends BaseFragment
             }
         });
     }
+
     protected void initData()
     {
     }
@@ -140,7 +134,7 @@ public class MainHiVideoFragment extends BaseFragment
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.frag_hivideo_main,R.id.frag_hivideo_secene,R.id.frag_hivideo_mv,R.id.frag_hivideo_man})
+    @OnClick({R.id.frag_hivideo_main, R.id.frag_hivideo_secene, R.id.frag_hivideo_mv, R.id.frag_hivideo_man})
     public void onClick(View view)
     {
 

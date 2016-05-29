@@ -72,6 +72,7 @@ public class MainMineFragment extends BaseFragment
         ButterKnife.bind(this, view);
         return view;
     }
+
     @Override
     public void onDestroyView()
     {
@@ -80,19 +81,20 @@ public class MainMineFragment extends BaseFragment
     }
 
     @OnClick({R.id.my_imformation_more,
-            R.id.my_video,R.id.my_music,R.id.my_nosim,R.id.my_vip,
-            R.id.my_setting,R.id.my_save, R.id.my_time_close,R.id.my_theme,R.id.my_about_himusic,R.id.my_button_outline})
-    public void onClick(View view){
+            R.id.my_video, R.id.my_music, R.id.my_nosim, R.id.my_vip,
+            R.id.my_setting, R.id.my_save, R.id.my_time_close, R.id.my_theme, R.id.my_about_himusic, R.id.my_button_outline})
+    public void onClick(View view)
+    {
         switch (view.getId())
         {
             case R.id.my_imformation_more:
-                startActivity(new Intent(getContext(),MyInformation.class));
+                startActivity(new Intent(getContext(), MyInformation.class));
                 break;
 
-             case R.id.my_setting:
-                 startActivity(new Intent(getContext(),MineSetting.class));
+            case R.id.my_setting:
+                startActivity(new Intent(getContext(), MineSetting.class));
                 break;
+        }
     }
-}
 }
 
