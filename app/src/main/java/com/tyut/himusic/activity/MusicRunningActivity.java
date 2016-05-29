@@ -71,7 +71,6 @@ public class MusicRunningActivity extends AppCompatActivity {
     private int listPosition; // 播放歌曲在mp3Infos的位置
     private int currentTime; // 当前歌曲播放时间
     private int duration; // 歌曲长度
-    private int flag; // 播放标识
 
     private List<Mp3Info> mp3Infos;
     private boolean isPause;
@@ -174,7 +173,7 @@ public class MusicRunningActivity extends AppCompatActivity {
             musicProgressBar.setMax(duration);
             finalProgress.setText(MediaUtil.formatTime(duration));
         } else if (action.equals(UPDATE_ACTION)) {
-            // 获取Intent中的current消息，current代表当前正在播放的歌曲
+
             listPosition = event.getMsg();
             url = mp3Infos.get(listPosition).getUrl();
             if (listPosition >= 0) {
@@ -191,4 +190,4 @@ public class MusicRunningActivity extends AppCompatActivity {
     }
 
     }
-}
+
