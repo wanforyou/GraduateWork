@@ -154,15 +154,15 @@ import de.greenrobot.event.EventBus;
         super.onStart(intent, startId);
     }
 
-    Runnable mRunnable = new Runnable() {
-
-        @Override
-        public void run() {
-            EventBus.getDefault().post(
-                    new MusicEvents(CTL_ACTION,msg));
-
-        }
-    };
+//    Runnable mRunnable = new Runnable() {
+//
+//        @Override
+//        public void run() {
+//            EventBus.getDefault().post(
+//                    new MusicEvents(CTL_ACTION,msg));
+//
+//        }
+//    };
 
     private void play(int currentTime) {
         try {
