@@ -7,6 +7,7 @@
 
 package com.tyut.himusic.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.VideoPlayerActivity;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
@@ -121,6 +123,7 @@ public class MainHiVideoFragment extends BaseFragment
                 return false;
             }
         });
+
     }
 
     protected void initData()
@@ -227,8 +230,10 @@ public class MainHiVideoFragment extends BaseFragment
                     hiVideoManFragment = hiVideoManFragment.getInstance();
                     ft.add(R.id.frag_hivideo, hiVideoManFragment);
                 }
+                startActivity(new Intent(getContext(), VideoPlayerActivity.class));
 
                 break;
+
         }
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
