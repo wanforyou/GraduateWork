@@ -17,13 +17,12 @@ import butterknife.OnClick;
 public class HiVideoMainFragment extends BaseFragment
 {
 
-    private HiVideoMainHotFragment hiVideoMainHotFragment;
-    private HiVideoMainNewFragment hiVideoMainNewFragment;
-
     @Bind(R.id.hivideo_hot)
     TextView hiVideoHot;
     @Bind(R.id.hivideo_new)
     TextView hiVideoNew;
+    private HiVideoMainHotFragment hiVideoMainHotFragment;
+    private HiVideoMainNewFragment hiVideoMainNewFragment;
 
     public static HiVideoMainFragment getInstance()
     {
@@ -47,6 +46,7 @@ public class HiVideoMainFragment extends BaseFragment
         return view;
 
     }
+
     private void setDefaultFragment()
     {
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
@@ -63,6 +63,7 @@ public class HiVideoMainFragment extends BaseFragment
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
     }
+
     protected void initData()
     {
     }
@@ -73,7 +74,8 @@ public class HiVideoMainFragment extends BaseFragment
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
-    @OnClick({R.id.hivideo_hot,R.id.hivideo_new})
+
+    @OnClick({R.id.hivideo_hot, R.id.hivideo_new})
     public void onClick(View view)
     {
         hiVideoHot.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));

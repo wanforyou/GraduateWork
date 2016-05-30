@@ -59,15 +59,18 @@ public class MainHimusicManAdapter extends RecyclerView.Adapter<MainHimusicManAd
     }
 
     @Override
-    public void onViewAttachedToWindow(MainHimusicManAdapter.ViewHolder holder) {
+    public void onViewAttachedToWindow(MainHimusicManAdapter.ViewHolder holder)
+    {
         super.onViewAttachedToWindow(holder);
         ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
-        if(lp != null
-                && lp instanceof StaggeredGridLayoutManager.LayoutParams) {
+        if (lp != null
+                && lp instanceof StaggeredGridLayoutManager.LayoutParams)
+        {
             StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) lp;
             p.setFullSpan(holder.getLayoutPosition() == 0);
         }
     }
+
     @Override
     public int getItemCount()
     {

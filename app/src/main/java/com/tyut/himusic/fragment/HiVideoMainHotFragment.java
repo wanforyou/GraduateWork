@@ -37,22 +37,25 @@ public class HiVideoMainHotFragment extends BaseFragment
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         View view = inflater.inflate(R.layout.fragment_hivideo_main_hot, container, false);
         ButterKnife.bind(this, view);
         initView();
         return view;
     }
+
     void initView()
     {
 
-        hiVideoHotRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
+        hiVideoHotRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         hiVideoHotRecyclerView.setHasFixedSize(true);
-        videoHotAdapter=new HotAdapter(imgUrls, getContext());
+        videoHotAdapter = new HotAdapter(imgUrls, getContext());
         hiVideoHotRecyclerView.setAdapter(videoHotAdapter);
-        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
+        SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         hiVideoHotRecyclerView.addItemDecoration(decoration);
-        log.d("");}
+        log.d("");
+    }
 
     @Override
     public void onDestroyView()

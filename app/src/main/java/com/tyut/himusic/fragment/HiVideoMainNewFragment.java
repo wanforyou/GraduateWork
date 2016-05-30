@@ -43,16 +43,19 @@ public class HiVideoMainNewFragment extends BaseFragment
         View view = inflater.inflate(R.layout.fragment_hivideo_main_new, container, false);
         return view;
 
-    }    void initView()
-{
+    }
 
-    hiVideoNewRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
-    hiVideoNewRecyclerView.setHasFixedSize(true);
-    videoNewAdapter=new HotAdapter(imgUrls, getContext());
-    hiVideoNewRecyclerView.setAdapter(videoNewAdapter);
-    SpacesItemDecoration decoration=new SpacesItemDecoration(16);
-    hiVideoNewRecyclerView.addItemDecoration(decoration);
-    log.d("");}
+    void initView()
+    {
+
+        hiVideoNewRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        hiVideoNewRecyclerView.setHasFixedSize(true);
+        videoNewAdapter = new HotAdapter(imgUrls, getContext());
+        hiVideoNewRecyclerView.setAdapter(videoNewAdapter);
+        SpacesItemDecoration decoration = new SpacesItemDecoration(16);
+        hiVideoNewRecyclerView.addItemDecoration(decoration);
+        log.d("");
+    }
 
     @Override
     public void onDestroyView()

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.adapter.MainHimusicManAdapter;
-import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainHimusicListData;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
@@ -24,16 +23,15 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 
 public class MainHiMusicFragment extends BaseFragment implements View.OnClickListener
 {
-//    @Bind(R.id.frag_main_himusic_banner)
+    //    @Bind(R.id.frag_main_himusic_banner)
     AutoScrollViewPager viewHimusicPager;
-//    @Bind(R.id.frag_main_himusic_main)
+    //    @Bind(R.id.frag_main_himusic_main)
     TextView fraghimusicMain;
-//    @Bind(R.id.frag_main_himusic_man)
+    //    @Bind(R.id.frag_main_himusic_man)
     TextView fraghimusicMan;
     @Bind(R.id.frag_main_himusic_recyclerview)
     RecyclerView recyclerView;
@@ -42,10 +40,11 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
     private MainHimusicManAdapter adapter;
     private List<MainHimusicListData> datasman;
 
-private HiMusicMainFragment hiMusicMainFragment;
+    private HiMusicMainFragment hiMusicMainFragment;
     private HiMusicManFragment hiMusicManFragment;
 
-    private List<String> himusicImageIdList ;
+    private List<String> himusicImageIdList;
+
     public static MainHiMusicFragment getInstance()
     {
         return new MainHiMusicFragment();
@@ -104,20 +103,21 @@ private HiMusicMainFragment hiMusicMainFragment;
         initView();
         return view;
     }
+
     protected void initView()
     {
-        viewHimusicPager = (AutoScrollViewPager)mListViewHeader.findViewById(R.id.frag_main_himusic_banner);
-        fraghimusicMain = (TextView)mListViewHeader.findViewById(R.id.frag_main_himusic_main);
+        viewHimusicPager = (AutoScrollViewPager) mListViewHeader.findViewById(R.id.frag_main_himusic_banner);
+        fraghimusicMain = (TextView) mListViewHeader.findViewById(R.id.frag_main_himusic_main);
         fraghimusicMain.setOnClickListener(this);
-        fraghimusicMan = (TextView)mListViewHeader.findViewById(R.id.frag_main_himusic_man) ;
+        fraghimusicMan = (TextView) mListViewHeader.findViewById(R.id.frag_main_himusic_man);
         fraghimusicMan.setOnClickListener(this);
-        himusicImageIdList= Arrays.asList(ImageUrlTestUtils.getImageUrls2());
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
+        himusicImageIdList = Arrays.asList(ImageUrlTestUtils.getImageUrls2());
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
         adapter = new MainHimusicManAdapter(datasman, getContext());
         recyclerView.setAdapter(adapter);
         adapter.setHeaderView(mListViewHeader);
-        viewHimusicPager=(AutoScrollViewPager)mListViewHeader.findViewById(R.id.frag_main_himusic_banner);
+        viewHimusicPager = (AutoScrollViewPager) mListViewHeader.findViewById(R.id.frag_main_himusic_banner);
         viewHimusicPager.setAdapter(new BannerAdapter(getContext(), himusicImageIdList));
         viewHimusicPager
                 .setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);
@@ -157,8 +157,6 @@ private HiMusicMainFragment hiMusicMainFragment;
     }
 
 
-
-
     private void setDefaultFragment()
     {
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
@@ -175,8 +173,6 @@ private HiMusicMainFragment hiMusicMainFragment;
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
     }
-
-
 
 
     @Override

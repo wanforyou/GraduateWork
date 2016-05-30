@@ -27,24 +27,14 @@ public class MainIngListData
         return dianzan;
     }
 
+    public void setDianzan(Integer dianzan)
+    {
+        this.dianzan = dianzan;
+    }
+
     public String getData()
     {
         return data;
-    }
-
-    public String getImgurl()
-    {
-        return imgurl;
-    }
-
-    public String getIntroduction()
-    {
-        return introduction;
-    }
-
-    public String getTitle()
-    {
-        return title;
     }
 
     public void setData(String data)
@@ -52,9 +42,9 @@ public class MainIngListData
         this.data = data;
     }
 
-    public void setDianzan(Integer dianzan)
+    public String getImgurl()
     {
-        this.dianzan = dianzan;
+        return imgurl;
     }
 
     public void setImgurl(String imgurl)
@@ -62,9 +52,19 @@ public class MainIngListData
         this.imgurl = imgurl;
     }
 
+    public String getIntroduction()
+    {
+        return introduction;
+    }
+
     public void setIntroduction(String introduction)
     {
         this.introduction = introduction;
+    }
+
+    public String getTitle()
+    {
+        return title;
     }
 
     public void setTitle(String title)

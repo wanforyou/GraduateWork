@@ -17,6 +17,4 @@ public abstract class BaseFragment extends Fragment
     MyLog log = MyLog.qcLog();
 
 
-
-
 }

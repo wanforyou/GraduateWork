@@ -20,7 +20,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainIngListData;
-import com.tyut.himusic.view.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

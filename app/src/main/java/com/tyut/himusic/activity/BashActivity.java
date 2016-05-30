@@ -27,50 +27,6 @@ public abstract class BashActivity extends FragmentActivity
 {
     protected static MyLog log = MyLog.qcLog();
 
-    protected abstract void initView();
-
-
-    protected abstract void initData();
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        //小米魅族手机api大于19的机型,状态栏透明且字体改成黑色
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-        {
-            if (MyApplication.os.toUpperCase().equals("XIAOMI"))
-            {
-                setStatusBarDarkMode(true, this);
-            } else if (MyApplication.os.toUpperCase().equals("MEIZU"))//"HUAWEI"
-            {
-                setStatusBarDarkIcon(this.getWindow(), true);
-            }
-
-        }
-        //否则状态栏黑色
-    }
-
-
-    //小米专用设置状态栏模式(黑色白色)
-    public void setStatusBarDarkMode(boolean darkmode, Activity activity)
-    {
-        Class<? extends Window> clazz = activity.getWindow().getClass();
-        try
-        {
-            int darkModeFlag = 0;
-            Class<?> layoutParams = Class.forName("android.view.MiuiWindowManager$LayoutParams");
-            Field field = layoutParams.getField("EXTRA_FLAG_STATUS_BAR_DARK_MODE");
-            darkModeFlag = field.getInt(layoutParams);
-            Method extraFlagField = clazz.getMethod("setExtraFlags", int.class, int.class);
-            extraFlagField.invoke(activity.getWindow(), darkmode ? darkModeFlag : 0, darkModeFlag);
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-
     //魅族专用设置状态栏模式(黑色白色)
     public static boolean setStatusBarDarkIcon(Window window, boolean dark)
     {
@@ -102,5 +58,46 @@ public abstract class BashActivity extends FragmentActivity
             }
         }
         return result;
+    }
+
+    protected abstract void initView();
+
+    protected abstract void initData();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        //小米魅族手机api大于19的机型,状态栏透明且字体改成黑色
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        {
+            if (MyApplication.os.toUpperCase().equals("XIAOMI"))
+            {
+                setStatusBarDarkMode(true, this);
+            } else if (MyApplication.os.toUpperCase().equals("MEIZU"))//"HUAWEI"
+            {
+                setStatusBarDarkIcon(this.getWindow(), true);
+            }
+
+        }
+        //否则状态栏黑色
+    }
+
+    //小米专用设置状态栏模式(黑色白色)
+    public void setStatusBarDarkMode(boolean darkmode, Activity activity)
+    {
+        Class<? extends Window> clazz = activity.getWindow().getClass();
+        try
+        {
+            int darkModeFlag = 0;
+            Class<?> layoutParams = Class.forName("android.view.MiuiWindowManager$LayoutParams");
+            Field field = layoutParams.getField("EXTRA_FLAG_STATUS_BAR_DARK_MODE");
+            darkModeFlag = field.getInt(layoutParams);
+            Method extraFlagField = clazz.getMethod("setExtraFlags", int.class, int.class);
+            extraFlagField.invoke(activity.getWindow(), darkmode ? darkModeFlag : 0, darkModeFlag);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
