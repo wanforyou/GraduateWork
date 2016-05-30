@@ -6,15 +6,20 @@ import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.opendanmaku.DanmakuItem;
+import com.opendanmaku.DanmakuView;
 import com.tyut.himusic.R;
 import com.tyut.himusic.util.SDCardUtil;
 
 import java.io.File;
 
+import static android.R.id.list;
+
 public class VideoPlayerActivity extends Activity
 {
     VideoView videoView;
     MediaController mController;
+    DanmakuView mDanmakuView;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -38,5 +43,29 @@ public class VideoPlayerActivity extends Activity
             // 让VideoView获取焦点
             videoView.requestFocus();
         }
+        mDanmakuView = (DanmakuView) findViewById(R.id.danmakuView);
+
+        // add danmaku items:
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+
+        //显示弹幕
+        mDanmakuView.show();
+
+    //方丈,你自己加按钮来控制弹幕显示和隐藏,添加弹幕发送的时候直接调用上面的additem即可。
+
+        //隐藏弹幕
+//        mDanmakuView.hide();
+
+        //清空弹幕
+//        mDanmakuView.clear();
     }
 }

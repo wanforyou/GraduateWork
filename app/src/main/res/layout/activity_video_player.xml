@@ -5,20 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include layout="@layout/title_bar"/>
-<FrameLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/act_video_player_videoview"/>
-    <master.flame.danmaku.ui.widget.DanmakuView
-        android:id="@+id/sv_danmaku"
+    <com.opendanmaku.DanmakuView
+        android:id="@+id/danmakuView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/act_video_player_videoview"
+        app:start_Y_offset="0.2"
+        app:end_Y_offset="0.8"
+        app:max_row="4"
+        app:max_running_per_row="2"
+        app:pick_interval="1000"
+        app:show_debug="false" />
 
-</FrameLayout>
+</RelativeLayout>
 </LinearLayout>
