@@ -38,7 +38,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.MusicRunningActivity" />
         <activity android:name=".activity.MusicListActivity" />
-        <activity android:name=".activity.MusicSettingActivity"></activity>
+        <activity android:name=".activity.MusicSettingActivity"/>
     </application>
 
 </manifest>
