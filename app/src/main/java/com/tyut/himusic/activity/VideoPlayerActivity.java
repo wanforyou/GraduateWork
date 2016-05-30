@@ -13,7 +13,6 @@ import com.tyut.himusic.util.SDCardUtil;
 
 import java.io.File;
 
-import static android.R.id.list;
 
 public class VideoPlayerActivity extends Activity
 {
@@ -46,15 +45,15 @@ public class VideoPlayerActivity extends Activity
         mDanmakuView = (DanmakuView) findViewById(R.id.danmakuView);
 
         // add danmaku items:
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
-        mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "2333333333333333333333333333", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "我从未见过如此厚颜无耻之人", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "前排", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "250个方丈你们好!", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "看见王司徒就滚进来了", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "前方高能", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "来不及了快上车", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "打卡", mDanmakuView.getWidth()));
+        mDanmakuView.addItem(new DanmakuItem(this, "恭喜你发现镇站之宝", mDanmakuView.getWidth()));
         mDanmakuView.addItem(new DanmakuItem(this, "Hello World", mDanmakuView.getWidth()));
 
         //显示弹幕
