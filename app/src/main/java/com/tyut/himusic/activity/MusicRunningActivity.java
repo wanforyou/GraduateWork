@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -161,6 +164,7 @@ public class MusicRunningActivity extends AppCompatActivity {
                 if (isFirstTime) {
                     isPause = false;
                     musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+                    startAnimation(musicPic);
 
                 }else {
                     Intent intent1 = new Intent(MusicRunningActivity.this, PlayerService.class);
@@ -170,12 +174,14 @@ public class MusicRunningActivity extends AppCompatActivity {
                         intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                         intent1.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
                         startService(intent1);
+                        musicPic.clearAnimation();
                     } else {
                         musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
                         isPause = false;
                         intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                         intent1.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
                         startService(intent1);
+                        startAnimation(musicPic);
                     }
                 }
                 break;
@@ -341,6 +347,12 @@ public class MusicRunningActivity extends AppCompatActivity {
                 new MusicControlEvents(CTL_ACTION, 2));
     }
 
+private void startAnimation(View view){
+    Animation operatingAnim = AnimationUtils.loadAnimation(this, R.anim.tip);
+    LinearInterpolator lin = new LinearInterpolator();
+    operatingAnim.setInterpolator(lin);
 
+
+}
 
     }

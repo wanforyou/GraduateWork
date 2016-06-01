@@ -3,8 +3,8 @@
     package="com.tyut.himusic">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name=".activity.MyApplication"
@@ -40,7 +40,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.MusicRunningActivity" />
         <activity android:name=".activity.MusicListActivity" />
-        <activity android:name=".activity.MusicSettingActivity"></activity>
+        <activity android:name=".activity.MusicSettingActivity" />
+        <activity android:name=".activity.CircleMenuActivity"></activity>
     </application>
 
 </manifest>
