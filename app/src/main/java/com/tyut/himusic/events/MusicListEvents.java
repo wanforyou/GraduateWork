@@ -7,18 +7,23 @@ public class MusicListEvents
 {
 
     private Integer mMsg;
-    private long mDuration;
+    private Long mDuration;
     private String mTitle;
     private String mArtist;
+    private String mUrl;
+    private Integer mListPosition;
 
 
-    public MusicListEvents( Integer msg,String title ,String artist,Integer currentTime)
+    public MusicListEvents(Integer listPosition, Integer msg,
+                            String url,String title ,String artist,Long duration)
     {
         // TODO Auto-generated constructor stub
 
+        mListPosition = listPosition;
         mMsg = msg;
-        mDuration =currentTime;
+        mDuration =duration;
         mTitle = title;
+        mUrl =url;
         mArtist= artist;
 
 
@@ -29,6 +34,10 @@ public class MusicListEvents
     {
         return mMsg;
     }
+    public String getUrl()
+    {
+        return mUrl;
+    }
     public String getTitle()
     {
         return mTitle;
@@ -38,9 +47,13 @@ public class MusicListEvents
         return mArtist;
     }
     public Long getDuration()
+
     {
         return mDuration;
     }
-
+    public Integer getListPosition()
+    {
+        return mListPosition;
+    }
 
 }

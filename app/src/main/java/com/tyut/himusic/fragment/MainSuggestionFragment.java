@@ -64,6 +64,7 @@ public class MainSuggestionFragment extends BaseFragment
         super.onCreate(savedInstanceState);
         setDefaultFragment();
         log.d("");
+        goToMusicRunning.setOnClickListener(new MyListener());
     }
 
     protected void initView()
@@ -113,6 +114,7 @@ public class MainSuggestionFragment extends BaseFragment
         ButterKnife.bind(this, view);
         initView();
         return view;
+
     }
 
 
@@ -141,7 +143,7 @@ public class MainSuggestionFragment extends BaseFragment
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot, R.id.main_top_music_running})
+    @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot})
     public void onClick(View view)
     {
         today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
@@ -215,12 +217,19 @@ public class MainSuggestionFragment extends BaseFragment
                 }
 
                 break;
-            case R.id.main_top_music_running:
-                startActivity(new Intent(getContext(), MusicRunningActivity.class));
-                break;
+
         }
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
+    }
+    private class MyListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            startActivity(new Intent(getContext(), MusicRunningActivity.class));
+        }
+
     }
 }
 

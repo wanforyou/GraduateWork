@@ -8,11 +8,17 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
+import com.tyut.himusic.domain.AppConstant;
 import com.tyut.himusic.domain.Mp3Info;
+import com.tyut.himusic.events.MusicControlEvents;
 import com.tyut.himusic.events.MusicEvents;
+import com.tyut.himusic.events.MusicListEvents;
+import com.tyut.himusic.service.PlayerService;
 import com.tyut.himusic.util.MediaUtil;
 
 import java.util.List;
@@ -46,9 +52,9 @@ public class MusicRunningActivity extends AppCompatActivity {
 
 
     @Bind(R.id.music_title)
-    TextView musicArtist;
-    @Bind(R.id.music_artist)
     TextView musicTitle;
+    @Bind(R.id.music_artist)
+    TextView musicArtist;
 
     @Bind(R.id.previous_music)
     ImageView previousMusic;
@@ -63,14 +69,20 @@ public class MusicRunningActivity extends AppCompatActivity {
     TextView finalProgress;
 
     Integer ZanNumber;
-    Integer MusicWay;
+    Integer MusicWay =0;
+
+
 
     private String title; // 歌曲标题
     private String artist; // 歌曲艺术家
     private String url; // 歌曲路径
     private int listPosition; // 播放歌曲在mp3Infos的位置
     private int currentTime; // 当前歌曲播放时间
-    private int duration; // 歌曲长度
+    private String duration; // 歌曲长度
+    private int flag; // 播放标识
+    private boolean isFirstTime = true;
+    private boolean isFirstTimeChangeWay = true;
+
 
     private List<Mp3Info> mp3Infos;
     private boolean isPause;
@@ -96,11 +108,6 @@ public class MusicRunningActivity extends AppCompatActivity {
             R.id.music_running_zan,R.id.music_running_repeatState,R.id.music_download,R.id.music_share,R.id.music_setting,
             R.id.play_music,R.id.previous_music,R.id.next_music  })
     public void onClick(View view){
-        musicZan.setImageDrawable(getDrawable(R.drawable.ic_thumb_up_white_24dp));
-        musicPlayWay.setImageDrawable(getDrawable(R.drawable.ic_loop_white_24dp));
-        musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
-        isPause = false;
-        MusicWay = 0;
         switch (view.getId()) {
             case R.id.muisc_running_back:
                 MusicRunningActivity.this.finish();
@@ -113,25 +120,31 @@ public class MusicRunningActivity extends AppCompatActivity {
 //                转为歌词界面
                 break;
             case  R.id.music_running_zan :
-
                 musicZan.setImageDrawable(getDrawable(R.drawable.ic_thumb_up_black_24dp));
 //                发送赞的广播
                 ZanNumber = ZanNumber + 1;
                 break;
             case  R.id.music_running_repeatState :
 //                1表示随机播放，2表示列表播放，3表示单曲循环
+                if (isFirstTimeChangeWay) {
+                    MusicWay =2;
+                    isFirstTimeChangeWay = false;
+                    musicPlayWay.setImageDrawable(getDrawable(R.drawable.ic_loop_white_24dp));
+                }else {
                 if (MusicWay.equals(1)){
                     musicPlayWay.setImageDrawable(getDrawable(R.drawable.ic_loop_white_24dp));
                     MusicWay = 2;
+                    shuffleMusic();
 
                 }else if (MusicWay.equals(2)){
                     musicPlayWay.setImageDrawable(getDrawable(R.drawable.ic_repeat_white_24dp));
                     MusicWay = 3;
-
+                    repeat_all();
                 }else {
                     musicPlayWay.setImageDrawable(getDrawable(R.drawable.ic_repeat_one_white_24dp));
                     MusicWay = 1;
-
+                    repeat_one();
+                }
                 }
                 break;
             case  R.id.music_download:
@@ -145,20 +158,34 @@ public class MusicRunningActivity extends AppCompatActivity {
                 startActivity(new Intent(this,MusicSettingActivity.class));
                 break;
             case R.id.play_music :
-                if(!isPause) {
-                    musicplay.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_white_48dp));
-                    isPause = true;
-                }else {
-                    musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+                if (isFirstTime) {
                     isPause = false;
-                }
+                    musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
 
+                }else {
+                    Intent intent1 = new Intent(MusicRunningActivity.this, PlayerService.class);
+                    if (!isPause) {
+                        musicplay.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_white_48dp));
+                        isPause = true;
+                        intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
+                        intent1.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
+                        startService(intent1);
+                    } else {
+                        musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+                        isPause = false;
+                        intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
+                        intent1.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
+                        startService(intent1);
+                    }
+                }
                 break;
             case R.id.previous_music :
 //                上一首歌逻辑
+                previous_music();
                 break;
             case R.id.next_music:
 //                下一首歌逻辑
+                next_music();
                 break;
 
         }
@@ -167,6 +194,29 @@ public class MusicRunningActivity extends AppCompatActivity {
         super.onDestroy();
         //反注册EventBus
         EventBus.getDefault().unregister(this);
+    }
+
+
+    private class SeekBarChangeListener implements OnSeekBarChangeListener {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress,
+                                      boolean fromUser) {
+            audioTrackChange(progress); // 用户控制进度的改变
+        }
+
+
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+
     }
 
     public void onEventMainThread(MusicEvents event) {
@@ -191,8 +241,106 @@ public class MusicRunningActivity extends AppCompatActivity {
                         listPosition).getDuration()));
                 musicplay.setBackgroundResource(R.drawable.ic_play_circle_outline_white_48dp);
                 isPause = true;
+
             }
         }
     }
+    public void onEventMainThread(MusicListEvents event) {
+        title = (event.getTitle());
+        musicTitle.setText(title);
+        artist = (event.getArtist());
+        musicArtist.setText(artist);
+        url = event.getUrl();
+        listPosition =event.getListPosition();
+        flag =event.getMsg();
+        duration= MediaUtil.formatTime(event.getDuration());
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.out.println("PlayerActivity has paused");
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("PlayerActivity has onResume");
+    }
+//上一首逻辑
+    public void previous_music() {
+    listPosition = listPosition - 1;
+    if (listPosition >= 0) {
+        Mp3Info mp3Info = mp3Infos.get(listPosition); // 上一首MP3
+        musicTitle.setText(mp3Info.getTitle());
+        musicArtist.setText(mp3Info.getArtist());
+        url = mp3Info.getUrl();
+        Intent intent = new Intent();
+        intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
+        intent.putExtra("url", mp3Info.getUrl());
+        intent.putExtra("listPosition", listPosition);
+        intent.putExtra("MSG", AppConstant.PlayerMsg.PRIVIOUS_MSG);
+        startService(intent);
+
+    } else {
+        listPosition = 0;
+        Toast.makeText(MusicRunningActivity.this, "没有上一首了", Toast.LENGTH_SHORT)
+                .show();
+    }
 }
+//下一首逻辑
+    public void next_music() {
+        listPosition = listPosition + 1;
+        if (listPosition <= mp3Infos.size() - 1) {
+            Mp3Info mp3Info = mp3Infos.get(listPosition);
+            url = mp3Info.getUrl();
+            musicTitle.setText(mp3Info.getTitle());
+            musicArtist.setText(mp3Info.getArtist());
+            Intent intent = new Intent();
+            intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
+            intent.putExtra("url", mp3Info.getUrl());
+            intent.putExtra("listPosition", listPosition);
+            intent.putExtra("MSG", AppConstant.PlayerMsg.NEXT_MSG);
+            startService(intent);
+
+        } else {
+            listPosition = mp3Infos.size() - 1;
+            Toast.makeText(MusicRunningActivity.this, "没有下一首了", Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+
+//    随机播放
+    public void shuffleMusic() {
+        EventBus.getDefault().post(
+                new MusicControlEvents(CTL_ACTION, 1));
+    }
+
+
+//      播放进度改变
+
+    public void audioTrackChange(int progress) {
+        Intent intent = new Intent();
+        intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
+        intent.putExtra("url", url);
+        intent.putExtra("listPosition", listPosition);
+        intent.putExtra("MSG", AppConstant.PlayerMsg.PROGRESS_CHANGE);
+        intent.putExtra("progress", progress);
+        startService(intent);
+    }
+
+//    单曲循环
+    public void repeat_one() {
+        EventBus.getDefault().post(
+                new MusicControlEvents(CTL_ACTION, 3));
+    }
+
+//    全部循环
+
+    public void repeat_all() {
+        EventBus.getDefault().post(
+                new MusicControlEvents(CTL_ACTION, 2));
+    }
+
+
+
+    }
