@@ -3,11 +3,14 @@ package com.tyut.himusic.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ import com.tyut.himusic.events.MusicEvents;
 import com.tyut.himusic.events.MusicListEvents;
 import com.tyut.himusic.service.PlayerService;
 import com.tyut.himusic.util.MediaUtil;
+import com.tyut.himusic.view.SharePopWindow;
 
 import java.util.List;
 
@@ -75,6 +79,7 @@ public class MusicRunningActivity extends AppCompatActivity {
     Integer MusicWay =0;
 
 
+    private PopupWindow popupWindow;
 
     private String title; // 歌曲标题
     private String artist; // 歌曲艺术家
@@ -155,7 +160,7 @@ public class MusicRunningActivity extends AppCompatActivity {
                 Toast.makeText(MusicRunningActivity.this,"下载完成", Toast.LENGTH_LONG).show();
                 break;
             case  R.id.music_share :
-//                分享的业务逻辑
+                getPopupWindow();
                 break;
             case R.id.music_setting:
                 startActivity(new Intent(this,MusicSettingActivity.class));
@@ -222,6 +227,39 @@ public class MusicRunningActivity extends AppCompatActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
 
         }
+
+    }
+
+    private void getPopupWindow()
+    {
+        if (null != popupWindow && popupWindow.isShowing())
+        {
+            popupWindow.dismiss();
+            return;
+        } else
+        {
+            initPopuptWindow();
+        }
+    }
+    private void initPopuptWindow()
+    {
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = 0.7f;
+        getWindow().setAttributes(lp);
+        this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        popupWindow = new SharePopWindow(this);
+        popupWindow.showAtLocation(this.findViewById(R.id.current_progress), Gravity.BOTTOM, 0, 0);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener()
+        {
+            @Override
+            public void onDismiss()
+            {
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 1f; //0.0-1.0
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                getWindow().setAttributes(lp);
+            }
+        });
 
     }
 

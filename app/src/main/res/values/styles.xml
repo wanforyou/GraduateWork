@@ -26,5 +26,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">#e8e8e8</item>
     </style>
-
+    <!--分享popWindows样式-->
+    <style name="popwindow_bottom_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+        <!--背景透明-->
+        <!--<item name="android:backgroundDimEnabled">true</item>-->
+        <!--模糊-->
+        <!--<item name="android:backgroundDimAmount">0.6</item>-->
+    </style>
 </resources>
