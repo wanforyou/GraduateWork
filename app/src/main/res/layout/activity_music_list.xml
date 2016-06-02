@@ -30,7 +30,7 @@
             android:text="晴天"
             android:paddingTop="8dp"
             android:textSize="20dp"
-            android:id="@+id/textView4"
+            android:id="@+id/music_title_list"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
@@ -43,7 +43,7 @@
             android:textColor="#6f000000"
             android:id="@+id/textView5"
             android:layout_alignParentBottom="true"
-            android:layout_alignEnd="@+id/textView4" />
+            android:layout_alignEnd="@+id/music_title_list" />
 
         <ImageView
             android:layout_width="wrap_content"

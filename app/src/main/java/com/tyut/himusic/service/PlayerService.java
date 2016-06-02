@@ -12,7 +12,9 @@ import android.os.IBinder;
 
 import com.tyut.himusic.domain.AppConstant;
 import com.tyut.himusic.domain.Mp3Info;
+import com.tyut.himusic.events.MusicControlEvents;
 import com.tyut.himusic.events.MusicEvents;
+import com.tyut.himusic.events.MusicListEvents;
 import com.tyut.himusic.util.MediaUtil;
 
 import java.util.List;
@@ -38,7 +40,6 @@ public class PlayerService extends Service
     private int current = 0;        // 记录当前正在播放的音乐
     private List<Mp3Info> mp3Infos;    //存放Mp3Info对象的集合
     private int status = 1;            //播放状态，默认为随机播放
-    private MyReceiver myReceiver;    //自定义广播接收器
     private int currentTime;        //当前播放进度
     private int duration;            //歌曲长度
     /**
@@ -67,6 +68,8 @@ public class PlayerService extends Service
         super.onCreate();
         mediaPlayer = new MediaPlayer();
         mp3Infos = MediaUtil.getMp3Infos(PlayerService.this);
+        //        注册eventsbus
+        EventBus.getDefault().register(this);
 
 
 //         设置音乐播放完成时的监听器
@@ -85,7 +88,7 @@ public class PlayerService extends Service
                     current++;    //下一首位置
                     if (current <= mp3Infos.size() - 1)
                     {
-                        // 发送广播，将被Activity组件中的BroadcastReceiver接收到
+
                         EventBus.getDefault().post(
                                 new MusicEvents(UPDATE_ACTION, current));
                         path = mp3Infos.get(current).getUrl();
@@ -110,18 +113,11 @@ public class PlayerService extends Service
             }
         });
 
-//        myReceiver = new MyReceiver();
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction(CTL_ACTION);
-//        registerReceiver(myReceiver, filter);
     }
 
-    /**
-     * 获取随机位置
-     *
-     * @param end
-     * @return
-     */
+
+//获取随机位置
+
     protected int getRandomIndex(int end)
     {
         int index = (int) (Math.random() * end);
@@ -137,9 +133,9 @@ public class PlayerService extends Service
     @Override
     public void onStart(Intent intent, int startId)
     {
-        path = intent.getStringExtra("url");        //歌曲路径
-        current = intent.getIntExtra("listPosition", -1);    //当前播放歌曲的在mp3Infos的位置
-        msg = intent.getIntExtra("MSG", 0);            //播放信息
+        path = intent.getStringExtra("url");		//歌曲路径
+        current = intent.getIntExtra("listPosition", -1);	//当前播放歌曲的在mp3Infos的位置
+        msg = intent.getIntExtra("MSG", 0);			//播放信息
         if (msg == AppConstant.PlayerMsg.PLAY_MSG)
         {    //直接播放音乐
             play(0);
@@ -179,6 +175,29 @@ public class PlayerService extends Service
 //
 //        }
 //    };
+
+//     实现一个OnPrepareLister接口,当音乐准备好的时候开始播放
+
+    private final class PreparedListener implements OnPreparedListener {
+        private int currentTime;
+
+        public PreparedListener(int currentTime) {
+            this.currentTime = currentTime;
+        }
+
+        @Override
+        public void onPrepared(MediaPlayer mp) {
+            mediaPlayer.start(); // 开始播放
+            if (currentTime > 0) { // 如果音乐不是从头播放
+                mediaPlayer.seekTo(currentTime);
+            }
+            duration = mediaPlayer.getDuration();
+//                  通过Eventsbus来传递歌曲的总长度
+
+            EventBus.getDefault().post(
+                    new MusicEvents(MUSIC_DURATION,duration));
+        }
+    }
 
     private void play(int currentTime)
     {
@@ -269,36 +288,10 @@ public class PlayerService extends Service
                 new MusicEvents(CTL_ACTION, msg));
     }
 
-    private final class PreparedListener implements OnPreparedListener
-    {
-        private int currentTime;
 
-        public PreparedListener(int currentTime)
-        {
-            this.currentTime = currentTime;
-        }
 
-        @Override
-        public void onPrepared(MediaPlayer mp)
-        {
-            mediaPlayer.start(); // 开始播放
-            if (currentTime > 0)
-            { // 如果音乐不是从头播放
-                mediaPlayer.seekTo(currentTime);
-            }
-            //通过Intent来传递歌曲的总长度
-            EventBus.getDefault().post(
-                    new MusicEvents(MUSIC_DURATION, duration));
-        }
-    }
-
-    public class MyReceiver extends BroadcastReceiver
-    {
-
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            int control = intent.getIntExtra("control", -1);
+    public void onEventMainThread(MusicControlEvents event) {
+           int control = event.getControl();
             switch (control)
             {
                 case 1:
@@ -314,6 +307,9 @@ public class PlayerService extends Service
 
             }
         }
+    public void onEventMainThread(MusicListEvents event){
+        path = event.getUrl();   //歌曲路径
+        current = event.getListPosition();    //当前播放歌曲的在mp3Infos的位置
+        msg = event.getMsg();          //播放信息
     }
-
 }

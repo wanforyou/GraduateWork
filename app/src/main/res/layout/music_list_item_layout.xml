@@ -4,8 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:elevation="5dp"
-    android:background="@color/color3"
-    android:layout_height="60dp">
+    android:background="@color/color1"
+android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/music_title"
@@ -14,18 +16,19 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:text="siger"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:textColor="#9f000000"
+        android:textSize="16dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
     <TextView
         android:id="@+id/music_Artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#4fffffff"
+        android:textColor="#6f000000"
+        android:textSize="12dp"
         android:text="artist"
-        android:layout_marginBottom="8dp"
-        android:layout_alignParentBottom="true"
+        android:paddingBottom="2dp"
+        android:layout_below="@+id/music_title"
         android:layout_alignStart="@+id/music_title" />
 
     <ImageView
