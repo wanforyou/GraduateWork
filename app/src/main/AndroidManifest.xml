@@ -87,7 +87,8 @@
             android:name=".activity.MusicSettingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.CircleMenuActivity" />
-        <activity android:name=".activity.VipActivity"></activity>
+        <activity android:name=".activity.VipActivity" />
+        <activity android:name=".activity.JAYZHOUActivity"></activity>
     </application>
 
 </manifest>
