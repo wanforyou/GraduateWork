@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tyut.himusic">
-    <uses-permission android:name="android.permission.INTERNET" />
+<manifest package="com.tyut.himusic"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
 
     <application
@@ -15,39 +16,44 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+          >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.MyInformation"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".activity.MineMyVideo"
-            android:theme="@style/AppTheme.NoActionBar" />
+         />
         <activity
             android:name=".activity.MineMyMusic"
-            android:theme="@style/AppTheme.NoActionBar" />
+           />
         <activity
             android:name=".activity.MineSetting"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".activity.VideoPlayerActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MusicRunningActivity"
-                  android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MusicListActivity"
-                  android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MusicSettingActivity"
-                  android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.CircleMenuActivity"/>
+            />
+        <activity
+            android:name=".activity.MusicRunningActivity"
+            />
+        <activity
+            android:name=".activity.MusicListActivity"
+            />
+        <activity
+            android:name=".activity.MusicSettingActivity"
+          />
+        <activity
+            android:name=".activity.CircleMenuActivity"
+          />
 
     </application>
 

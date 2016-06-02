@@ -10,7 +10,7 @@
         android:layout_height="56dp"
         android:layout_alignParentTop="true"
         android:elevation="12dp"
-        android:background="@color/color4"
+        android:background="@color/color4_blue"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout15">
 

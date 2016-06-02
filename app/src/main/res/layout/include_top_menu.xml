@@ -6,7 +6,7 @@
         android:id="@+id/top_menu"
         android:layout_height="56dp"
         android:elevation="10dp"
-        android:background="@color/color4">
+        android:background="@color/color4_blue">
 
         <ImageView
             android:id="@+id/main_suggestion_searchView"
