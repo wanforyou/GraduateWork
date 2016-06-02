@@ -63,8 +63,6 @@ public class MainSuggestionFragment extends BaseFragment
 
         super.onCreate(savedInstanceState);
         setDefaultFragment();
-        log.d("");
-        goToMusicRunning.setOnClickListener(new MyListener());
     }
 
     protected void initView()
@@ -101,6 +99,15 @@ public class MainSuggestionFragment extends BaseFragment
                 return false;
             }
         });
+        goToMusicRunning.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getContext(), MusicRunningActivity.class));
+            }
+        });
+
     }
 
     protected void initData()
@@ -221,15 +228,6 @@ public class MainSuggestionFragment extends BaseFragment
         }
         ft.commitAllowingStateLoss();
         getChildFragmentManager().executePendingTransactions();
-    }
-    private class MyListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
-            startActivity(new Intent(getContext(), MusicRunningActivity.class));
-        }
-
     }
 }
 

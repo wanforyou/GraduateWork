@@ -69,6 +69,7 @@ public class MediaUtil
                 mp3Infos.add(mp3Info);
             }
         }
+        cursor.close();
         return mp3Infos;
     }
 
