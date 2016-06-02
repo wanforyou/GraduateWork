@@ -106,6 +106,7 @@ public class MusicListActivity extends AppCompatActivity
 
                 EventBus.getDefault().post(
                         new MusicListEvents(listPosition,musicMsg,musicUrl,musicTitle,musicArtist,musicDuration));
+                startActivity(new Intent(getApplicationContext(), MusicRunningActivity.class));
                 MusicListActivity.this.finish();
 
             }

@@ -10,7 +10,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
-              android:background="@color/color4"
+              android:background="@color/color1"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
@@ -68,7 +68,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:elevation="5dp"
+        android:elevation="7dp"
+        android:background="@color/color4"
         android:paddingBottom="7dp"
         android:layout_height="wrap_content">
 
@@ -156,7 +157,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="6dp"
-        android:background="#00000000"
+        android:background="@color/color1"
         ></View>
 
 

@@ -18,7 +18,9 @@ import android.widget.RelativeLayout;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.activity.MineSetting;
+import com.tyut.himusic.activity.MusicListActivity;
 import com.tyut.himusic.activity.MyInformation;
+import com.tyut.himusic.activity.VipActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -94,6 +96,13 @@ public class MainMineFragment extends BaseFragment
             case R.id.my_setting:
                 startActivity(new Intent(getContext(), MineSetting.class));
                 break;
+            case R.id.my_music_text:
+                startActivity(new Intent(getContext(), MusicListActivity.class));
+                break;
+            case R.id.my_vip:
+                startActivity(new Intent(getContext(), VipActivity.class));
+                break;
+
         }
     }
 }
