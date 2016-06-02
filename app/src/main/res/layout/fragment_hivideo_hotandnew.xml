@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
+    <com.tyut.himusic.ui.RevealLayout
         android:id="@+id/hivideo_hotandnew"
         android:background="#ffffff"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:textColor="#8f000000"
 
             />
-    </LinearLayout>
+    </com.tyut.himusic.ui.RevealLayout>
 
     <View
         android:layout_width="match_parent"

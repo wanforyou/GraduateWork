@@ -1,9 +1,12 @@
 package com.tyut.himusic.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,12 +38,16 @@ public class MusicListActivity extends AppCompatActivity
     private String musicTitle;
     private long musicDuration;
     private String musicUrl;
+    private String url;
 
     @Bind(R.id.music_title_list)
     TextView mTitle;
 
     @Bind(R.id.textView5)
     TextView mArtist;
+
+    @Bind(R.id.music_little_pic)
+    Button backToRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,7 +56,14 @@ public class MusicListActivity extends AppCompatActivity
         setContentView(R.layout.activity_music_list);
         ButterKnife.bind(this);
         mMusiclist = (ListView) findViewById(R.id.music_list);
+
         mMusiclist.setOnItemClickListener(new MusicListItemClickListener());
+        backToRunning.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                MusicListActivity.this.finish();
+            }
+
+        });
 
         mp3Infos = MediaUtil.getMp3Infos(MusicListActivity.this);
 
@@ -67,6 +81,7 @@ public class MusicListActivity extends AppCompatActivity
                                 long id)
         {
             listPosition = position; // 获取列表点击的位置
+
             playMusic(listPosition); // 播放音乐
         }
 
@@ -82,9 +97,16 @@ public class MusicListActivity extends AppCompatActivity
                 musicArtist = mp3Info.getArtist();
                 musicDuration = mp3Info.getDuration();
                 musicUrl = mp3Info.getUrl();
-                musicMsg = AppConstant.PlayerMsg.PLAY_MSG;
+                Intent intent = new Intent();
+                intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
+                intent.putExtra("url", musicUrl);
+                intent.putExtra("listPosition", listPosition);
+                intent.putExtra("MSG", AppConstant.PlayerMsg.PRIVIOUS_MSG);
+                startService(intent);
+
                 EventBus.getDefault().post(
                         new MusicListEvents(listPosition,musicMsg,musicUrl,musicTitle,musicArtist,musicDuration));
+                MusicListActivity.this.finish();
 
             }
         }
@@ -97,3 +119,7 @@ public class MusicListActivity extends AppCompatActivity
     }
 
 }
+
+
+
+

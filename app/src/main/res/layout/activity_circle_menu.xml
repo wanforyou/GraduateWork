@@ -7,41 +7,42 @@
 
 
     <RelativeLayout
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="26dp">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView3"
-            android:src="@drawable/ic_album_black_48dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true">
+
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView4"
             android:src="@drawable/ic_album_grey600_36dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignTop="@+id/imageView5"
+            android:layout_alignStart="@+id/imageView5" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView5"
             android:src="@drawable/ic_album_grey600_36dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignTop="@+id/imageView6"
+            android:layout_alignStart="@+id/imageView6" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView6"
             android:src="@drawable/ic_album_grey600_36dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_alignStart="@+id/imageView3" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:src="@drawable/ic_album_black_48dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

@@ -118,6 +118,8 @@
         android:layout_height="60dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="10dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="16dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout2">
@@ -127,7 +129,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="44dp"
             android:src="@drawable/ic_thumb_up_white_24dp"
              />
         <ImageView
@@ -135,8 +136,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="5dp"
             android:src="@drawable/ic_loop_white_24dp"
             />
         <ImageView
@@ -144,8 +143,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:src="@drawable/ic_inbox_white_24dp"
             />
         <ImageView
@@ -153,8 +150,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="35dp"
             android:src="@drawable/ic_send_white_24dp"
             />
         <ImageView
@@ -163,7 +158,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginRight="40dp"
             />
     </LinearLayout>
 

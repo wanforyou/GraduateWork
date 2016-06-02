@@ -28,7 +28,7 @@
         android:layout_height="134dp"/>
 
 
-    <LinearLayout
+    <com.tyut.himusic.ui.RevealLayout
         android:layout_marginTop="4dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"
@@ -82,7 +82,7 @@
             android:elevation="14dp"
             />
 
-    </LinearLayout>
+    </com.tyut.himusic.ui.RevealLayout>
 
 
 

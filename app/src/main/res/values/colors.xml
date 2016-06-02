@@ -12,4 +12,5 @@
     <color name="color4">#0288d1</color>
     <color name="color5">#0277bd</color>
     <color name="color6">#01579b</color>
+    <color name="reveal_color">#1b000000</color>
 </resources>

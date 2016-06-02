@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<com.tyut.himusic.ui.RevealLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:elevation="14dp"
+    android:elevation="20dp"
     android:background="#ffffff"
     android:orientation="horizontal"
     android:layout_alignParentBottom="true">
@@ -84,5 +84,5 @@
         android:textColor="#9f000000"
         android:textSize="8dp"
         />
-</LinearLayout>
+</com.tyut.himusic.ui.RevealLayout>
 

@@ -13,7 +13,7 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
+    <com.tyut.himusic.ui.RevealLayout
         android:id="@+id/hivideo_hotandnew"
         android:background="#ffffff"
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:textColor="#000000"
 
             />
-    </LinearLayout>
+    </com.tyut.himusic.ui.RevealLayout>
 
     <View
         android:layout_width="match_parent"

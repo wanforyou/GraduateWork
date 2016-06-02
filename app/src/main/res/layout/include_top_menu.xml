@@ -26,10 +26,9 @@
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
             android:paddingRight="13dp"
-            android:layout_alignParentTop="true"
             android:src="@drawable/ic_album_black_48dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
+            android:layout_alignTop="@+id/main_suggestion_searchView"
+            android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
