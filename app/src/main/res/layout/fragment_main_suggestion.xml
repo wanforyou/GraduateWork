@@ -12,8 +12,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-   <include android:id="@+id/top_menu_suggestion"
-       layout="@layout/include_top_menu"></include>
+    <include android:id="@+id/top_menu_suggestion"
+             layout="@layout/include_top_menu"/>
 
 
     <com.tyut.himusic.view.AutoScrollViewPager

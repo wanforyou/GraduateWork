@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color1"
+    android:background="@color/color1_blue"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.tyut.himusic.activity.VipActivity">
     <RelativeLayout
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:elevation="13dp"
-        android:background="@color/color4"
+        android:background="@color/color4_blue"
         >
 
         <com.tyut.himusic.view.CircleImageView
@@ -60,7 +60,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-        android:background="@color/color3"
+        android:background="@color/color3_blue"
         android:layout_height="wrap_content"
         android:elevation="8dp"
         android:layout_below="@+id/my_imformation_more"
@@ -95,7 +95,7 @@
         android:layout_height="160dp"
         android:orientation="horizontal"
         android:elevation="7dp"
-        android:background="@color/color3"
+        android:background="@color/color3_blue"
 android:id="@+id/vip_more"
         android:layout_below="@+id/relativeLayout16"
         android:layout_alignParentStart="true">
@@ -143,7 +143,7 @@ android:id="@+id/vip_more"
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-        android:background="@color/color3"
+        android:background="@color/color3_blue"
         android:elevation="7dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/vip_more"
@@ -173,7 +173,7 @@ android:id="@+id/vip_more"
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/color3"
+        android:background="@color/color3_blue"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view"
         android:elevation="7dp"
@@ -214,7 +214,7 @@ android:id="@+id/vip_more"
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/color3"
+        android:background="@color/color3_blue"
         android:layout_height="wrap_content"
         android:elevation="7dp"
         android:layout_below="@+id/view2"

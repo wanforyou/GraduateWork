@@ -1,94 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tyut.himusic">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 二维码扫描需要的权限 -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- 震动权限 -->
-    <uses-permission android:name="android.permission.CAMERA" />
+<manifest package="com.tyut.himusic"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-feature android:name="android.hardware.camera" />
-    <!-- 使用照相机权限 -->
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-    <!-- 自动聚焦权限 -->
-
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!-- 微信权限开始 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
 
-    <!-- 微信权限结束 -->
-    <!-- 个推SDK权限配置开始 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <!-- ibeancon 需要蓝牙权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <!-- 支持个推3.0 电子围栏功能 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 浮动通知权限 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <!-- 自定义权限 -->
     <application
         android:name=".activity.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+          >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.MyInformation"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".activity.MineMyVideo"
-            android:theme="@style/AppTheme.NoActionBar" />
+         />
         <activity
             android:name=".activity.MineMyMusic"
-            android:theme="@style/AppTheme.NoActionBar" />
+           />
         <activity
             android:name=".activity.MineSetting"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
-            android:name=".activity.VideoPlayerActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".activity.VideoPlayerActivity"/>
         <activity
             android:name=".activity.MusicRunningActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".activity.MusicListActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".activity.MusicSettingActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.CircleMenuActivity" />
+          />
+        <activity
+            android:name=".activity.CircleMenuActivity"
+          />
         <activity android:name=".activity.VipActivity" />
-        <activity android:name=".activity.JAYZHOUActivity"></activity>
+        <activity android:name=".activity.JAYZHOUActivity"/>
+<service android:name=".service.PlayerService"
+         >
+    <intent-filter>
+        <action android:name="com.tyut.himusic.media.MUSIC_SERVICE"/>
+    </intent-filter>
+</service>
     </application>
 
 </manifest>

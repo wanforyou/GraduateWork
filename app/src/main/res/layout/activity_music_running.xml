@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:background="@color/color3"
+    android:background="@color/color3_blue"
     tools:context="com.tyut.himusic.activity.MusicRunningActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:background="@color/color4"
+        android:background="@color/color4_blue"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout13">

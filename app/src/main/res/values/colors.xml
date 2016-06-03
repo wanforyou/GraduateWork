@@ -6,11 +6,12 @@
     <color name="bottom_green">#66cc66</color>
     <color name="color_text">#ffffff</color>
     <color name="text_color_bottom_grey">#9f000000</color>
-    <color name="color1">#29b6f6</color>
-    <color name="color2">#03a9f4</color>
-    <color name="color3">#039be5</color>
-    <color name="color4">#0288d1</color>
-    <color name="color5">#0277bd</color>
-    <color name="color6">#01579b</color>
+    <color name="color1_blue">#29b6f6</color>
+    <color name="color2_blue">#03a9f4</color>
+    <color name="color3_blue">#039be5</color>
+    <color name="color4_blue">#0288d1</color>
+    <color name="color5_blue">#0277bd</color>
+    <color name="color6_blue">#01579b</color>
+    <color name="white">#ffffff</color>
     <color name="reveal_color">#1b000000</color>
 </resources>

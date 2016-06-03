@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.tyut.himusic.R;
 import com.tyut.himusic.util.MyLog;
 
 import java.lang.reflect.Field;

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Recruit Andriod
+  ~ Created by lqc
+  ~ Copyright © 2016年 issuebang.com. All rights reserved.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_text"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_share_divider"
+        style="@style/divider"/>
+
+    <TextView
+        android:id="@+id/view_share_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_share_divider"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="分享到："
+        android:textColor="#666666"
+        android:textSize="14dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/view_share_title"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/view_share_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/view_share_wechat_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/wechat"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/view_share_wechat_img"
+                android:gravity="center"
+                android:text="微信好友"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/view_share_friend_circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/view_share_friend_circle_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/friend_circle"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/view_share_friend_circle_img"
+                android:gravity="center"
+                android:text="朋友圈"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/view_share_qq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/view_share_qq_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/friend_circle"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/view_share_qq_img"
+                android:gravity="center"
+                android:text="qq"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/view_share_qzone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/view_share_qzone_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/friend_circle"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/view_share_qzone_img"
+                android:gravity="center"
+                android:text="qzone"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/view_share_weibo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/view_share_weibo_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/friend_circle"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/view_share_weibo_img"
+                android:gravity="center"
+                android:text="微博"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

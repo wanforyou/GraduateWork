@@ -65,7 +65,6 @@ public class MainSuggestionFragment extends BaseFragment
     {
 
         super.onCreate(savedInstanceState);
-        setDefaultFragment();
     }
 
     protected void initView()
@@ -131,6 +130,7 @@ public class MainSuggestionFragment extends BaseFragment
         View view = inflater.inflate(R.layout.fragment_main_suggestion, container, false);
         ButterKnife.bind(this, view);
         initView();
+        setDefaultFragment();
         return view;
 
     }
@@ -241,4 +241,3 @@ public class MainSuggestionFragment extends BaseFragment
         getChildFragmentManager().executePendingTransactions();
     }
 }
-

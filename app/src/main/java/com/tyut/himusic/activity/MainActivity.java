@@ -65,6 +65,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 
     private void setDefaultFragment()
     {
+        suggestion.setTextColor(getColor(R.color.color_text));
+        suggestion.setBackground(getDrawable(R.drawable.bottommenu7dp));
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
         {
