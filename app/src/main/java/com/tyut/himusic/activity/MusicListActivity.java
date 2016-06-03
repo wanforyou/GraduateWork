@@ -97,17 +97,16 @@ public class MusicListActivity extends AppCompatActivity
                 musicArtist = mp3Info.getArtist();
                 musicDuration = mp3Info.getDuration();
                 musicUrl = mp3Info.getUrl();
+                musicMsg =AppConstant.PlayerMsg.PRIVIOUS_MSG;
                 Intent intent = new Intent();
                 intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                 intent.putExtra("url", musicUrl);
                 intent.putExtra("listPosition", listPosition);
                 intent.putExtra("MSG", AppConstant.PlayerMsg.PRIVIOUS_MSG);
+                intent.setPackage(getPackageName());
                 startService(intent);
-
                 EventBus.getDefault().post(
                         new MusicListEvents(listPosition,musicMsg,musicUrl,musicTitle,musicArtist,musicDuration));
-                startActivity(new Intent(getApplicationContext(), MusicRunningActivity.class));
-                MusicListActivity.this.finish();
 
             }
         }
