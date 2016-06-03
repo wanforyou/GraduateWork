@@ -39,6 +39,7 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
 
     private MainHimusicManAdapter adapter;
     private List<MainHimusicListData> datasman;
+    private List<MainHimusicListData> datasman2;
 
     private HiMusicMainFragment hiMusicMainFragment;
     private HiMusicManFragment hiMusicManFragment;
@@ -56,6 +57,7 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
 
         super.onCreate(savedInstanceState);
         datasman = new ArrayList<MainHimusicListData>();
+        datasman2 = new ArrayList<MainHimusicListData>();
         datasman.add(new MainHimusicListData("热门",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
@@ -92,6 +94,37 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman2.add(new MainHimusicListData("原创歌手",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman2.add(new MainHimusicListData("华语男歌手",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "周杰伦",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman2.add(new MainHimusicListData("华语女歌手",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman2.add(new MainHimusicListData("日韩潮流",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+        datasman2.add(new MainHimusicListData("英美飚榜",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+
         mListViewHeader = getActivity().getLayoutInflater().inflate(R.layout.main_himusic_frag_headview, null);
     }
 
@@ -221,6 +254,8 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
                 fraghimusicMan.setTextColor(getContext().getColor(R.color.color_text));
                 fraghimusicMan.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 fraghimusicMain.setElevation(2);
+                adapter.setDatas(datasman2);
+                adapter.notifyDataSetChanged();
 
                 if (hiMusicManFragment != null && hiMusicManFragment.isAdded())
                 {

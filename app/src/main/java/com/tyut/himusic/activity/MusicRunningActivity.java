@@ -168,6 +168,7 @@ public class MusicRunningActivity extends AppCompatActivity {
             case R.id.play_music :
                 if (isFirstTime) {
                     isPause = false;
+                    isFirstTime = false;
                     musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
                     startAnimation(musicPic);
 

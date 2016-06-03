@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.CircleMenuActivity;
 import com.tyut.himusic.activity.MusicRunningActivity;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
@@ -44,6 +45,8 @@ public class MainSuggestionFragment extends BaseFragment
     @Bind(R.id.main_top_music_running)
     ImageView goToMusicRunning;
 
+    @Bind(R.id.main_suggestion_searchView)
+    ImageView goTosearch;
 
     private MainTodayhotFragment mainTodayhotFragment;
     private MainMonthhotFragment mainMonthhotFragment;
@@ -104,6 +107,14 @@ public class MainSuggestionFragment extends BaseFragment
             public void onClick(View v)
             {
                 startActivity(new Intent(getContext(), MusicRunningActivity.class));
+            }
+        });
+        goTosearch.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getContext(), CircleMenuActivity.class));
             }
         });
 
@@ -180,6 +191,7 @@ public class MainSuggestionFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.frag_main_suggestion_today_hot:
+
                 today.setSelected(true);
                 today.setElevation(3);
                 if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
@@ -194,6 +206,7 @@ public class MainSuggestionFragment extends BaseFragment
                 break;
             case R.id.frag_main_suggestion_week_hot:
                 week.setSelected(true);
+
                 week.setElevation(3);
                 if (mainWeekhotFragment != null && mainWeekhotFragment.isAdded())
                 {
@@ -208,6 +221,7 @@ public class MainSuggestionFragment extends BaseFragment
                 break;
             case R.id.frag_main_suggestion_month_hot:
                 month.setSelected(true);
+
                 month.setElevation(3);
                 if (mainMonthhotFragment != null && mainMonthhotFragment.isAdded())
                 {

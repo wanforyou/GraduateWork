@@ -11,7 +11,7 @@
         android:layout_height="132dp"/>
 
 
-    <LinearLayout
+    <com.tyut.himusic.ui.RevealLayout
         android:layout_width="match_parent"
         android:layout_height="37dp"
         android:layout_marginTop="4dp"
@@ -40,7 +40,7 @@
             android:textColor="#5f000000"
             android:textSize="16dp"
             />
-    </LinearLayout>
+    </com.tyut.himusic.ui.RevealLayout>
 
 
 

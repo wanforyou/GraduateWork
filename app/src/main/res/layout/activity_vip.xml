@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.tyut.himusic.activity.VipActivity">
+    <RelativeLayout
+        android:id="@+id/my_imformation_more"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="13dp"
+        android:background="@color/color4"
+        >
+
+        <com.tyut.himusic.view.CircleImageView
+
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/my_head_img"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_album_black_48dp"
+            app:border_color="#ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My name"
+            android:paddingTop="10dp"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/my_my_name"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/my_head_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前未订购"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/my_my_name"
+            android:layout_toEndOf="@+id/my_head_img" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+
+            android:textSize="10dp"
+            android:textColor="#ff0033"
+            android:text="立即订购"
+            android:background="@drawable/vipbuttonshape"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/color3"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_below="@+id/my_imformation_more"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看会员特权"
+            android:id="@+id/textView4"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多特权即将推出"
+            android:textColor="#3f000000"
+            android:textSize="10dp"
+            android:id="@+id/textView6"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:elevation="7dp"
+        android:background="@color/color3"
+android:id="@+id/vip_more"
+        android:layout_below="@+id/relativeLayout16"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:id="@+id/imageView7"
+            android:background="@drawable/ic_album_white_48dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/imageView8"
+            android:layout_marginEnd="51dp" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_album_white_48dp"
+            android:id="@+id/imageView8"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="51dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Hi会员"
+            android:id="@+id/textView7"
+            android:layout_alignTop="@+id/textView8"
+            android:layout_alignEnd="@+id/imageView7"
+            android:layout_marginEnd="38dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Hi超级会员"
+            android:id="@+id/textView8"
+            android:layout_below="@+id/imageView8"
+            android:layout_alignEnd="@+id/imageView8"
+            android:layout_marginEnd="24dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/color3"
+        android:elevation="7dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vip_more"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout17">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="赠送好友"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="46dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView9"
+            android:background="@drawable/ic_equalizer_white_24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/color3"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:elevation="7dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout18">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用兑换码"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="46dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_equalizer_white_24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" /></RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3f000000"
+        android:layout_below="@+id/relativeLayout18"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view2"></View>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3f000000"
+        android:layout_below="@+id/relativeLayout17"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/color3"
+        android:layout_height="wrap_content"
+        android:elevation="7dp"
+        android:layout_below="@+id/view2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已购买"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="46dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_equalizer_white_24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="会员常见问题"
+        android:id="@+id/textView9"
+        android:textColor="#3f000000"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:text="残忍退出"
+        android:elevation="5dp"
+        android:id="@+id/button3"
+        android:background="@drawable/shape"
+        android:layout_below="@+id/relativeLayout19"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp" />
+
+</RelativeLayout>

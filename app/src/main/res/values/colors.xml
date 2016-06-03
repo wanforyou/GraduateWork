@@ -13,4 +13,5 @@
     <color name="color5_blue">#0277bd</color>
     <color name="color6_blue">#01579b</color>
     <color name="white">#ffffff</color>
+    <color name="reveal_color">#1b000000</color>
 </resources>

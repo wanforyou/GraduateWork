@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest package="com.tyut.himusic"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -40,8 +41,7 @@
             android:name=".activity.MineSetting"
             />
         <activity
-            android:name=".activity.VideoPlayerActivity"
-            />
+            android:name=".activity.VideoPlayerActivity"/>
         <activity
             android:name=".activity.MusicRunningActivity"
             />
@@ -54,6 +54,8 @@
         <activity
             android:name=".activity.CircleMenuActivity"
           />
+        <activity android:name=".activity.VipActivity" />
+        <activity android:name=".activity.JAYZHOUActivity"/>
 
     </application>
 

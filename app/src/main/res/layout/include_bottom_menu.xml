@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<com.tyut.himusic.ui.RevealLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         android:gravity="center"
         android:paddingTop="9dp"
         android:text="亦可赛艇"
-        android:textColor="#9f000000"
+        android:textColor="@drawable/selector_btn_bottom"
         android:textSize="8dp"
 
 
@@ -88,5 +88,5 @@
         android:textColor="@drawable/selector_btn_bottom"
         android:textSize="8dp"
         />
-</LinearLayout>
+</com.tyut.himusic.ui.RevealLayout>
 
