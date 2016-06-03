@@ -101,13 +101,13 @@ public class MusicListActivity extends AppCompatActivity
                 musicArtist = mp3Info.getArtist();
                 musicDuration = mp3Info.getDuration();
                 musicUrl = mp3Info.getUrl();
-                musicMsg =AppConstant.PlayerMsg.PRIVIOUS_MSG;
+                musicMsg =AppConstant.PlayerMsg.PLAY_MSG;
                 Intent intent = new Intent();
                 intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                 intent.putExtra("url", musicUrl);
                 intent.setPackage(getPackageName());
                 intent.putExtra("listPosition", listPosition);
-                intent.putExtra("MSG", AppConstant.PlayerMsg.PRIVIOUS_MSG);
+                intent.putExtra("MSG", AppConstant.PlayerMsg.PLAY_MSG);
                 intent.setPackage(getPackageName());
                 startService(intent);
                 EventBus.getDefault().post(
@@ -116,25 +116,7 @@ public class MusicListActivity extends AppCompatActivity
             }
         }
     }
-    public static Intent getExplicitIntent(Context context, Intent implicitIntent) {
-        // Retrieve all services that can match the given intent
-        PackageManager pm = context.getPackageManager();
-        List<ResolveInfo> resolveInfo = pm.queryIntentServices(implicitIntent, 0);
-        // Make sure only one match was found
-        if (resolveInfo == null || resolveInfo.size() != 1) {
-            return null;
-        }
-        // Get component info and create ComponentName
-        ResolveInfo serviceInfo = resolveInfo.get(0);
-        String packageName = serviceInfo.serviceInfo.packageName;
-        String className = serviceInfo.serviceInfo.name;
-        ComponentName component = new ComponentName(packageName, className);
-        // Create a new intent. Use the old one for extras and such reuse
-        Intent explicitIntent = new Intent(implicitIntent);
-        // Set the component to be explicit
-        explicitIntent.setComponent(component);
-        return explicitIntent;
-    }
+
     protected void onDestroy()
     {
         super.onDestroy();

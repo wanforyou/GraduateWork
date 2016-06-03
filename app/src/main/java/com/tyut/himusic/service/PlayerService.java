@@ -2,8 +2,6 @@ package com.tyut.himusic.service;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -133,9 +131,9 @@ public class PlayerService extends Service
     @Override
     public void onStart(Intent intent, int startId)
     {
-        path = intent.getStringExtra("url");		//歌曲路径
-        current = intent.getIntExtra("listPosition", -1);	//当前播放歌曲的在mp3Infos的位置
-        msg = intent.getIntExtra("MSG", 0);			//播放信息
+        path = intent.getStringExtra("url");        //歌曲路径
+        current = intent.getIntExtra("listPosition", -1);    //当前播放歌曲的在mp3Infos的位置
+        msg = intent.getIntExtra("MSG", 0);            //播放信息
         if (msg == AppConstant.PlayerMsg.PLAY_MSG)
         {    //直接播放音乐
             play(0);
@@ -178,24 +176,28 @@ public class PlayerService extends Service
 
 //     实现一个OnPrepareLister接口,当音乐准备好的时候开始播放
 
-    private final class PreparedListener implements OnPreparedListener {
+    private final class PreparedListener implements OnPreparedListener
+    {
         private int currentTime;
 
-        public PreparedListener(int currentTime) {
+        public PreparedListener(int currentTime)
+        {
             this.currentTime = currentTime;
         }
 
         @Override
-        public void onPrepared(MediaPlayer mp) {
+        public void onPrepared(MediaPlayer mp)
+        {
             mediaPlayer.start(); // 开始播放
-            if (currentTime > 0) { // 如果音乐不是从头播放
+            if (currentTime > 0)
+            { // 如果音乐不是从头播放
                 mediaPlayer.seekTo(currentTime);
             }
             duration = mediaPlayer.getDuration();
 //                  通过Eventsbus来传递歌曲的总长度
 
             EventBus.getDefault().post(
-                    new MusicEvents(MUSIC_DURATION,duration));
+                    new MusicEvents(MUSIC_DURATION, duration));
         }
     }
 
@@ -289,25 +291,27 @@ public class PlayerService extends Service
     }
 
 
+    public void onEventMainThread(MusicControlEvents event)
+    {
+        int control = event.getControl();
+        switch (control)
+        {
+            case 1:
+                status = 1; // 1表示随机播放
+                break;
+            case 2:
+                status = 2;    //2表示列表播放
+                break;
+            case 3:
+                status = 3;    //3表示单曲循环
+                break;
 
-    public void onEventMainThread(MusicControlEvents event) {
-           int control = event.getControl();
-            switch (control)
-            {
-                case 1:
-                    status = 1; // 1表示随机播放
-                    break;
-                case 2:
-                    status = 2;    //2表示列表播放
-                    break;
-                case 3:
-                    status = 3;    //3表示单曲循环
-                    break;
 
-
-            }
         }
-    public void onEventMainThread(MusicListEvents event){
+    }
+
+    public void onEventMainThread(MusicListEvents event)
+    {
         path = event.getUrl();   //歌曲路径
         current = event.getListPosition();    //当前播放歌曲的在mp3Infos的位置
         msg = event.getMsg();          //播放信息
