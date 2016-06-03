@@ -104,6 +104,7 @@ public class MusicListActivity extends AppCompatActivity
                 Intent intent = new Intent();
                 intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                 intent.putExtra("url", musicUrl);
+                intent.setPackage(getPackageName());
                 intent.putExtra("listPosition", listPosition);
                 intent.putExtra("MSG", AppConstant.PlayerMsg.PRIVIOUS_MSG);
                 startService(intent);

@@ -56,7 +56,12 @@
           />
         <activity android:name=".activity.VipActivity" />
         <activity android:name=".activity.JAYZHOUActivity"/>
-
+<service android:name=".service.PlayerService"
+         >
+    <intent-filter>
+        <action android:name="com.tyut.himusic.media.MUSIC_SERVICE"/>
+    </intent-filter>
+</service>
     </application>
 
 </manifest>
