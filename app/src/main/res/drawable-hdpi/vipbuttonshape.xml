@@ -9,7 +9,7 @@
     <!-- 主体背景颜色值 -->
     <item  android:bottom="1dp" android:right="1dp" android:top="1dp" android:left="1dp">
         <shape>
-            <solid android:color="@color/color4"  />
+            <solid android:color="@color/color4_blue"  />
             <padding
                 android:left="2dp"
                 android:top="2dp"

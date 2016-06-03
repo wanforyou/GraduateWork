@@ -65,7 +65,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 
     private void setDefaultFragment()
     {
-        suggestion.setSelected(true);
+        suggestion.setTextColor(getColor(R.color.color_text));
+        suggestion.setBackground(getDrawable(R.drawable.bottommenu7dp));
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
         {
@@ -84,11 +85,16 @@ public class MainActivity extends BashActivity implements View.OnClickListener
     @OnClick({R.id.include_bottom_ing, R.id.include_bottom_himusic, R.id.include_bottom_suggestion, R.id.include_bottom_hivideo, R.id.include_bottom_mine})
     public void onClick(View view)
     {
-        ing.setSelected(false);
-        himusic.setSelected(false);
-        hivideo.setSelected(false);
-        suggestion.setSelected(false);
-        mine.setSelected(false);
+        ing.setTextColor(getColor(R.color.text_color_bottom_grey));
+        ing.setBackgroundColor(getColor(R.color.color_text));
+        himusic.setTextColor(getColor(R.color.text_color_bottom_grey));
+        himusic.setBackgroundColor(getColor(R.color.color_text));
+        hivideo.setTextColor(getColor(R.color.text_color_bottom_grey));
+        hivideo.setBackgroundColor(getColor(R.color.color_text));
+        suggestion.setTextColor(getColor(R.color.text_color_bottom_grey));
+        suggestion.setBackgroundColor(getColor(R.color.color_text));
+        mine.setTextColor(getColor(R.color.text_color_bottom_grey));
+        mine.setBackgroundColor(getColor(R.color.color_text));
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mainSuggestionFragment != null)
@@ -114,7 +120,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
         switch (view.getId())
         {
             case R.id.include_bottom_ing:
-                ing.setSelected(true);
+                ing.setTextColor(getColor(R.color.color_text));
+                ing.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainIngFragment != null && mainIngFragment.isAdded())
                 {
                     ft.show(mainIngFragment);
@@ -126,7 +133,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
 
                 break;
             case R.id.include_bottom_himusic:
-                himusic.setSelected(true);
+                himusic.setTextColor(getColor(R.color.color_text));
+                himusic.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainHiMusicFragment != null && mainHiMusicFragment.isAdded())
                 {
                     ft.show(mainHiMusicFragment);
@@ -137,7 +145,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.include_bottom_suggestion:
-                suggestion.setSelected(true);
+                suggestion.setTextColor(getColor(R.color.color_text));
+                suggestion.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainSuggestionFragment != null && mainSuggestionFragment.isAdded())
                 {
                     ft.show(mainSuggestionFragment);
@@ -148,7 +157,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.include_bottom_hivideo:
-                hivideo.setSelected(true);
+                hivideo.setTextColor(getColor(R.color.color_text));
+                hivideo.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainHiVideoFragment != null && mainHiVideoFragment.isAdded())
                 {
                     ft.show(mainHiVideoFragment);
@@ -159,7 +169,8 @@ public class MainActivity extends BashActivity implements View.OnClickListener
                 }
                 break;
             case R.id.include_bottom_mine:
-                mine.setSelected(true);
+                mine.setTextColor(getColor(R.color.color_text));
+                mine.setBackground(getDrawable(R.drawable.bottommenu7dp));
                 if (mainMineFragment != null && mainMineFragment.isAdded())
                 {
                     ft.show(mainMineFragment);

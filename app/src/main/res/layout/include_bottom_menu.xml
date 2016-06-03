@@ -3,24 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
     android:layout_weight="1"
+    android:elevation="20dp"
     android:background="#ffffff"
-    android:elevation="14dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true">
 
     <Button
         android:id="@+id/include_bottom_ing"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="@drawable/selector_btn_bottom"
-
-        android:drawableTop="@drawable/belt"
+        android:background="#ffffff"
         android:gravity="center"
-        android:paddingTop="9dp"
         android:text="亦可赛艇"
-        android:textColor="@drawable/selector_btn_bottom"
+        android:paddingTop="9dp"
+        android:drawableTop="@drawable/belt"
+        android:textColor="#9f000000"
         android:textSize="8dp"
 
 
@@ -32,47 +31,44 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="@drawable/selector_btn_bottom"
-
-        android:drawableTop="@drawable/video"
+        android:background="@color/color_text"
         android:gravity="center"
         android:paddingTop="9dp"
         android:text="Hi视"
-        android:textColor="@drawable/selector_btn_bottom"
+        android:drawableTop="@drawable/video"
+        android:textColor="@color/text_color_bottom_grey"
         android:textSize="8dp"
         />
 
     <Button
         android:id="@+id/include_bottom_suggestion"
         android:layout_width="0dp"
+        android:elevation="7dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="@drawable/selector_btn_bottom"
-        android:drawableTop="@drawable/glasses"
-
-        android:elevation="7dp"
+        android:background="@drawable/bottommenu7dp"
         android:gravity="center"
-        android:paddingTop="9dp"
         android:text="因吹丝挺"
-        android:textColor="@drawable/selector_btn_bottom"
+        android:textColor="#ffffff"
         android:textSize="8dp"
+        android:paddingTop="9dp"
+        android:drawableTop="@drawable/glasses"
         />
-
     <Button
         android:id="@+id/include_bottom_himusic"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="@drawable/selector_btn_bottom"
-
-        android:drawableTop="@drawable/music"
+        android:background="#ffffff"
         android:gravity="center"
         android:paddingTop="9dp"
         android:text="Hi乐"
-        android:textColor="@drawable/selector_btn_bottom"
+        android:drawableTop="@drawable/music"
+        android:textColor="#9f000000"
         android:textSize="8dp"
 
         />
+
 
 
     <Button
@@ -80,12 +76,12 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:background="@drawable/selector_btn_bottom"
-        android:drawableTop="@drawable/frog"
+        android:background="#ffffff"
         android:gravity="center"
         android:paddingTop="9dp"
         android:text="我的"
-        android:textColor="@drawable/selector_btn_bottom"
+        android:drawableTop="@drawable/frog"
+        android:textColor="#9f000000"
         android:textSize="8dp"
         />
 </com.tyut.himusic.ui.RevealLayout>

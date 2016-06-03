@@ -127,7 +127,6 @@ public class MainSuggestionFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-
         View view = inflater.inflate(R.layout.fragment_main_suggestion, container, false);
         ButterKnife.bind(this, view);
         initView();
@@ -139,7 +138,6 @@ public class MainSuggestionFragment extends BaseFragment
 
     private void setDefaultFragment()
     {
-        today.setSelected(true);
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
         {
@@ -166,11 +164,14 @@ public class MainSuggestionFragment extends BaseFragment
     @OnClick({R.id.frag_main_suggestion_today_hot, R.id.frag_main_suggestion_week_hot, R.id.frag_main_suggestion_month_hot})
     public void onClick(View view)
     {
-        today.setSelected(false);
+        today.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        today.setBackgroundColor(getContext().getColor(R.color.color_text));
         today.setElevation(10);
-        week.setSelected(false);
+        week.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        week.setBackgroundColor(getContext().getColor(R.color.color_text));
         week.setElevation(10);
-        month.setSelected(false);
+        month.setTextColor(getContext().getColor(R.color.text_color_bottom_grey));
+        month.setBackgroundColor(getContext().getColor(R.color.color_text));
         month.setElevation(10);
 
 
@@ -191,8 +192,8 @@ public class MainSuggestionFragment extends BaseFragment
         switch (view.getId())
         {
             case R.id.frag_main_suggestion_today_hot:
-
-                today.setSelected(true);
+                today.setTextColor(getContext().getColor(R.color.color_text));
+                today.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 today.setElevation(3);
                 if (mainTodayhotFragment != null && mainTodayhotFragment.isAdded())
                 {
@@ -205,8 +206,8 @@ public class MainSuggestionFragment extends BaseFragment
                 }
                 break;
             case R.id.frag_main_suggestion_week_hot:
-                week.setSelected(true);
-
+                week.setTextColor(getContext().getColor(R.color.color_text));
+                week.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 week.setElevation(3);
                 if (mainWeekhotFragment != null && mainWeekhotFragment.isAdded())
                 {
@@ -220,8 +221,8 @@ public class MainSuggestionFragment extends BaseFragment
 
                 break;
             case R.id.frag_main_suggestion_month_hot:
-                month.setSelected(true);
-
+                month.setTextColor(getContext().getColor(R.color.color_text));
+                month.setBackground(getContext().getDrawable(R.drawable.bottom7dp));
                 month.setElevation(3);
                 if (mainMonthhotFragment != null && mainMonthhotFragment.isAdded())
                 {
@@ -240,4 +241,3 @@ public class MainSuggestionFragment extends BaseFragment
         getChildFragmentManager().executePendingTransactions();
     }
 }
-

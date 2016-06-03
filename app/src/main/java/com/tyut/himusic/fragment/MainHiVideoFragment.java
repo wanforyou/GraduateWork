@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.activity.VideoPlayerActivity;
@@ -43,6 +44,8 @@ public class MainHiVideoFragment extends BaseFragment
     Button hiVideoMan;
     @Bind(R.id.frag_main_hivideo_banner)
     AutoScrollViewPager viewPagerHivideo;
+    @Bind(R.id.main_top_music_running)
+    ImageView goToMusicRunning;
     private HiVideoMainFragment hiVideoMainFragment;
     private HiVideoMvFragment hiVideoMvFragment;
     private HiVideoSeceneFragment hiVideoSeceneFragment;
@@ -69,6 +72,7 @@ public class MainHiVideoFragment extends BaseFragment
     {
         View view = inflater.inflate(R.layout.fragment_main_hi_video, container, false);
         ButterKnife.bind(this, view);
+        initView();
         return view;
     }
 
@@ -123,7 +127,14 @@ public class MainHiVideoFragment extends BaseFragment
                 return false;
             }
         });
-
+        goToMusicRunning.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getContext(), VideoPlayerActivity.class));
+            }
+        });
     }
 
     protected void initData()
@@ -230,8 +241,6 @@ public class MainHiVideoFragment extends BaseFragment
                     hiVideoManFragment = hiVideoManFragment.getInstance();
                     ft.add(R.id.frag_hivideo, hiVideoManFragment);
                 }
-                startActivity(new Intent(getContext(), VideoPlayerActivity.class));
-
                 break;
 
         }
