@@ -3,13 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/color_text"
+android:elevation="13dp"
+    android:background="@color/color3_blue"
     >
 
     <ImageView
         android:id="@+id/title_bar_back"
-        android:layout_width="100dp"
-        android:layout_height="49dp"/>
+        android:src="@drawable/ic_chevron_left_white_36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/title_bar_name"
@@ -21,9 +23,12 @@
 
     <ImageView
         android:id="@+id/title_bar_more"
-        android:layout_width="100dp"
-        android:layout_height="49dp"
-        android:layout_alignParentRight="true"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:src="@drawable/ic_pause_circle_fill_grey600_36dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
 
     <View
         style="@style/divider"

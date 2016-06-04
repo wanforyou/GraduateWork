@@ -108,7 +108,6 @@ public class MusicListActivity extends AppCompatActivity
                 intent.setPackage(getPackageName());
                 intent.putExtra("listPosition", listPosition);
                 intent.putExtra("MSG", AppConstant.PlayerMsg.PLAY_MSG);
-                intent.setPackage(getPackageName());
                 startService(intent);
                 EventBus.getDefault().post(
                         new MusicListEvents(listPosition,musicMsg,musicUrl,musicTitle,musicArtist,musicDuration));

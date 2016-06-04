@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/color2_blue"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="1">
 
-    <include layout="@layout/title_bar"/>
+    <include layout="@layout/title_bar"
+        />
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="200dp">
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,13 +22,242 @@
         android:id="@+id/danmakuView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/act_video_player_videoview"
         app:start_Y_offset="0.2"
         app:end_Y_offset="0.8"
         app:max_row="4"
         app:max_running_per_row="2"
         app:pick_interval="1000"
-        app:show_debug="false" />
+        app:show_debug="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
+
+    <com.tyut.himusic.ui.RevealLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:elevation="8dp"
+        android:background="#5f000000"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭弹幕"
+            android:paddingLeft="30dp"
+            android:background="@color/color_text"
+            android:drawableLeft="@drawable/ic_message_grey600_24dp"
+
+            android:id="@+id/danmu" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="超清"
+            android:paddingLeft="30dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/color_text"
+            android:drawableLeft="@drawable/ic_stay_current_landscape_grey600_36dp"
+            android:layout_weight="1"
+            android:id="@+id/button5" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+
+            android:background="@color/color_text"
+            android:drawableLeft="@drawable/ic_archive_grey600_24dp"
+            android:text="下载视频"
+            android:id="@+id/download" />
+    </com.tyut.himusic.ui.RevealLayout>
+
+    <com.tyut.himusic.ui.RevealLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#3f000000"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="上传"
+            android:background="@color/color_text"
+            android:paddingLeft="30dp"
+
+            android:drawableLeft="@drawable/uplocate"
+
+ />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="喜欢"
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
+            android:background="@color/color_text"
+            android:paddingLeft="30dp"
+
+            android:drawableLeft="@drawable/uplocate"
+            />
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+            android:text="弹幕"
+            android:layout_marginRight="1dp"
+            android:background="@color/color_text"
+            android:paddingLeft="30dp"
+
+            android:drawableLeft="@drawable/uplocate"
+
+            />
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+            android:text="弹幕"
+            android:layout_marginRight="1dp"
+            android:background="@color/color_text"
+            android:paddingLeft="30dp"
+
+            android:drawableLeft="@drawable/uplocate"
+            />
+
+
+
+    </com.tyut.himusic.ui.RevealLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal">
+        <RelativeLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pause_circle_fill_grey600_36dp"
+                android:id="@+id/imageView13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi乐小秘书"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/textView17"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageView13" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pause_circle_fill_grey600_36dp"
+                android:id="@+id/imageView14"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注者3620人"
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView18"
+                android:layout_alignTop="@+id/textView17"
+                android:layout_toStartOf="@+id/imageView14" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#3f000000"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="所属频道"
+                android:id="@+id/textView14"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp"
+                android:background="#4f000000"
+                android:id="@+id/imageView12"
+                android:layout_below="@+id/textView14"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="欧美流行精选"
+                android:id="@+id/textView15"
+                android:layout_alignTop="@+id/imageView12"
+                android:layout_toEndOf="@+id/imageView12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sabdkabwdbadbnka"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textView16"
+                android:layout_below="@+id/textView15"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《Free Loop》是加拿大歌手“城市琴人”Daniel Powter演唱的一首歌曲，由Daniel Powter填词谱曲，收录在Daniel Powter 2005年发行的专辑《Daniel Powter 同名专辑》中，是该专辑的第二主打歌曲，因2006年被用作福特轿车广告曲而为中国歌迷所熟知。"
+                android:id="@+id/textView19"
+                android:layout_marginRight="8dp"
+                android:layout_below="@+id/imageView12"
+                android:layout_alignStart="@+id/imageView12" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_text"
+        android:layout_gravity="center_horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/editText"
+            android:hint="这里输入弹幕啊，亲！"
+            android:textColorHint="@color/color1_blue"
+            android:layout_weight="1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/danmu_fasong"
+            android:text="发送"/>
+    </LinearLayout>
 </LinearLayout>
