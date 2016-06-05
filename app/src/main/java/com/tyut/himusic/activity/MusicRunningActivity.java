@@ -108,6 +108,7 @@ public class MusicRunningActivity extends AppCompatActivity
         ButterKnife.bind(this);
 //        注册eventsbus
         EventBus.getDefault().register(this);
+        mp3Infos = MediaUtil.getMp3Infos(MusicRunningActivity.this);
 
     }
 
@@ -195,7 +196,7 @@ public class MusicRunningActivity extends AppCompatActivity
                         musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
                         isPause = false;
                         intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
-                        intent1.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
+                        intent1.putExtra("MSG", AppConstant.PlayerMsg.CONTINUE_MSG);
                         startService(intent1);
                         startAnimation(musicPic);
                     }
@@ -315,6 +316,7 @@ public class MusicRunningActivity extends AppCompatActivity
 
     public void onEventMainThread(MusicListEvents event)
     {
+        isPause = false;
         title = (event.getTitle());
         musicTitle.setText(title);
         artist = (event.getArtist());
@@ -323,6 +325,8 @@ public class MusicRunningActivity extends AppCompatActivity
         listPosition = event.getListPosition();
         flag = event.getMsg();
         duration = MediaUtil.formatTime(event.getDuration());
+        musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+
     }
 
     @Override

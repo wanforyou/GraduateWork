@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 public class MainMonthhotFragment extends BaseFragment
 {
 
-    @Bind(R.id.frag_main_monthhot_recyclerview)
+    @Bind(R.id.frag_jayzhou_mv)
     RecyclerView recyclerView;
     private HotAdapter hotAdapter;
     private String[] imgUrls;
