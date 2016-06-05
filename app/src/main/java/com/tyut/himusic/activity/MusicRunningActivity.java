@@ -177,7 +177,7 @@ public class MusicRunningActivity extends AppCompatActivity
                 {
                     isPause = false;
                     isFirstTime = false;
-                    musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+                    musicplay.setImageResource(R.drawable.ic_pause_circle_outline_white_48dp);
                     startAnimation(musicPic);
 
                 } else
@@ -185,7 +185,7 @@ public class MusicRunningActivity extends AppCompatActivity
                     Intent intent1 = new Intent(MusicRunningActivity.this, PlayerService.class);
                     if (!isPause)
                     {
-                        musicplay.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_white_48dp));
+                        musicplay.setImageResource(R.drawable.ic_play_circle_outline_white_48dp);
                         isPause = true;
                         intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                         intent1.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
@@ -193,7 +193,7 @@ public class MusicRunningActivity extends AppCompatActivity
                         musicPic.clearAnimation();
                     } else
                     {
-                        musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+                        musicplay.setImageResource(R.drawable.ic_pause_circle_outline_white_48dp);
                         isPause = false;
                         intent1.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
                         intent1.putExtra("MSG", AppConstant.PlayerMsg.CONTINUE_MSG);
@@ -325,7 +325,7 @@ public class MusicRunningActivity extends AppCompatActivity
         listPosition = event.getListPosition();
         flag = event.getMsg();
         duration = MediaUtil.formatTime(event.getDuration());
-        musicplay.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_white_48dp));
+        musicplay.setImageResource(R.drawable.ic_pause_circle_outline_white_48dp);
 
     }
 
