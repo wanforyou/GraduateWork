@@ -129,7 +129,7 @@ public class MusicRunningActivity extends AppCompatActivity
 //                转为歌词界面
                 break;
             case R.id.music_running_zan:
-                musicZan.setImageDrawable(getDrawable(R.drawable.ic_thumb_up_black_24dp));
+                musicZan.setBackground(getDrawable(R.drawable.ic_thumb_up_black_24dp));
 //                发送赞的广播
                 ZanNumber = ZanNumber + 1;
                 break;
@@ -350,6 +350,7 @@ public class MusicRunningActivity extends AppCompatActivity
             musicArtist.setText(mp3Info.getArtist());
             url = mp3Info.getUrl();
             Intent intent = new Intent();
+            intent.setPackage(getPackageName());
             intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
             intent.putExtra("url", mp3Info.getUrl());
             intent.putExtra("listPosition", listPosition);
@@ -368,7 +369,7 @@ public class MusicRunningActivity extends AppCompatActivity
     public void next_music()
     {
         listPosition = listPosition + 1;
-        if (listPosition <= mp3Infos.size() - 1)
+        if (listPosition <= (mp3Infos.size() - 1))
         {
             Mp3Info mp3Info = mp3Infos.get(listPosition);
             url = mp3Info.getUrl();
@@ -376,7 +377,8 @@ public class MusicRunningActivity extends AppCompatActivity
             musicArtist.setText(mp3Info.getArtist());
             Intent intent = new Intent();
             intent.setAction("com.tyut.himusic.media.MUSIC_SERVICE");
-            intent.putExtra("url", mp3Info.getUrl());
+            intent.putExtra("url", url);
+            intent.setPackage(getPackageName());
             intent.putExtra("listPosition", listPosition);
             intent.putExtra("MSG", AppConstant.PlayerMsg.NEXT_MSG);
             startService(intent);

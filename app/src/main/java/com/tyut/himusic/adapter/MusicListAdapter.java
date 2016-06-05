@@ -53,6 +53,7 @@ public class MusicListAdapter extends BaseAdapter
             convertView = LayoutInflater.from(context).inflate(R.layout.music_list_item_layout, null);
             viewHolder.musicTitle = (TextView) convertView.findViewById(R.id.music_title);
             viewHolder.musicArtist = (TextView) convertView.findViewById(R.id.music_Artist);
+            viewHolder.musicListposition = (TextView) convertView.findViewById(R.id.music_list_position);
             convertView.setTag(viewHolder);
         } else
         {
@@ -61,15 +62,16 @@ public class MusicListAdapter extends BaseAdapter
         mp3Info = mp3Infos.get(position);
         viewHolder.musicTitle.setText(mp3Info.getTitle());
         viewHolder.musicArtist.setText(mp3Info.getArtist());
-
+        viewHolder.musicListposition.setText(Long.toString(mp3Info.getId()));
         return convertView;
     }
 
     public class ViewHolder
     {
         public TextView musicTitle;
-        public TextView musicDuration;
+        public TextView musicListposition;
         public TextView musicArtist;
+
     }
 
 

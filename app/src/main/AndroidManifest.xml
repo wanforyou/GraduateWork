@@ -55,7 +55,7 @@
             android:name=".activity.CircleMenuActivity"
           />
         <activity android:name=".activity.VipActivity" />
-        <activity android:name=".activity.JAYZHOUActivity"/>
+        <activity android:name=".fragment.JAYZHOUFragment"/>
 <service android:name=".service.PlayerService"
          >
     <intent-filter>

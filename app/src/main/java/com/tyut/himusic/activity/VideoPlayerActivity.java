@@ -3,7 +3,11 @@ package com.tyut.himusic.activity;
 import android.app.Activity;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.opendanmaku.DanmakuItem;
@@ -13,16 +17,34 @@ import com.tyut.himusic.util.SDCardUtil;
 
 import java.io.File;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 public class VideoPlayerActivity extends Activity
 {
     VideoView videoView;
     MediaController mController;
     DanmakuView mDanmakuView;
+    private boolean danMuopen = true;
+    private String tuCao;
+
+    @Bind(R.id.danmu)
+    Button danMu;
+    @Bind(R.id.download)
+Button downLoadVideo;
+    @Bind(R.id.danmu_fasong)
+    Button danMuFaSong;
+    @Bind(R.id.editText)
+    EditText danMuSms;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
         setContentView(R.layout.activity_video_player);
         // 获取界面上VideoView组件
@@ -66,5 +88,30 @@ public class VideoPlayerActivity extends Activity
 
         //清空弹幕
 //        mDanmakuView.clear();
+    }
+    @OnClick({R.id.danmu,R.id.download})
+    public void onClick(View view)
+    {
+
+        switch (view.getId())
+        {
+            case R.id.danmu:
+                if(danMuopen){
+                    danMuopen =false;
+                    mDanmakuView.hide();
+                }else {
+                    danMuopen =true;
+                    mDanmakuView.show();
+                }
+                break;
+            case R.id.download:
+                Toast.makeText(VideoPlayerActivity.this, "下载完成", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.danmu_fasong:
+                tuCao = danMuSms.getText().toString();
+                mDanmakuView.addItem(new DanmakuItem(this, tuCao, mDanmakuView.getWidth()));
+                mDanmakuView.show();
+                break;
+        }
     }
 }
