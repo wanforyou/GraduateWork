@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest package="com.tyut.himusic"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -10,7 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-
     <application
         android:name=".activity.MyApplication"
         android:allowBackup="true"
@@ -20,48 +18,32 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/app_name"
-          >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.MyInformation"
-            />
-        <activity
-            android:name=".activity.MineMyVideo"
-         />
-        <activity
-            android:name=".activity.MineMyMusic"
-           />
-        <activity
-            android:name=".activity.MineSetting"
-            />
-        <activity
-            android:name=".activity.VideoPlayerActivity"/>
-        <activity
-            android:name=".activity.MusicRunningActivity"
-            />
-        <activity
-            android:name=".activity.MusicListActivity"
-            />
-        <activity
-            android:name=".activity.MusicSettingActivity"
-          />
-        <activity
-            android:name=".activity.CircleMenuActivity"
-          />
-        <activity android:name=".activity.VipActivity" />
-        <activity android:name=".fragment.JAYZHOUFragment"/>
-<service android:name=".service.PlayerService"
-         >
-    <intent-filter>
-        <action android:name="com.tyut.himusic.media.MUSIC_SERVICE"/>
-    </intent-filter>
-</service>
+        <activity android:name=".activity.MyInformation"/>
+        <activity android:name=".activity.MineMyVideo"/>
+        <activity android:name=".activity.MineMyMusic"/>
+        <activity android:name=".activity.MineSetting"/>
+        <activity android:name=".activity.VideoPlayerActivity"/>
+        <activity android:name=".activity.MusicRunningActivity"/>
+        <activity android:name=".activity.MusicListActivity"/>
+        <activity android:name=".activity.MusicSettingActivity"/>
+        <activity android:name=".activity.CircleMenuActivity"/>
+        <activity android:name=".activity.VipActivity"/>
+
+        <service android:name=".service.PlayerService">
+            <intent-filter>
+                <action android:name="com.tyut.himusic.media.MUSIC_SERVICE"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.SearchActivity">
+        </activity>
     </application>
 
 </manifest>
