@@ -14,6 +14,7 @@
     <color name="color6_blue">#01579b</color>
     <color name="color_org1">#ff3300</color>
     <color name="color_org2">#ff6600</color>
+    <color name="default_green">#00bc4a</color>
     <color name="white">#ffffff</color>
     <color name="reveal_color">#1b000000</color>
 </resources>

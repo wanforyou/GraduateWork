@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_search"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#c8c8c8">
+
+        <ImageView
+            android:id="@+id/act_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search_black_36dp"/>
+
+        <TextView
+            android:id="@+id/act_search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:text="搜索"
+            android:textColor="@color/bottom_green"
+            android:textSize="15dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@id/act_search_btn"
+            android:layout_toRightOf="@id/act_search_back"
+            android:background="@drawable/shape_search_edit">
+
+            <ImageView
+                android:id="@+id/act_search_edit_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_search_black_36dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/act_search_edit_img"
+                android:hint="输入关键字"
+                android:textColor="#555555"
+                android:textSize="13dp"
+                />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="全部"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="视频"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="音乐"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="歌手"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="歌词"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:text="热门搜索"
+        android:textSize="14dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    我的少女时代    "
+            android:textColor="@color/default_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    依然范克西    "
+            android:textColor="@color/default_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    Love Story    "
+            android:textColor="@color/default_green"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    tfboys    "
+            android:textColor="@color/default_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    南山南    "
+            android:textColor="@color/default_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    没有你的森林    "
+            android:textColor="@color/default_green"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    我在东北玩泥巴    "
+            android:textColor="@color/default_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    权御天下    "
+            android:textColor="@color/default_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_tag_green"
+            android:gravity="center"
+            android:text="    千本樱    "
+            android:textColor="@color/default_green"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:text="历史搜索"
+        android:textSize="14dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="28dp"
+        android:textColor="@color/color1_blue"
+        android:text="苏打绿"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="28dp"
+        android:textColor="@color/color1_blue"
+        android:text="苏打绿"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="28dp"
+        android:textColor="@color/color1_blue"
+        android:text="苏打绿"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="28dp"
+        android:textColor="@color/color1_blue"
+        android:text="苏打绿"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="28dp"
+        android:textColor="@color/color1_blue"
+        android:text="苏打绿"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#ee0000"
+        android:text="清空所有历史搜索"
+        android:textSize="14dp"/>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by lqc
+  ~ Copyright © 2016年 issuebang.com. All rights reserved.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <corners android:radius="18dp"/>
+    <solid android:color="@color/white"/>
+    <stroke android:width="0.5dp" android:color="@color/default_green"/>
+</shape>
