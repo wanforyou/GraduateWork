@@ -107,7 +107,7 @@ public class MainHimusicManAdapter extends RecyclerView.Adapter<MainHimusicManAd
         viewHolder.txtTitle3.setText(datas.get(getRealPosition(position)).getTitle3());
         viewHolder.imgPisture4.setImageURI(Uri.parse(datas.get(getRealPosition(position)).getImgur4()));
         viewHolder.txtTitle4.setText(datas.get(getRealPosition(position)).getTitle4());
-        viewHolder.imgPisture5.setImageURI(Uri.parse(datas.get(getRealPosition(position)).getImgur4()));
+        viewHolder.imgPisture5.setImageURI(Uri.parse(datas.get(getRealPosition(position)).getImgur5()));
         viewHolder.txtTitle5.setText(datas.get(getRealPosition(position)).getTitle5());
 
     }

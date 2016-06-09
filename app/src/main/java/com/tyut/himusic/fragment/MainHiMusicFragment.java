@@ -95,35 +95,35 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
         datasman2.add(new MainHimusicListData("原创歌手",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/qiaoyang.png", "乔洋",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/xiaojian.png", "小贱",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/zhengguofeng.png", "郑国锋",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/xuliang.png", "徐良",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/jiajia.png", "家家"));
         datasman2.add(new MainHimusicListData("华语男歌手",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "周杰伦",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/jayzhou.jpg", "周杰伦",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/eason.jpg", "陈奕迅",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/linjj.jpg", "林俊杰",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/xuanzhiqian.jpg", "薛之谦",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/zhangxueyou.jpg", "张学友"));
         datasman2.add(new MainHimusicListData("华语女歌手",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/zhanghuimei.jpg", "张惠妹",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/caiyiling.jpg", "蔡依林",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/nayin.jpg", "那英",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/dengziqi.jpg", "邓紫棋",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/zhangliangyin.jpg", "张靓颖"));
         datasman2.add(new MainHimusicListData("日韩潮流",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/bigbang.jpg", "BIGBANG",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/lovelive.jpg", "邪教",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/TARA.jpg", "T-ARA",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/akb48.jpg", "AKB48",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/xiangcai.jpg", "兵库北"));
         datasman2.add(new MainHimusicListData("英美飚榜",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/Maroon%205.jpg", "Maroon 5",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/Rihanna.jpg", "Rihanna",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/Christopher.jpg", "Christopher",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/Avril%20Lavigne.jpg", "Avril",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/Taylor%20Swift.jpg", "Taylor"));
 
         mListViewHeader = getActivity().getLayoutInflater().inflate(R.layout.main_himusic_frag_headview, null);
     }

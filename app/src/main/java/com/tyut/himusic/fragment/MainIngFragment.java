@@ -61,36 +61,36 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
         datasActivity = new ArrayList<MainIngListData>();
         datasNew = new ArrayList<MainIngListData>();
         datasHot = new ArrayList<MainIngListData>();
-        datasActivity.add(new MainIngListData("标题1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 45));
-        datasActivity.add(new MainIngListData("标题2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 33));
-        datasActivity.add(new MainIngListData("标题3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 435));
-        datasActivity.add(new MainIngListData("标题4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 1));
-        datasActivity.add(new MainIngListData("标题5",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍1", 4));
+        datasActivity.add(new MainIngListData("魔兽",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160609231549.png", "三天前", "为了部落", 1));
+        datasActivity.add(new MainIngListData("九九八十一",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/T1lvWEBXWT1RXrhCrK.jpg", "一天", "BiliBili拜年祭", 45));
+        datasActivity.add(new MainIngListData("魔兽",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/lich-king-large.jpg", "两天前", "巫妖王之怒", 33));
+        datasActivity.add(new MainIngListData("端午",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160609234059.png", "刚刚", "风气端午粽飘香", 435));
+        datasActivity.add(new MainIngListData("前世情人",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160609162440.png", "一周前", "介绍1", 4));
         datasNew.add(new MainIngListData("标题11",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 145));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "四天前", "介绍2", 145));
         datasNew.add(new MainIngListData("标题12",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 133));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一周前", "介绍2", 133));
         datasNew.add(new MainIngListData("标题13",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 1435));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一周前", "介绍2", 1435));
         datasNew.add(new MainIngListData("标题14",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 11));
         datasNew.add(new MainIngListData("标题15",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍2", 14));
         datasHot.add(new MainIngListData("标题21",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 345));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一周前", "介绍3", 345));
         datasHot.add(new MainIngListData("标题22",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 33));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一周前", "介绍3", 33));
         datasHot.add(new MainIngListData("标题23",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 3435));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一月前", "介绍3", 3435));
         datasHot.add(new MainIngListData("标题24",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 31));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一周前", "介绍3", 31));
         datasHot.add(new MainIngListData("标题25",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "今天", "介绍3", 34));
+                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "一月前", "介绍3", 34));
         mListViewHeader = getActivity().getLayoutInflater().inflate(R.layout.main_ing_frag_headview, null);
 
 
@@ -99,10 +99,10 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-//        search = (ImageView)findViewById(R.id.title_bar_back);
-//        search.setOnClickListener(this);
 
         View view = inflater.inflate(R.layout.fragment_main_ing, container, false);
+        search = (ImageView)view.findViewById(R.id.title_bar_back);
+        search.setOnClickListener(this);
         ButterKnife.bind(this, view);
         initView();
         return view;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,39 +10,43 @@
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right|bottom">
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView4"
-            android:src="@drawable/ic_album_grey600_36dp"
+            android:elevation="3dp"
+            android:background="@drawable/shape_circle3"
             android:layout_alignTop="@+id/imageView5"
             android:layout_alignStart="@+id/imageView5" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView5"
-
-            android:src="@drawable/ic_archive_grey600_24dp"
+            android:elevation="5dp"
+            android:background="@drawable/shape_circle2"
             android:layout_alignTop="@+id/imageView6"
             android:layout_alignStart="@+id/imageView6" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView6"
+            android:elevation="7dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/circle_yellow_48px_543519_easyicon"
+            android:background="@drawable/shape_circle1"
             android:layout_alignTop="@+id/imageView3"
             android:layout_alignStart="@+id/imageView3" />
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:id="@+id/imageView3"
+            android:elevation="9dp"
             android:src="@drawable/fab_anim"
-            android:background="@drawable/circle_yellow_48px_543519_easyicon"
+            android:background="@drawable/shape_circle"
             android:layout_marginEnd="59dp"
             android:layout_marginBottom="56dp"
             android:layout_alignParentBottom="true"
@@ -50,4 +54,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</FrameLayout>

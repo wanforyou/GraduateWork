@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="title"
             android:id="@+id/himusic_title1"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/himusic_circleIMG1"
             android:layout_alignStart="@+id/himusic_circleIMG1" />
         <com.facebook.drawee.view.SimpleDraweeView
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:text="title"
             android:id="@+id/himusic_title2"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/himusic_circleIMG2"
             android:layout_alignStart="@+id/himusic_circleIMG2" />
         <com.facebook.drawee.view.SimpleDraweeView
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:text="title"
             android:id="@+id/himusic_title3"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/himusic_circleIMG3"
             android:layout_alignStart="@+id/himusic_circleIMG3" />
         <com.facebook.drawee.view.SimpleDraweeView
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:text="title"
             android:id="@+id/himusic_title4"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/himusic_circleIMG4"
             android:layout_alignStart="@+id/himusic_circleIMG4" />
         <com.facebook.drawee.view.SimpleDraweeView
@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:text="title"
             android:id="@+id/himusic_title5"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/himusic_circleIMG5"
             android:layout_alignStart="@+id/himusic_circleIMG5" />
     </RelativeLayout>

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
 import com.tyut.himusic.R;
 
 import butterknife.Bind;
@@ -52,13 +51,14 @@ public class CircleMenuActivity extends AppCompatActivity
                 if (!buttonIsChecked)
                 {
                     startAnim();
-                    imageView.setImageState(STATE_UNCHECKED, true);
+                    imageView.setImageState(STATE_CHECKED, true);
                     buttonIsChecked = true;
                 } else
                 {
                     //返回动画
                     cleanAnim();
-                    imageView.setImageState(STATE_CHECKED, true);
+                    imageView.setImageState(STATE_UNCHECKED, true);
+
                     buttonIsChecked = false;
                 }
                 break;
