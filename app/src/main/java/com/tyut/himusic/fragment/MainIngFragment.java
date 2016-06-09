@@ -99,6 +99,8 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+        search = (ImageView)findViewById(R.id.title_bar_back);
+        search.setOnClickListener(this);
 
         View view = inflater.inflate(R.layout.fragment_main_ing, container, false);
         ButterKnife.bind(this, view);
@@ -122,8 +124,7 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
         recyclerview.setAdapter(adapter);
         adapter.setHeaderView(mListViewHeader);
         imgPicture.setImageURI(Uri.parse(datasActivity.get(0).getImgurl()));
-//        search = (ImageView)mListViewHeader.findViewById(R.id.title_bar_back);
-//        search.setOnClickListener(this);
+
 
 
     }
