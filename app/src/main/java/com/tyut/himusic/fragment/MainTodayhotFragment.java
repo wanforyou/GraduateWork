@@ -26,6 +26,7 @@ public class MainTodayhotFragment extends BaseFragment
     RecyclerView recyclerView;
     private HotAdapter hotAdapter;
     private String[] imgUrls;
+    private String[] imgTitles;
 
     public static MainTodayhotFragment getInstance()
     {
@@ -36,6 +37,8 @@ public class MainTodayhotFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState)
     {
         imgUrls = ImageUrlTestUtils.getImageUrls();
+        imgTitles = ImageUrlTestUtils.getImageTitle();
+
         super.onCreate(savedInstanceState);
     }
 
@@ -54,7 +57,7 @@ public class MainTodayhotFragment extends BaseFragment
 
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
-        hotAdapter = new HotAdapter(imgUrls, getContext());
+        hotAdapter = new HotAdapter(imgUrls,imgTitles, getContext());
         recyclerView.setAdapter(hotAdapter);
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         recyclerView.addItemDecoration(decoration);

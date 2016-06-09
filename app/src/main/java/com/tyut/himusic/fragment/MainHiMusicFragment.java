@@ -144,7 +144,7 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
         fraghimusicMain.setOnClickListener(this);
         fraghimusicMan = (TextView) mListViewHeader.findViewById(R.id.frag_main_himusic_man);
         fraghimusicMan.setOnClickListener(this);
-        himusicImageIdList = Arrays.asList(ImageUrlTestUtils.getImageUrls2());
+        himusicImageIdList = Arrays.asList(ImageUrlTestUtils.getImageUrls3());
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
         adapter = new MainHimusicManAdapter(datasman, getContext());

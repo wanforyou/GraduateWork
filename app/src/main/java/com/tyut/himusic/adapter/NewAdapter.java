@@ -21,22 +21,19 @@ import com.tyut.himusic.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * @author luqingchuan on 16/5/13 15:41
- * @email luqingchuan@foxmail.com
- */
-public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
+
+public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder>
 {
     private String[] imgUrls;
-    private String[] imgTitles;
     private Context context;
+    private String[] imgTitles;
 
-    public HotAdapter(String[] imgUrls,String[] imgTitles, Context context)
+    public NewAdapter(String[] imgUrls,String[] imgTitles, Context context)
     {
         super();
         this.imgUrls = imgUrls;
-        this.imgTitles = imgTitles;
         this.context = context;
+        this.imgTitles = imgTitles;
     }
 
     @Override
@@ -49,7 +46,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
     {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(
-                R.layout.item_hot, viewGroup, false);
+                R.layout.item_new, viewGroup, false);
         return new ViewHolder(v);
     }
 
@@ -58,15 +55,10 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
     {
         // 建立起ViewHolder中视图与数据的关联
         String imgUrl = imgUrls[position];
-        String imgTitle = imgTitles[position];
         viewHolder.imgPisture.setImageURI(Uri.parse(imgUrl));
-        //模拟随机行
-//        int i = (int) (Math.random() * 5) + 1;
-//        StringBuilder str = new StringBuilder();
-//        for (int a = 1; a < i; a++)
-//        {
-//            str.append("\n行");
-//        }
+        String imgTitle = imgTitles[position];
+
+
         viewHolder.txtTitle.setText(imgTitle);
 
     }
@@ -74,9 +66,9 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
     class ViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener
     {
-        @Bind(R.id.item_hot_picture)
+        @Bind(R.id.item_new_picture)
         SimpleDraweeView imgPisture;
-        @Bind(R.id.item_hot_title)
+        @Bind(R.id.item_new_title)
         TextView txtTitle;
 
         public ViewHolder(View convertView)

@@ -1,15 +1,20 @@
 package com.tyut.himusic.fragment;
 
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.tyut.himusic.R;
 
+import butterknife.Bind;
+
 
 public class HiMusicManFragment extends BaseFragment
 {
+
+
     public static HiMusicManFragment getInstance()
     {
         return new HiMusicManFragment();

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.adapter.HotAdapter;
+import com.tyut.himusic.adapter.NewAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.SpacesItemDecoration;
 
@@ -21,8 +22,10 @@ public class HiVideoMainNewFragment extends BaseFragment
     @Bind(R.id.frag_hivideo_new_recyclerview)
     RecyclerView hiVideoNewRecyclerView;
 
-    private HotAdapter videoNewAdapter;
+    private NewAdapter videoNewAdapter;
     private String[] imgUrls;
+    private String[] imgTitles;
+
 
     public static HiVideoMainNewFragment getInstance()
     {
@@ -33,7 +36,8 @@ public class HiVideoMainNewFragment extends BaseFragment
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        imgUrls = ImageUrlTestUtils.getImageUrls();
+        imgUrls = ImageUrlTestUtils.getImageUrls4();
+        imgTitles = ImageUrlTestUtils.getImageTitle4();
         super.onCreate(savedInstanceState);
     }
 
@@ -48,9 +52,9 @@ public class HiVideoMainNewFragment extends BaseFragment
     void initView()
     {
 
-        hiVideoNewRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        hiVideoNewRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         hiVideoNewRecyclerView.setHasFixedSize(true);
-        videoNewAdapter = new HotAdapter(imgUrls, getContext());
+        videoNewAdapter = new NewAdapter(imgUrls,imgTitles, getContext());
         hiVideoNewRecyclerView.setAdapter(videoNewAdapter);
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         hiVideoNewRecyclerView.addItemDecoration(decoration);

@@ -45,7 +45,7 @@ public class MainHiVideoFragment extends BaseFragment
     @Bind(R.id.frag_main_hivideo_banner)
     AutoScrollViewPager viewPagerHivideo;
     @Bind(R.id.main_top_music_running)
-    ImageView goToMusicRunning;
+    ImageView goToVideoRunning;
     private HiVideoMainFragment hiVideoMainFragment;
     private HiVideoMvFragment hiVideoMvFragment;
     private HiVideoSeceneFragment hiVideoSeceneFragment;
@@ -127,7 +127,7 @@ public class MainHiVideoFragment extends BaseFragment
                 return false;
             }
         });
-        goToMusicRunning.setOnClickListener(new View.OnClickListener()
+        goToVideoRunning.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)

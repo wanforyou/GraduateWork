@@ -23,6 +23,7 @@ public class HiVideoMainHotFragment extends BaseFragment
 
     private HotAdapter videoHotAdapter;
     private String[] imgUrls;
+    private String[] imgTitles;
 
     public static HiVideoMainHotFragment getInstance()
     {
@@ -32,7 +33,8 @@ public class HiVideoMainHotFragment extends BaseFragment
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        imgUrls = ImageUrlTestUtils.getImageUrls();
+        imgUrls = ImageUrlTestUtils.getImageUrls4();
+        imgTitles = ImageUrlTestUtils.getImageTitle4();
         super.onCreate(savedInstanceState);
     }
 
@@ -48,9 +50,9 @@ public class HiVideoMainHotFragment extends BaseFragment
     void initView()
     {
 
-        hiVideoHotRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        hiVideoHotRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         hiVideoHotRecyclerView.setHasFixedSize(true);
-        videoHotAdapter = new HotAdapter(imgUrls, getContext());
+        videoHotAdapter = new HotAdapter(imgUrls,imgTitles, getContext());
         hiVideoHotRecyclerView.setAdapter(videoHotAdapter);
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         hiVideoHotRecyclerView.addItemDecoration(decoration);

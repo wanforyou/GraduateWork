@@ -7,6 +7,7 @@
 
 package com.tyut.himusic.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -15,9 +16,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.SearchActivity;
+import com.tyut.himusic.activity.VideoPlayerActivity;
 import com.tyut.himusic.adapter.MainIngAdapter;
 import com.tyut.himusic.bean.MainIngListData;
 
@@ -35,6 +39,8 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
     Button fragIngActivity;
     Button fragIngNew;
     Button fragIngHot;
+
+    ImageView search;
     private View mListViewHeader;
 
 
@@ -93,6 +99,7 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+
         View view = inflater.inflate(R.layout.fragment_main_ing, container, false);
         ButterKnife.bind(this, view);
         initView();
@@ -115,6 +122,9 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
         recyclerview.setAdapter(adapter);
         adapter.setHeaderView(mListViewHeader);
         imgPicture.setImageURI(Uri.parse(datasActivity.get(0).getImgurl()));
+//        search = (ImageView)mListViewHeader.findViewById(R.id.title_bar_back);
+//        search.setOnClickListener(this);
+
 
     }
 
@@ -159,6 +169,8 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
                 adapter.setDatas(datasHot);
                 adapter.notifyDataSetChanged();
                 break;
+            case R.id.title_bar_back:
+                startActivity(new Intent(getContext(), SearchActivity.class));
         }
     }
 }
