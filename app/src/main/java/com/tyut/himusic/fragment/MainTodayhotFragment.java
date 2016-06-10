@@ -6,16 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 
 import com.tyut.himusic.R;
 import com.tyut.himusic.activity.MusicRunningActivity;
 import com.tyut.himusic.adapter.HotAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
+import com.tyut.himusic.view.SharePopWindow;
 import com.tyut.himusic.view.SpacesItemDecoration;
+import com.tyut.himusic.view.VideoPopWindow;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -47,6 +52,7 @@ public class MainTodayhotFragment extends BaseFragment
     private HotAdapter hotAdapter;
     private String[] imgUrls;
     private String[] imgTitles;
+    private PopupWindow popupWindow;
 
     public static MainTodayhotFragment getInstance()
     {
@@ -65,9 +71,17 @@ public class MainTodayhotFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_suggestion_todayhot, container, false);
+        final View view = inflater.inflate(R.layout.fragment_suggestion_todayhot, container, false);
         ButterKnife.bind(this, view);
         initView();
+        imageView3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                getPopupWindow(view);
+            }
+        });
         return view;
 
     }
@@ -90,7 +104,7 @@ public class MainTodayhotFragment extends BaseFragment
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
-    @OnClick(value = {R.id.imageView3, R.id.imageView4, R.id.imageView6, R.id.imageView5})
+    @OnClick(value = {R.id.imageView3, R.id.imageView4, R.id.imageView5})
     public void onClick(View view)
     {
         switch (view.getId())
@@ -112,11 +126,44 @@ public class MainTodayhotFragment extends BaseFragment
                 }
                 break;
             case R.id.imageView4:
-                startActivity(new Intent(getContext(), MusicRunningActivity.class));
+                recyclerView.smoothScrollToPosition(0);
                 break;
         }
     }
 
+    private void getPopupWindow(View view)
+    {
+        if (null != popupWindow && popupWindow.isShowing())
+        {
+            popupWindow.dismiss();
+            return;
+        } else
+        {
+            initPopuptWindow(view);
+        }
+    }
+
+    private void initPopuptWindow(View view)
+    {
+        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+        lp.alpha = 0.7f;
+        getActivity().getWindow().setAttributes(lp);
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        popupWindow = new VideoPopWindow(getActivity());
+        popupWindow.showAtLocation(view.findViewById(R.id.imageView4), Gravity.BOTTOM, 0, 0);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener()
+        {
+            @Override
+            public void onDismiss()
+            {
+                WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+                lp.alpha = 1f; //0.0-1.0
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                getActivity().getWindow().setAttributes(lp);
+            }
+        });
+
+    }
     /**
      * 开启一个动画
      */

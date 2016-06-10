@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pop_video_record"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="录制视频"
+        android:textColor="@color/white"
+        android:textSize="18dp"/>
+
+    <View style="@style/divider"/>
+
+    <TextView
+        android:id="@+id/pop_video_local_list"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="本地视频"
+        android:textSize="18dp"/>
+
+    <View style="@style/divider"/>
+
+    <TextView
+        android:id="@+id/pop_video_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="取消"
+        android:textSize="18dp"/>
+</LinearLayout>
