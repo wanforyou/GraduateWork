@@ -31,12 +31,18 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
     private String[] imgTitles;
     private Context context;
 
-    public HotAdapter(String[] imgUrls,String[] imgTitles, Context context)
+    public HotAdapter(String[] imgUrls, String[] imgTitles, Context context)
     {
         super();
         this.imgUrls = imgUrls;
         this.imgTitles = imgTitles;
         this.context = context;
+    }
+
+    public void setDatas(String[] imgUrls, String[] imgTitles)
+    {
+        this.imgUrls = imgUrls;
+        this.imgTitles = imgTitles;
     }
 
     @Override
