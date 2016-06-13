@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     android:background="@color/color5_blue"
 >
+    <com.tyut.himusic.ui.RevealLayout
+        android:layout_width="match_parent"
+        android:id="@+id/setting_title"
+
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:id="@+id/setting_title"
         android:elevation="13dp"
         android:layout_height="55dp"
         android:background="@color/color5_blue"
@@ -29,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/textView2" />
     </RelativeLayout>
-
+    </com.tyut.himusic.ui.RevealLayout>
     <RelativeLayout
         android:id="@+id/setting_music"
         android:layout_below="@+id/setting_title"

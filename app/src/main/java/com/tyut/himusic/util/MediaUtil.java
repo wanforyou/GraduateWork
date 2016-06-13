@@ -17,23 +17,16 @@ import java.util.List;
  */
 
 
-public class MediaUtil
-{
-
+public class MediaUtil {
     //获取专辑封面的Uri
     private static final Uri albumArtUri = Uri.parse("content://media/external/audio/albumart");
-
 // 用于从数据库中查询歌曲的信息，保存在List当中
-
-    public static List<Mp3Info> getMp3Infos(Context context)
-    {
+    public static List<Mp3Info> getMp3Infos(Context context) {
         Cursor cursor = context.getContentResolver().query(
                 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null,
                 MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
-
         List<Mp3Info> mp3Infos = new ArrayList<Mp3Info>();
-        for (int i = 0; i < cursor.getCount(); i++)
-        {
+        for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToNext();
             Mp3Info mp3Info = new Mp3Info();
             long id = cursor.getLong(cursor

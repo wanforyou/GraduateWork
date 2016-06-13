@@ -68,38 +68,29 @@ public class PlayerService extends Service
         mp3Infos = MediaUtil.getMp3Infos(PlayerService.this);
         //        注册eventsbus
         EventBus.getDefault().register(this);
-
-
 //         设置音乐播放完成时的监听器
-
         mediaPlayer.setOnCompletionListener(new OnCompletionListener()
         {
 
             @Override
             public void onCompletion(MediaPlayer mp)
             {
-                if (status == 3)
-                { // 单曲循环
+                if (status == 3) { // 单曲循环
                     mediaPlayer.start();
-                } else if (status == 2)
-                { // 顺序播放
+                } else if (status == 2) { // 顺序播放
                     current++;    //下一首位置
-                    if (current <= mp3Infos.size() - 1)
-                    {
-
+                    if (current <= mp3Infos.size() - 1) {
                         EventBus.getDefault().post(
                                 new MusicEvents(UPDATE_ACTION, current));
                         path = mp3Infos.get(current).getUrl();
                         play(0);
-                    } else
-                    {
+                    } else {
                         mediaPlayer.seekTo(0);
                         current = 0;
                         EventBus.getDefault().post(
                                 new MusicEvents(UPDATE_ACTION, current));
                     }
-                } else if (status == 1)
-                {    //随机播放
+                } else if (status == 1) {    //随机播放
                     current = getRandomIndex(mp3Infos.size() - 1);
                     System.out.println("currentIndex ->" + current);
                     // 发送广播，将被Activity组件中的BroadcastReceiver接收到

@@ -13,8 +13,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.MainActivity;
+import com.tyut.himusic.activity.MusicListActivity;
 import com.tyut.himusic.activity.MusicRunningActivity;
 import com.tyut.himusic.adapter.HotAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
@@ -96,6 +99,22 @@ public class MainTodayhotFragment extends BaseFragment
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         recyclerView.addItemDecoration(decoration);
         log.d("");
+        hotAdapter.setOnItemClickLitener(new HotAdapter.OnItemClickLitener()
+        {
+
+            @Override
+            public void onItemClick(View view, int position)
+            {
+//转跳视频播放页面
+                startActivity(new Intent(getContext(), MusicRunningActivity.class));            }
+
+            @Override
+            public void onItemLongClick(View view, int position)
+            {
+//          分享的
+                getPopupWindow1(recyclerView);
+            }
+        });
     }
 
     @Override
@@ -128,6 +147,7 @@ public class MainTodayhotFragment extends BaseFragment
             case R.id.imageView4:
                 recyclerView.smoothScrollToPosition(0);
                 break;
+
         }
     }
 
@@ -150,7 +170,7 @@ public class MainTodayhotFragment extends BaseFragment
         getActivity().getWindow().setAttributes(lp);
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         popupWindow = new VideoPopWindow(getActivity());
-        popupWindow.showAtLocation(view.findViewById(R.id.imageView4), Gravity.BOTTOM, 0, 0);
+        popupWindow.showAtLocation(view.findViewById(R.id.imageView3), Gravity.BOTTOM, 0, 0);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener()
         {
             @Override
@@ -233,5 +253,39 @@ public class MainTodayhotFragment extends BaseFragment
         set6.start();
 
     }
+    private void getPopupWindow1(View view)
+    {
+        if (null != popupWindow && popupWindow.isShowing())
+        {
+            popupWindow.dismiss();
+            return;
+        } else
+        {
+            initPopuptWindow1(view);
+        }
+    }
+
+    private void initPopuptWindow1(View view)
+    {
+        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+        lp.alpha = 0.7f;
+        getActivity().getWindow().setAttributes(lp);
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        popupWindow = new SharePopWindow(getActivity());
+        popupWindow.showAtLocation(view.findViewById(R.id.imageView4), Gravity.BOTTOM, 0, 0);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener()
+        {
+            @Override
+            public void onDismiss()
+            {
+                WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+                lp.alpha = 1f; //0.0-1.0
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                getActivity().getWindow().setAttributes(lp);
+            }
+        });
+
+    }
+
 }
 

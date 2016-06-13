@@ -8,6 +8,7 @@
 package com.tyut.himusic.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.MusicListActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -30,6 +32,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
     private String[] imgUrls;
     private String[] imgTitles;
     private Context context;
+
 
     public HotAdapter(String[] imgUrls,String[] imgTitles, Context context)
     {
@@ -53,22 +56,50 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
         return new ViewHolder(v);
     }
 
+    public interface OnItemClickLitener
+    {
+        void onItemClick(View view, int position);
+        void onItemLongClick(View view , int position);
+    }
+
+    private OnItemClickLitener mOnItemClickLitener;
+
+    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener)
+    {
+        this.mOnItemClickLitener = mOnItemClickLitener;
+    }
+
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int position)
+    public void onBindViewHolder(final ViewHolder viewHolder, int position)
     {
         // 建立起ViewHolder中视图与数据的关联
         String imgUrl = imgUrls[position];
         String imgTitle = imgTitles[position];
         viewHolder.imgPisture.setImageURI(Uri.parse(imgUrl));
-        //模拟随机行
-//        int i = (int) (Math.random() * 5) + 1;
-//        StringBuilder str = new StringBuilder();
-//        for (int a = 1; a < i; a++)
-//        {
-//            str.append("\n行");
-//        }
         viewHolder.txtTitle.setText(imgTitle);
+        if (mOnItemClickLitener != null)
+        {
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    int pos = viewHolder.getLayoutPosition();
+                    mOnItemClickLitener.onItemClick(viewHolder.itemView, pos);
+                }
+            });
 
+            viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener()
+            {
+                @Override
+                public boolean onLongClick(View v)
+                {
+                    int pos = viewHolder.getLayoutPosition();
+                    mOnItemClickLitener.onItemLongClick(viewHolder.itemView, pos);
+                    return false;
+                }
+            });
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder
@@ -93,4 +124,6 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder>
 
         }
     }
+
+
 }

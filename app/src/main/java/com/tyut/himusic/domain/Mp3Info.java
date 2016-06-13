@@ -80,7 +80,6 @@ public class Mp3Info
         this.album = album;
     }
 
-
     public long getAlbumId()
     {
         return albumId;

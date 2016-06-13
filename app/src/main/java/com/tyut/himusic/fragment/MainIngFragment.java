@@ -124,9 +124,6 @@ public class MainIngFragment extends BaseFragment implements View.OnClickListene
         recyclerview.setAdapter(adapter);
         adapter.setHeaderView(mListViewHeader);
         imgPicture.setImageURI(Uri.parse(datasActivity.get(0).getImgurl()));
-
-
-
     }
 
     @Override

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.tyut.himusic.view.AutoScrollViewPager;
 
+
 import java.util.List;
 
 /**
