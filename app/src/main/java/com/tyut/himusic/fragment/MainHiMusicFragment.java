@@ -1,5 +1,6 @@
 package com.tyut.himusic.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +9,12 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.MusicRunningActivity;
+import com.tyut.himusic.activity.SearchActivity;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.adapter.MainHimusicManAdapter;
 import com.tyut.himusic.bean.MainHimusicListData;
@@ -36,7 +40,10 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
     @Bind(R.id.frag_main_himusic_recyclerview)
     RecyclerView recyclerView;
     private View mListViewHeader;
-
+    @Bind(R.id.main_top_music_running)
+    ImageView goToMusicRunning;
+    @Bind(R.id.main_suggestion_searchView)
+    ImageView goTosearch;
     private MainHimusicManAdapter adapter;
     private List<MainHimusicListData> datasman;
     private List<MainHimusicListData> datasman2;
@@ -59,23 +66,23 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
         datasman = new ArrayList<MainHimusicListData>();
         datasman2 = new ArrayList<MainHimusicListData>();
         datasman.add(new MainHimusicListData("热门",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/zhongguofeng.png", "中国风",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/zhiqingchun.png", "致青春",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/tianxin.png", "甜心",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/jiezouyuwenrou.png", "节奏与温柔",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/gexiaoleng.png", "戈小冷"));
         datasman.add(new MainHimusicListData("心情",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/wuyan.png", "无言",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/chengmo.png", "沉默",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/yangguang.png", "阳光",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/nanguo.png", "难过",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/love.png", "love"));
         datasman.add(new MainHimusicListData("主题",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title3",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title4",
-                "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title5"));
+                "http://7xv7ag.com1.z0.glb.clouddn.com/landiao.png", "蓝调",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/rmb.png", "RMB",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/qingyinyue.png", "轻音乐",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/disco.png", "disco",
+                "http://7xv7ag.com1.z0.glb.clouddn.com/yaogun.png", "摇滚"));
         datasman.add(new MainHimusicListData("场景",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title1",
                 "http://7xqgf6.com2.z0.glb.qiniucdn.com/FmGVOUrfaIb3w0dyoodWCtT_6YC3", "title2",
@@ -181,8 +188,22 @@ public class MainHiMusicFragment extends BaseFragment implements View.OnClickLis
                 return false;
             }
         });
-
-
+        goTosearch.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getContext(), SearchActivity.class));
+            }
+        });
+        goToMusicRunning.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getContext(), MusicRunningActivity.class));
+            }
+        });
     }
 
     protected void initData()

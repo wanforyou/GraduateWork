@@ -16,9 +16,13 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.tyut.himusic.R;
+
 import com.tyut.himusic.activity.MainActivity;
 import com.tyut.himusic.activity.MusicListActivity;
 import com.tyut.himusic.activity.MusicRunningActivity;
+
+import com.tyut.himusic.activity.MyApplication;
+
 import com.tyut.himusic.adapter.HotAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.SharePopWindow;
@@ -55,7 +59,10 @@ public class MainTodayhotFragment extends BaseFragment
     private HotAdapter hotAdapter;
     private String[] imgUrls;
     private String[] imgTitles;
+    private String[] imgUrls2;
+    private String[] imgTitles2;
     private PopupWindow popupWindow;
+    private boolean isSecond = false;
 
     public static MainTodayhotFragment getInstance()
     {
@@ -67,6 +74,9 @@ public class MainTodayhotFragment extends BaseFragment
     {
         imgUrls = ImageUrlTestUtils.getImageUrls();
         imgTitles = ImageUrlTestUtils.getImageTitle();
+
+        imgUrls2 = ImageUrlTestUtils.getImageUrlschange();
+        imgTitles2 = ImageUrlTestUtils.getImageTitlechange();
 
         super.onCreate(savedInstanceState);
     }
@@ -94,7 +104,7 @@ public class MainTodayhotFragment extends BaseFragment
 
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
-        hotAdapter = new HotAdapter(imgUrls,imgTitles, getContext());
+        hotAdapter = new HotAdapter(imgUrls, imgTitles, getContext());
         recyclerView.setAdapter(hotAdapter);
         SpacesItemDecoration decoration = new SpacesItemDecoration(16);
         recyclerView.addItemDecoration(decoration);
@@ -112,7 +122,7 @@ public class MainTodayhotFragment extends BaseFragment
             public void onItemLongClick(View view, int position)
             {
 //          分享的
-                getPopupWindow1(recyclerView);
+//                getPopupWindow1(recyclerView);
             }
         });
     }
@@ -123,6 +133,7 @@ public class MainTodayhotFragment extends BaseFragment
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
     @OnClick(value = {R.id.imageView3, R.id.imageView4, R.id.imageView5})
     public void onClick(View view)
     {
@@ -146,6 +157,20 @@ public class MainTodayhotFragment extends BaseFragment
                 break;
             case R.id.imageView4:
                 recyclerView.smoothScrollToPosition(0);
+                break;
+
+
+
+            case R.id.imageView5:
+                if (isSecond)
+                {
+                    Toast.makeText(MyApplication.getInstance(), "已经是最新的,请续一秒后重试", Toast.LENGTH_SHORT);
+                } else
+                {
+                    hotAdapter.setDatas(imgUrls2,imgTitles2);
+                    hotAdapter.notifyDataSetChanged();
+                    isSecond = true;
+                }
                 break;
 
         }
@@ -184,6 +209,7 @@ public class MainTodayhotFragment extends BaseFragment
         });
 
     }
+
     /**
      * 开启一个动画
      */
@@ -191,16 +217,16 @@ public class MainTodayhotFragment extends BaseFragment
     {
 
         ObjectAnimator animator1 = ObjectAnimator.ofFloat(imageView1, "translationX", -220);
-        ObjectAnimator animator16 = ObjectAnimator.ofFloat(imageView1, "scaleY",0.01f,1.0f);
+        ObjectAnimator animator16 = ObjectAnimator.ofFloat(imageView1, "scaleY", 0.01f, 1.0f);
         ObjectAnimator animator2 = ObjectAnimator.ofFloat(imageView2, "translationX", -220);
-        ObjectAnimator animator17 = ObjectAnimator.ofFloat(imageView2, "scaleY",0.01f,1.0f);
+        ObjectAnimator animator17 = ObjectAnimator.ofFloat(imageView2, "scaleY", 0.01f, 1.0f);
         ObjectAnimator animator3 = ObjectAnimator.ofFloat(imageView3, "translationX", -220);
-        ObjectAnimator animator18 = ObjectAnimator.ofFloat(imageView3, "scaleY",0.01f,1.0f);
+        ObjectAnimator animator18 = ObjectAnimator.ofFloat(imageView3, "scaleY", 0.01f, 1.0f);
         AnimatorSet set1 = new AnimatorSet();
         set1.setDuration(300);
-        set1.playTogether(animator1, animator2, animator3,animator16,animator17,animator18);
+        set1.playTogether(animator1, animator2, animator3, animator16, animator17, animator18);
         ObjectAnimator animator4 = ObjectAnimator.ofFloat(imageView1, "rotation", 0F, 50F);
-        ObjectAnimator animator5= ObjectAnimator.ofFloat(imageView2, "rotation", 0F, 50F);
+        ObjectAnimator animator5 = ObjectAnimator.ofFloat(imageView2, "rotation", 0F, 50F);
         AnimatorSet set2 = new AnimatorSet();
         set2.setStartDelay(300);
         set2.setDuration(300);
@@ -228,17 +254,17 @@ public class MainTodayhotFragment extends BaseFragment
         ObjectAnimator animator7 = ObjectAnimator.ofFloat(imageView1, "rotation", 103F, 0F);
         set4.setDuration(400);
         set4.play(animator7);
-        ObjectAnimator animator9= ObjectAnimator.ofFloat(imageView2, "rotation", 50F, -0F);
+        ObjectAnimator animator9 = ObjectAnimator.ofFloat(imageView2, "rotation", 50F, -0F);
         AnimatorSet set5 = new AnimatorSet();
         set5.setStartDelay(180);
         set5.setDuration(200);
         set5.play(animator9);
         ObjectAnimator animator10 = ObjectAnimator.ofFloat(imageView1, "translationX", 0);
-        ObjectAnimator animator13 = ObjectAnimator.ofFloat(imageView1, "scaleY",1.0f,0.01f);
+        ObjectAnimator animator13 = ObjectAnimator.ofFloat(imageView1, "scaleY", 1.0f, 0.01f);
         ObjectAnimator animator11 = ObjectAnimator.ofFloat(imageView2, "translationX", 0);
-        ObjectAnimator animator14 = ObjectAnimator.ofFloat(imageView2, "scaleY",1.0f,0.01f);
+        ObjectAnimator animator14 = ObjectAnimator.ofFloat(imageView2, "scaleY", 1.0f, 0.01f);
         ObjectAnimator animator12 = ObjectAnimator.ofFloat(imageView3, "translationX", 0);
-        ObjectAnimator animator15 = ObjectAnimator.ofFloat(imageView3, "scaleY",1.0f,0.01f);
+        ObjectAnimator animator15 = ObjectAnimator.ofFloat(imageView3, "scaleY", 1.0f, 0.01f);
 
         AnimatorSet set6 = new AnimatorSet();
         set6.setStartDelay(400);

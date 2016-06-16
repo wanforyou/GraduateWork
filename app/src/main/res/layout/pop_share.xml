@@ -86,7 +86,7 @@
                 android:id="@+id/view_share_qq_img"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/friend_circle"/>
+                android:src="@drawable/qq"/>
 
             <TextView
                 android:layout_width="60dp"
@@ -106,7 +106,7 @@
                 android:id="@+id/view_share_qzone_img"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/friend_circle"/>
+                android:src="@drawable/kongjian"/>
 
             <TextView
                 android:layout_width="60dp"
@@ -126,7 +126,7 @@
                 android:id="@+id/view_share_weibo_img"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/friend_circle"/>
+                android:src="@drawable/weibo"/>
 
             <TextView
                 android:layout_width="60dp"

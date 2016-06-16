@@ -73,7 +73,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             fresco:roundAsCircle="true"
-            android:background="#4f000000"
+            android:background="@drawable/abc"
             android:id="@+id/music_pan_pic"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/audioTrack"
-            android:text="0:25" />
+            android:text="0:03" />
 
         <TextView
             android:id="@+id/final_progress"

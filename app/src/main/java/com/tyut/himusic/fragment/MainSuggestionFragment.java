@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import com.tyut.himusic.R;
 import com.tyut.himusic.activity.CircleMenuActivity;
 import com.tyut.himusic.activity.MusicRunningActivity;
+import com.tyut.himusic.activity.SearchActivity;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
 import com.tyut.himusic.view.AutoScrollViewPager;
@@ -114,7 +115,7 @@ public class MainSuggestionFragment extends BaseFragment
             @Override
             public void onClick(View v)
             {
-                startActivity(new Intent(getContext(), CircleMenuActivity.class));
+                startActivity(new Intent(getContext(), SearchActivity.class));
             }
         });
 

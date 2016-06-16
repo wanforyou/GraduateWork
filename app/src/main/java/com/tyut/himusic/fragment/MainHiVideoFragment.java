@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.tyut.himusic.R;
+import com.tyut.himusic.activity.SearchActivity;
 import com.tyut.himusic.activity.VideoPlayerActivity;
 import com.tyut.himusic.adapter.BannerAdapter;
 import com.tyut.himusic.util.ImageUrlTestUtils;
@@ -46,6 +47,9 @@ public class MainHiVideoFragment extends BaseFragment
     AutoScrollViewPager viewPagerHivideo;
     @Bind(R.id.main_top_music_running)
     ImageView goToVideoRunning;
+
+    @Bind(R.id.main_suggestion_searchView)
+    ImageView goTosearch;
     private HiVideoMainFragment hiVideoMainFragment;
     private HiVideoMvFragment hiVideoMvFragment;
     private HiVideoSeceneFragment hiVideoSeceneFragment;
@@ -133,6 +137,14 @@ public class MainHiVideoFragment extends BaseFragment
             public void onClick(View v)
             {
                 startActivity(new Intent(getContext(), VideoPlayerActivity.class));
+            }
+        });
+        goTosearch.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getContext(), SearchActivity.class));
             }
         });
     }

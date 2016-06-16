@@ -13,8 +13,9 @@
 
     android:orientation="vertical">
 
-    <include android:id="@+id/top_menu_hivideo"
-        layout="@layout/title_bar">   </include>
+
+    <include android:id="@+id/top_menu_suggestion"
+        layout="@layout/include_top_menu"/>
 
 
     <android.support.v7.widget.RecyclerView

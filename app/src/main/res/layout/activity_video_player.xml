@@ -105,7 +105,7 @@
             android:background="@color/color_text"
             android:paddingLeft="30dp"
 
-            android:drawableLeft="@drawable/uplocate"
+            android:drawableLeft="@drawable/ic_headset_grey600_24dp"
             />
         <Button
         android:layout_width="wrap_content"
@@ -116,19 +116,19 @@
             android:background="@color/color_text"
             android:paddingLeft="30dp"
 
-            android:drawableLeft="@drawable/uplocate"
+            android:drawableLeft="@drawable/ic_archive_grey600_24dp"
 
             />
         <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-            android:text="弹幕"
+            android:text="分享"
             android:layout_marginRight="1dp"
             android:background="@color/color_text"
             android:paddingLeft="30dp"
 
-            android:drawableLeft="@drawable/uplocate"
+            android:drawableLeft="@drawable/ic_redo_grey600_24dp"
             />
 
 
@@ -165,7 +165,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_pause_circle_fill_grey600_36dp"
+                android:src="@drawable/ic_account_circle_grey600_24dp"
                 android:id="@+id/imageView14"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true" />
@@ -205,7 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="欧美流行精选"
+                android:text="g鬼畜精选"
                 android:id="@+id/textView15"
                 android:layout_alignTop="@+id/imageView12"
                 android:layout_toEndOf="@+id/imageView12" />
@@ -215,7 +215,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="《Free Loop》是加拿大歌手“城市琴人”Daniel Powter演唱的一首歌曲，由Daniel Powter填词谱曲，收录在Daniel Powter 2005年发行的专辑《Daniel Powter 同名专辑》中"
+                android:text="通过视频（或音频）剪辑，用频率极高的重复画面（或声音）组合而成的一段节奏配合音画同步率极高的一类视频，而这类鬼畜视频多见于AcFun和哔哩哔哩等ACGN相关视频网站。"
                 android:id="@+id/textView19"
                 android:layout_marginRight="8dp"
                 android:layout_below="@+id/imageView12"

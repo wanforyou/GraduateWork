@@ -40,8 +40,8 @@ public class MainWeekhotFragment extends BaseFragment
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        imgUrls = ImageUrlTestUtils.getImageUrls();
-        imgTitles = ImageUrlTestUtils.getImageTitle();
+        imgUrls = ImageUrlTestUtils.getImageUrlsweek();
+        imgTitles = ImageUrlTestUtils.getImageTitleweek();
         super.onCreate(savedInstanceState);
     }
 
